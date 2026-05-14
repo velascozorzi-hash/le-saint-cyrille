@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Étoiles Dorées — Cuisine chinoise authentique Paris 11e</title>
+  <meta name="description" content="Restaurant Étoiles Dorées (香锅里辣) — Cuisine sichuanaise authentique, hot pot, raviolis maison. 7 Avenue Philippe Auguste, Paris 11e. ⭐ 4,9/5 Google." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Tokens ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0A0A0A;
+      --dark:    #111111;
+      --card:    #1A1410;
+      --border:  rgba(212,175,55,.18);
+      --red:     #C0392B;
+      --red-dk:  #9B2E22;
+      --gold:    #D4AF37;
+      --gold-lt: #E8C84A;
+      --cream:   #F5F0E8;
+      --muted:   #A09080;
+      --ff-serif: 'Cormorant Garamond', Georgia, serif;
+      --ff-body:  'Inter', system-ui, sans-serif;
+      --ease:    cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ── Utility ──────────────────────────────────────────────────── */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+    .gold { color: var(--gold); }
+    .red  { color: var(--red);  }
+
+    /* ── Decorative divider ───────────────────────────────────────── */
+    .divider {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 0 auto 2.5rem;
+      max-width: 320px;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider span { color: var(--gold); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; white-space: nowrap; }
+
+    /* ── Section headings ─────────────────────────────────────────── */
+    .section-label {
+      display: block; text-align: center;
+      font-family: var(--ff-body); font-size: .7rem; font-weight: 600;
+      letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: var(--ff-serif); font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600; text-align: center; line-height: 1.15;
+      margin-bottom: 1rem; color: var(--cream);
+    }
+    .section-sub {
+      text-align: center; color: var(--muted);
+      font-size: .95rem; max-width: 540px; margin: 0 auto 3rem;
+    }
+
+    /* ── Buttons ──────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .8rem 2rem; border-radius: 2px;
+      font-size: .875rem; font-weight: 500; letter-spacing: .08em;
+      transition: all 200ms var(--ease);
+      border: none; text-transform: uppercase;
+    }
+    .btn-gold {
+      background: var(--gold); color: var(--black);
+    }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(212,175,55,.35); }
+
+    .btn-outline {
+      background: transparent; color: var(--cream);
+      border: 1px solid rgba(245,240,232,.35);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .btn-red {
+      background: var(--red); color: #fff;
+    }
+    .btn-red:hover { background: var(--red-dk); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192,57,43,.4); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 0;
+      transition: background 300ms var(--ease), padding 300ms var(--ease), box-shadow 300ms var(--ease);
+    }
+    #navbar.scrolled {
+      background: rgba(10,10,10,.96);
+      padding: .75rem 0;
+      box-shadow: 0 1px 0 var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .nav-logo {
+      font-family: var(--ff-serif); font-size: 1.55rem; font-weight: 600;
+      color: var(--gold); white-space: nowrap; flex-shrink: 0;
+      letter-spacing: .02em;
+    }
+    .nav-logo small {
+      display: block; font-size: .65rem; letter-spacing: .18em; color: var(--muted);
+      text-transform: uppercase; font-family: var(--ff-body); font-weight: 400;
+      margin-top: -4px;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--cream); opacity: .8;
+      transition: color 200ms, opacity 200ms;
+    }
+    .nav-links a:hover { color: var(--gold); opacity: 1; }
+
+    .nav-cta { flex-shrink: 0; }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: .25rem;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--cream); border-radius: 2px;
+      transition: all 250ms var(--ease);
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none; flex-direction: column; align-items: center; gap: 1.5rem;
+      padding: 2rem 1.5rem;
+      background: rgba(10,10,10,.98);
+    }
+    .nav-mobile a {
+      font-size: 1rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════════════ */
+    #accueil {
+      position: relative; min-height: 100svh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1400&q=80');
+      background-size: cover; background-position: center;
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+    #accueil:hover .hero-bg { transform: scale(1.0); }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg,
+        rgba(10,10,10,.55) 0%,
+        rgba(10,10,10,.78) 60%,
+        rgba(10,10,10,.95) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 8rem 1.5rem 4rem;
+      max-width: 860px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: rgba(212,175,55,.12); border: 1px solid rgba(212,175,55,.3);
+      color: var(--gold); border-radius: 100px;
+      padding: .35rem 1rem; font-size: .75rem; letter-spacing: .1em;
+      margin-bottom: 1.75rem;
+    }
+    .hero-badge svg { width: 14px; height: 14px; fill: var(--gold); flex-shrink: 0; }
+    .hero-sep { width: 1px; height: 14px; background: rgba(212,175,55,.4); }
+
+    .hero-eyebrow {
+      font-family: var(--ff-body); font-size: .7rem; font-weight: 600;
+      letter-spacing: .3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-weight: 600; line-height: 1.1;
+      color: var(--cream); margin-bottom: 1.25rem;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); }
+
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.1rem);
+      color: rgba(245,240,232,.75); max-width: 540px; margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       GALERIE
+    ═══════════════════════════════════════════════════════════════ */
+    #galerie {
+      background: var(--dark); padding: 5rem 0;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 360px 260px;
+      gap: .75rem;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; cursor: pointer;
+      border-radius: 2px;
+    }
+    .gallery-item:first-child {
+      grid-row: 1 / 2; grid-column: 1 / 2;
+    }
+    .gallery-item:nth-child(2) { grid-column: 2 / 3; }
+    .gallery-item:nth-child(3) { grid-column: 1 / 2; }
+    .gallery-item:nth-child(4) { grid-column: 2 / 3; }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 500ms var(--ease);
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 2.5rem 1.25rem .9rem;
+      background: linear-gradient(transparent, rgba(0,0,0,.78));
+      font-family: var(--ff-serif); font-size: 1rem; font-style: italic;
+      color: var(--cream); letter-spacing: .04em;
+    }
+    .gallery-caption span {
+      display: block; font-family: var(--ff-body);
+      font-style: normal; font-size: .65rem; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 2px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LA CARTE
+    ═══════════════════════════════════════════════════════════════ */
+    #la-carte {
+      padding: 5rem 0;
+      background: var(--black);
+    }
+
+    /* Category tabs */
+    .menu-tabs {
+      display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted); border-radius: 2px;
+      padding: .5rem 1.1rem; font-size: .75rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      transition: all 180ms var(--ease);
+    }
+    .tab-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .tab-btn.active {
+      background: var(--gold); color: var(--black);
+      border-color: var(--gold);
+    }
+
+    /* Menu panel */
+    .menu-panel { display: none; }
+    .menu-panel.active { display: block; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0;
+    }
+    .menu-item {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding: .7rem 0;
+      border-bottom: 1px solid rgba(212,175,55,.08);
+      gap: 1rem;
+    }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item-name {
+      font-size: .9rem; color: var(--cream);
+      flex: 1; min-width: 0;
+    }
+    .menu-item-name small {
+      font-size: .75rem; color: var(--muted); margin-left: .35rem;
+    }
+    .menu-item-price {
+      color: var(--gold); font-size: .85rem; font-weight: 500;
+      white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* Sub-category headings within a panel */
+    .menu-sub-heading {
+      font-family: var(--ff-serif); font-size: 1.15rem; font-style: italic;
+      color: var(--gold); margin: 2rem 0 .75rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .menu-sub-heading:first-child { margin-top: 0; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       MENUS
+    ═══════════════════════════════════════════════════════════════ */
+    #menus {
+      padding: 5rem 0;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .menus-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .menu-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 2px; padding: 2rem 1.75rem;
+      position: relative; overflow: hidden;
+      transition: transform 200ms var(--ease), box-shadow 200ms var(--ease);
+    }
+    .menu-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.5), 0 0 0 1px var(--gold);
+    }
+    .menu-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+    .menu-card-tag {
+      font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .6rem;
+    }
+    .menu-card-name {
+      font-family: var(--ff-serif); font-size: 1.6rem; font-weight: 600;
+      color: var(--cream); margin-bottom: .2rem;
+    }
+    .menu-card-price {
+      font-family: var(--ff-serif); font-size: 2.2rem; font-weight: 300;
+      color: var(--gold); margin-bottom: 1.25rem; line-height: 1;
+    }
+    .menu-card-price span { font-size: 1rem; }
+    .menu-card-sep {
+      width: 40px; height: 1px; background: var(--gold);
+      margin-bottom: 1.25rem; opacity: .5;
+    }
+    .menu-card-content p {
+      font-size: .85rem; color: var(--muted); line-height: 1.65;
+      margin-bottom: .5rem;
+    }
+    .menu-card-content strong { color: var(--cream); font-weight: 500; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       BOISSONS
+    ═══════════════════════════════════════════════════════════════ */
+    #boissons {
+      padding: 4rem 0;
+      background: var(--black);
+    }
+    .drinks-accordion summary {
+      list-style: none; display: flex; align-items: center;
+      justify-content: space-between;
+      font-family: var(--ff-serif); font-size: 1.1rem; font-style: italic;
+      color: var(--cream); padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: color 200ms;
+    }
+    .drinks-accordion summary:hover { color: var(--gold); }
+    .drinks-accordion summary::-webkit-details-marker { display: none; }
+    .drinks-accordion[open] summary { color: var(--gold); }
+    .drinks-accordion summary .arrow {
+      width: 18px; height: 18px; flex-shrink: 0;
+      transition: transform 250ms var(--ease);
+      stroke: currentColor;
+    }
+    .drinks-accordion[open] summary .arrow { transform: rotate(180deg); }
+    .drinks-list {
+      padding: 1rem 0 .5rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RÉSERVATION CTA
+    ═══════════════════════════════════════════════════════════════ */
+    #reserver {
+      position: relative; overflow: hidden;
+      background: var(--red-dk);
+      padding: 6rem 1.5rem; text-align: center;
+    }
+    #reserver::before {
+      content: '香锅里辣';
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-size: 14vw; font-family: serif; font-weight: 900;
+      color: rgba(255,255,255,.04); white-space: nowrap;
+      pointer-events: none; user-select: none;
+    }
+    .reservation-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .reservation-content .section-label { color: rgba(255,255,255,.6); }
+    .reservation-content .section-title { color: #fff; }
+    .reservation-content p { color: rgba(255,255,255,.8); margin-bottom: 2rem; font-size: .95rem; }
+    .badge-thefork {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+      border-radius: 100px; padding: .3rem .9rem;
+      font-size: .78rem; color: #fff; margin-top: 1.25rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       AVIS CLIENTS
+    ═══════════════════════════════════════════════════════════════ */
+    #avis {
+      padding: 5rem 0;
+      background: var(--dark);
+    }
+    .ratings-row {
+      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
+      margin-bottom: 3.5rem;
+    }
+    .rating-badge {
+      text-align: center;
+    }
+    .rating-score {
+      font-family: var(--ff-serif); font-size: 3.5rem; font-weight: 300;
+      color: var(--gold); line-height: 1;
+    }
+    .rating-stars { color: var(--gold); letter-spacing: .1em; font-size: 1rem; margin: .3rem 0; }
+    .rating-source { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+    .ratings-sep { width: 1px; background: var(--border); align-self: stretch; }
+
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .review-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 2px; padding: 1.75rem;
+    }
+    .review-stars { color: var(--gold); font-size: .9rem; margin-bottom: .75rem; }
+    .review-text {
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 1rem; color: var(--cream); line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .review-author {
+      font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .review-author strong { color: var(--gold); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HORAIRES
+    ═══════════════════════════════════════════════════════════════ */
+    #horaires {
+      padding: 5rem 0;
+      background: var(--black);
+    }
+    .hours-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem; max-width: 780px; margin: 0 auto;
+    }
+    .hours-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 2px; padding: 1.5rem;
+    }
+    .hours-card h3 {
+      font-family: var(--ff-serif); font-size: 1.2rem; font-style: italic;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .hours-row {
+      display: flex; justify-content: space-between;
+      padding: .45rem 0; border-bottom: 1px solid rgba(212,175,55,.07);
+      font-size: .875rem;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { color: var(--muted); }
+    .hours-time { color: var(--cream); text-align: right; }
+    .hours-closed { color: var(--red); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       FOOTER / CONTACT
+    ═══════════════════════════════════════════════════════════════ */
+    #contact {
+      background: #080808;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-logo {
+      font-family: var(--ff-serif); font-size: 1.8rem; font-weight: 600;
+      color: var(--gold); line-height: 1.1; margin-bottom: .4rem;
+    }
+    .footer-logo small {
+      display: block; font-family: var(--ff-body); font-size: .65rem;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
+      margin-top: 2px;
+    }
+    .footer-tagline { font-size: .85rem; color: var(--muted); margin: .75rem 0 1.25rem; }
+    .footer-heading {
+      font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem; font-weight: 600;
+    }
+    .footer-info { font-size: .875rem; color: var(--muted); line-height: 1.9; }
+    .footer-info a { color: var(--cream); transition: color 180ms; }
+    .footer-info a:hover { color: var(--gold); }
+    .footer-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .8rem; color: var(--gold); margin-top: .5rem;
+      transition: opacity 180ms;
+    }
+    .footer-link:hover { opacity: .75; }
+    .footer-tags {
+      display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem;
+    }
+    .footer-tag {
+      font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
+      border: 1px solid var(--border); color: var(--muted);
+      border-radius: 100px; padding: .2rem .65rem;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(212,175,55,.1);
+      padding-top: 1.5rem;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1rem;
+      font-size: .75rem; color: var(--muted);
+    }
+    .footer-bottom a { color: var(--muted); }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-mobile.open { display: flex; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px;
+      }
+      .gallery-item:first-child { grid-column: 1 / 2; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .ratings-sep { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 220px); }
+      .gallery-item:first-child { grid-column: 1; }
+      .gallery-item:nth-child(n) { grid-column: 1; }
+      .hero-actions { flex-direction: column; align-items: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ───────────── NAVBAR ───────────── -->
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Navigation principale">
+      <a href="#accueil" class="nav-logo" aria-label="Étoiles Dorées — Accueil">
+        Étoiles Dorées
+        <small>香锅里辣 · Paris 11e</small>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#la-carte">La Carte</a></li>
+        <li><a href="#menus">Menus</a></li>
+        <li><a href="#reserver">Réserver</a></li>
+        <li><a href="#horaires">Horaires</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="https://www.thefork.fr/restaurant/etoiles-dorees-r847962"
+         target="_blank" rel="noopener"
+         class="btn btn-gold nav-cta"
+         aria-label="Réserver une table sur TheFork">
+        Réserver une table
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <!-- Mobile menu -->
+  <div class="nav-mobile" id="navMobile" role="navigation" aria-label="Menu mobile">
+    <a href="#accueil"  onclick="closeMobile()">Accueil</a>
+    <a href="#la-carte" onclick="closeMobile()">La Carte</a>
+    <a href="#menus"    onclick="closeMobile()">Menus</a>
+    <a href="#reserver" onclick="closeMobile()">Réserver</a>
+    <a href="#horaires" onclick="closeMobile()">Horaires</a>
+    <a href="#contact"  onclick="closeMobile()">Contact</a>
+    <a href="https://www.thefork.fr/restaurant/etoiles-dorees-r847962"
+       target="_blank" rel="noopener"
+       class="btn btn-gold" style="margin-top:.5rem">Réserver une table</a>
+  </div>
+</header>
+
+<!-- ───────────── HERO ───────────── -->
+<section id="accueil" aria-label="Accueil">
+  <div class="hero-bg" role="img" aria-label="Marmite sichuanaise — plat signature du restaurant"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge" aria-label="Notes Google et TheFork">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      4,9/5 Google
+      <span class="hero-sep"></span>
+      9,3/10 TheFork
+    </div>
+
+    <p class="hero-eyebrow">Cuisine chinoise authentique</p>
+
+    <h1 class="hero-title">
+      Au cœur de <em>Paris</em>,<br />les saveurs du Sichuan
+    </h1>
+
+    <p class="hero-sub">
+      Hot pot, raviolis maison, bœuf aux poivres — une cuisine sincère et généreuse à deux pas de Nation, dans le 11e.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#la-carte" class="btn btn-outline">Voir la carte</a>
+      <a href="https://www.thefork.fr/restaurant/etoiles-dorees-r847962"
+         target="_blank" rel="noopener"
+         class="btn btn-gold">
+        Réserver sur TheFork
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── GALERIE ───────────── -->
+<section id="galerie" aria-label="Galerie — nos plats">
+  <div class="container">
+    <span class="section-label">Nos plats signature</span>
+    <h2 class="section-title">Une cuisine qui se voit</h2>
+    <p class="section-sub">Quatre plats emblématiques, préparés chaque jour avec des produits frais.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=900&q=80"
+             alt="Marmite sichuanaise — hot pot épicé du restaurant Étoiles Dorées"
+             loading="lazy" />
+        <div class="gallery-caption"><span>Plat signature</span>Marmite sichuanaise</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=700&q=80"
+             alt="Raviolis maison — dumplings cuits à la vapeur"
+             loading="lazy" />
+        <div class="gallery-caption"><span>Fait maison</span>Raviolis maison</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=700&q=80"
+             alt="Bœuf sauté aux poivres — plat wok du Sichuan"
+             loading="lazy" />
+        <div class="gallery-caption"><span>Wok sichuanais</span>Bœuf sauté aux poivres</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=700&q=80"
+             alt="Bobun maison — nouilles fraîches au bœuf"
+             loading="lazy" />
+        <div class="gallery-caption"><span>Nouilles fraîches</span>Bobun maison</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── LA CARTE ───────────── -->
+<section id="la-carte" aria-label="La carte complète">
+  <div class="container">
+    <span class="section-label">La carte</span>
+    <h2 class="section-title">Toute la cuisine sichuanaise</h2>
+    <p class="section-sub">Des classiques revisités, des spécialités rares — découvrez notre carte complète.</p>
+
+    <div class="menu-tabs" role="tablist" aria-label="Catégories de la carte">
+      <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="entrees">Entrées</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="nouilles">Nouilles & Riz</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="raviolis">Raviolis</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="plats">Plats</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="legumes">Légumes</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="desserts">Desserts</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="boissons-tab">Boissons</button>
+    </div>
+
+    <!-- ENTRÉES -->
+    <div class="menu-panel active" id="tab-entrees" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Kimchi</span><span class="menu-item-price">4,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Edamame</span><span class="menu-item-price">4,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nêms au porc ou poulet <small>(4p)</small></span><span class="menu-item-price">5,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nêm aux crevettes et fromage <small>(3p)</small></span><span class="menu-item-price">7,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Raviolis ha kao aux crevettes <small>(4p)</small></span><span class="menu-item-price">5,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Raviolis crevettes frits <small>(4p)</small></span><span class="menu-item-price">5,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Raviolis au porc grillés <small>(10p)</small></span><span class="menu-item-price">11,5€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Bouchées aux crevettes <small>(4p)</small></span><span class="menu-item-price">5,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Tempura crevettes <small>(4p)</small></span><span class="menu-item-price">6,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Soupe pékinoise</span><span class="menu-item-price">5,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Soupe wonton <small>(4p)</small></span><span class="menu-item-price">6,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Salade de champignon noir</span><span class="menu-item-price">8,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Salade de concombre</span><span class="menu-item-price">5,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Œufs de cent ans au piment</span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Tripes de bœuf assaisonnées pimentées</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Bœuf à la sauce soja et tripes épicées</span><span class="menu-item-price">15,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Poulet à la façon sichuanaise</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Émincé de bœuf aux cinq parfums</span><span class="menu-item-price">9,8€</span></div>
+      </div>
+    </div>
+
+    <!-- NOUILLES & RIZ -->
+    <div class="menu-panel" id="tab-nouilles" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Bobun au bœuf ou aux crevettes</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Pâtes de riz gluant sautées</span><span class="menu-item-price">8,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Soupe de nouilles au bœuf</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Soupe de nouilles aux fruits de mer</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Soupe de nouilles végétarienne</span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Soupe de nouilles au canard rôti</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Soupe wonton <small>(8p)</small></span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Bœuf jjajangmyeon</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nouilles dandan</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nouilles sautées au porc effiloché</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nouilles sautées aux fruits de mer et au poivre</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nouilles sautées aux légumes</span><span class="menu-item-price">9,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Pâtes sautées au bœuf</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Riz cantonais</span><span class="menu-item-price">8,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Riz sauté aux fruits de mer</span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Loc lac</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Riz nature</span><span class="menu-item-price">3€</span></div>
+      </div>
+    </div>
+
+    <!-- RAVIOLIS -->
+    <div class="menu-panel" id="tab-raviolis" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Raviolis au porc et chou <small>(12p)</small></span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Raviolis au porc et cive <small>(12p)</small></span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Raviolis au bœuf céleri <small>(12p)</small></span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Raviolis au poulet et fromage <small>(12p)</small></span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Xiaolongbao au bœuf <small>(8p)</small></span><span class="menu-item-price">11,9€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Xiaolongbao au porc <small>(8p)</small></span><span class="menu-item-price">10,9€</span></div>
+      </div>
+    </div>
+
+    <!-- PLATS -->
+    <div class="menu-panel" id="tab-plats" role="tabpanel">
+      <h3 class="menu-sub-heading">Poulet</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Poulet kung pao</span><span class="menu-item-price">13,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Poulet sauté à la sauce soja</span><span class="menu-item-price">13,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Canard croustillant <small>(grand)</small></span><span class="menu-item-price">17,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Poulet épicé du Sichuan</span><span class="menu-item-price">15,8€</span></div>
+      </div>
+
+      <h3 class="menu-sub-heading">Bœuf & Agneau</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Agneau sauté aux ciboulettes</span><span class="menu-item-price">14,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Agneau au cumin</span><span class="menu-item-price">14,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Marmite de bœuf à la sichuanaise</span><span class="menu-item-price">14,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Bœuf aux oignons</span><span class="menu-item-price">13,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Bœuf sauté à la citronnelle</span><span class="menu-item-price">13,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Bœuf sauté aux poivres</span><span class="menu-item-price">13,8€</span></div>
+      </div>
+
+      <h3 class="menu-sub-heading">Porc</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Porc mijoté à la sauce soja</span><span class="menu-item-price">13,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Travers de porc aigre-doux</span><span class="menu-item-price">14,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Andouillette sautée</span><span class="menu-item-price">13,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Porc frit</span><span class="menu-item-price">13,8€</span></div>
+      </div>
+
+      <h3 class="menu-sub-heading">Fruits de mer</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Cocotte aux crabes épicées</span><span class="menu-item-price">18,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Crevette et gâteau de riz épicées</span><span class="menu-item-price">16,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Crevettes sel et poivre</span><span class="menu-item-price">17,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Calamars sautés</span><span class="menu-item-price">13,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Ragoût de poisson au choucroute</span><span class="menu-item-price">18,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Poisson cuit à la vapeur</span><span class="menu-item-price">20,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Filet de poisson épicé</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Crevettes nature</span><span class="menu-item-price">12,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Tranches de poisson bouillies à la sichuanaise</span><span class="menu-item-price">18,8€</span></div>
+      </div>
+    </div>
+
+    <!-- LÉGUMES -->
+    <div class="menu-panel" id="tab-legumes" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Trois délices <small>(aubergine, pommes de terre, poivron)</small></span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Aubergine à l'ail</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Chrysanthème à l'ail</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Pommes de terre râpées sautées au vinaigre</span><span class="menu-item-price">9,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Légumes chop-suey</span><span class="menu-item-price">10,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Chou blanc sauté au piment</span><span class="menu-item-price">9,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Aubergine à la sauce piquante</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Aubergines braisées à la sauce soja</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Tofu sauté au bœuf</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Tofu pimenté au bœuf</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Cocotte au tofu et fruits de mer</span><span class="menu-item-price">11,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Haricots verts sautés</span><span class="menu-item-price">9,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Brocolis sautés à l'ail</span><span class="menu-item-price">9,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Chou chinois sauté aux champignons parfumés</span><span class="menu-item-price">10,8€</span></div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="menu-panel" id="tab-desserts" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item"><span class="menu-item-name">Litchis</span><span class="menu-item-price">5€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nougat</span><span class="menu-item-price">4€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Perle de coco</span><span class="menu-item-price">4€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Boulettes de riz gluant</span><span class="menu-item-price">4,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Gingembre confit</span><span class="menu-item-price">4,8€</span></div>
+        <div class="menu-item"><span class="menu-item-name">Nougat glacé</span><span class="menu-item-price">5,5€</span></div>
+      </div>
+    </div>
+
+    <!-- BOISSONS tab -->
+    <div class="menu-panel" id="tab-boissons-tab" role="tabpanel">
+      <details class="drinks-accordion" open>
+        <summary>
+          Apéritifs
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="drinks-list menu-grid">
+          <div class="menu-item"><span class="menu-item-name">Martini</span><span class="menu-item-price">4,5€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Kir</span><span class="menu-item-price">4,5€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Ricard</span><span class="menu-item-price">4€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Whisky</span><span class="menu-item-price">6€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Alcool de sorgo</span><span class="menu-item-price">5,2€</span></div>
+        </div>
+      </details>
+      <details class="drinks-accordion">
+        <summary>
+          Softs & Boissons chaudes
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="drinks-list menu-grid">
+          <div class="menu-item"><span class="menu-item-name">Evian 1L</span><span class="menu-item-price">5,9€</span></div>
+          <div class="menu-item"><span class="menu-item-name">San Pellegrino 1L</span><span class="menu-item-price">5,9€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Coca / Coca Zéro</span><span class="menu-item-price">3,9€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Jus d'orange</span><span class="menu-item-price">3,5€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Lait de soja 1L</span><span class="menu-item-price">8,9€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Aloe vera 1L</span><span class="menu-item-price">8,9€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Thé citron miel 1L</span><span class="menu-item-price">8,9€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Boisson prune glacée 1L</span><span class="menu-item-price">8,9€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Café</span><span class="menu-item-price">2,2€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Thé vert</span><span class="menu-item-price">4,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Thé jasmin</span><span class="menu-item-price">4,2€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Thé rose</span><span class="menu-item-price">5,2€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Thé chrysanthème</span><span class="menu-item-price">5,2€</span></div>
+        </div>
+      </details>
+      <details class="drinks-accordion">
+        <summary>
+          Bières
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="drinks-list menu-grid">
+          <div class="menu-item"><span class="menu-item-name">Tsingtao bouteille</span><span class="menu-item-price">4,5€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Monaco pression</span><span class="menu-item-price">3,5€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Leffe pression</span><span class="menu-item-price">3,9€</span></div>
+        </div>
+      </details>
+      <details class="drinks-accordion">
+        <summary>
+          Vins
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="drinks-list menu-grid">
+          <div class="menu-item"><span class="menu-item-name">Pichet 50cl <small>(rouge / rosé / blanc)</small></span><span class="menu-item-price">7,2€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Côte du Rhône rouge</span><span class="menu-item-price">14,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Bordeaux Supérieur rouge</span><span class="menu-item-price">16,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Saint-Émilion Grand Cru rouge</span><span class="menu-item-price">36,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Saint-Tropez Côte de Provence rosé</span><span class="menu-item-price">16,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Tavel rosé</span><span class="menu-item-price">19,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Muscadet blanc</span><span class="menu-item-price">16,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Riesling blanc</span><span class="menu-item-price">19,8€</span></div>
+          <div class="menu-item"><span class="menu-item-name">Sancerre blanc</span><span class="menu-item-price">32,8€</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── MENUS ───────────── -->
+<section id="menus" aria-label="Menus du midi">
+  <div class="container">
+    <span class="section-label">Menus</span>
+    <h2 class="section-title">Nos formules</h2>
+    <p class="section-sub">Des menus généreux pour déjeuner ou dîner sans se ruiner.</p>
+
+    <div class="menus-grid">
+      <!-- Menu Galette -->
+      <article class="menu-card" aria-label="Menu Galette">
+        <div class="menu-card-tag">Menu du moment</div>
+        <div class="menu-card-name">Menu Galette</div>
+        <div class="menu-card-price">15<span>,90€</span></div>
+        <div class="menu-card-sep"></div>
+        <div class="menu-card-content">
+          <p><strong>Galette croustillante</strong> au porc ou au bœuf</p>
+          <p>+ Accompagnement au choix :</p>
+          <p>Soupe wonton aux crevettes (6p)<br />ou Soupe de nouilles au bœuf</p>
+        </div>
+      </article>
+
+      <!-- Menu Express 1 -->
+      <article class="menu-card" aria-label="Menu Express 1">
+        <div class="menu-card-tag">Menu Express</div>
+        <div class="menu-card-name">Menu Express 1</div>
+        <div class="menu-card-price">15<span>,90€</span></div>
+        <div class="menu-card-sep"></div>
+        <div class="menu-card-content">
+          <p><strong>Entrée au choix :</strong><br />Nêm poulet/porc (3p) · Raviolis crevettes (3p) · Potage pékinois</p>
+          <p><strong>Plat au choix :</strong><br />Bœuf sauté aux poivres · Trois délices · Filet de poisson épicé · Poulet kung pao</p>
+          <p><strong>Accompagnement au choix :</strong><br />Nouilles sautées · Riz cantonais · Riz nature</p>
+        </div>
+      </article>
+
+      <!-- Menu Express 2 -->
+      <article class="menu-card" aria-label="Menu Express 2">
+        <div class="menu-card-tag">Formule rapide</div>
+        <div class="menu-card-name">Menu Express 2</div>
+        <div class="menu-card-price">11<span>,90€</span></div>
+        <div class="menu-card-sep"></div>
+        <div class="menu-card-content">
+          <p><strong>Plat au choix :</strong><br />Bœuf aux oignons · Légumes chop-suey · Ailes de poulet frit</p>
+          <p>+ Riz nature</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── RÉSERVATION CTA ───────────── -->
+<section id="reserver" aria-label="Réserver une table">
+  <div class="reservation-content">
+    <span class="section-label">Réservation en ligne</span>
+    <h2 class="section-title" style="color:#fff">Réservez votre table</h2>
+    <p>Confirmation immédiate, sans attendre. Profitez de <strong>−20% sur la carte</strong> en réservant via TheFork.</p>
+    <a href="https://www.thefork.fr/restaurant/etoiles-dorees-r847962"
+       target="_blank" rel="noopener"
+       class="btn btn-gold"
+       style="font-size:1rem; padding:1rem 2.5rem;"
+       aria-label="Réserver sur TheFork">
+      Réserver sur TheFork
+    </a>
+    <div>
+      <span class="badge-thefork">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        9,3/10 sur TheFork · 4,9/5 sur Google
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── AVIS CLIENTS ───────────── -->
+<section id="avis" aria-label="Avis clients">
+  <div class="container">
+    <span class="section-label">Ce que disent nos clients</span>
+    <h2 class="section-title">Avis &amp; Notes</h2>
+
+    <div class="ratings-row" role="list" aria-label="Scores globaux">
+      <div class="rating-badge" role="listitem">
+        <div class="rating-score">4,9</div>
+        <div class="rating-stars" aria-label="5 étoiles">★★★★★</div>
+        <div class="rating-source">Google · 90 avis</div>
+      </div>
+      <div class="ratings-sep" aria-hidden="true"></div>
+      <div class="rating-badge" role="listitem">
+        <div class="rating-score">9,3</div>
+        <div class="rating-stars" aria-label="Note TheFork">★★★★★</div>
+        <div class="rating-source">TheFork · Note /10</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review-card" aria-label="Avis de Sophie M.">
+        <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+        <p class="review-text">
+          "Une adresse rare dans le 11e. Les raviolis maison sont fondants, le hot pot sichuanais est à tomber. Le service est attentionné et chaleureux. On y retourne sans hésiter !"
+        </p>
+        <div class="review-author"><strong>Sophie M.</strong> — Google · il y a 2 semaines</div>
+      </article>
+
+      <article class="review-card" aria-label="Avis de Thomas L.">
+        <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+        <p class="review-text">
+          "Découvert grâce à TheFork, et vraiment surpris par la qualité. Le bœuf sauté aux poivres est l'un des meilleurs que j'ai goûté à Paris. La carte est très complète, les prix très raisonnables."
+        </p>
+        <div class="review-author"><strong>Thomas L.</strong> — Google · il y a 1 mois</div>
+      </article>
+
+      <article class="review-card" aria-label="Avis de Mei-Ling W.">
+        <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+        <p class="review-text">
+          "Je suis d'origine sichuanaise et je peux confirmer : ici, l'authenticité est au rendez-vous. Les épices sont vraies, les saveurs honnêtes. Pas de compromis pour les palais occidentaux. Bravo !"
+        </p>
+        <div class="review-author"><strong>Mei-Ling W.</strong> — Google · il y a 3 semaines</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── HORAIRES ───────────── -->
+<section id="horaires" aria-label="Horaires d'ouverture">
+  <div class="container">
+    <span class="section-label">Horaires</span>
+    <h2 class="section-title">Ouvert 7j/7</h2>
+    <p class="section-sub">Venez déjeuner ou dîner, du lundi au dimanche.</p>
+
+    <div class="hours-grid">
+      <div class="hours-card">
+        <h3>Lundi — Vendredi</h3>
+        <div class="hours-row"><span class="hours-day">Déjeuner</span><span class="hours-time">12h00 – 15h00</span></div>
+        <div class="hours-row"><span class="hours-day">Dîner</span><span class="hours-time">18h00 – 23h00</span></div>
+      </div>
+      <div class="hours-card">
+        <h3>Samedi &amp; Dimanche</h3>
+        <div class="hours-row"><span class="hours-day">Déjeuner</span><span class="hours-time hours-closed">Fermé</span></div>
+        <div class="hours-row"><span class="hours-day">Dîner</span><span class="hours-time">18h00 – 23h00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── FOOTER / CONTACT ───────────── -->
+<footer id="contact" aria-label="Contact et pied de page">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Col 1 : Brand -->
+      <div>
+        <div class="footer-logo">
+          Étoiles Dorées
+          <small>香锅里辣 · Cuisine sichuanaise</small>
+        </div>
+        <p class="footer-tagline">Cuisine chinoise authentique au cœur du 11e arrondissement de Paris.</p>
+        <a href="https://www.thefork.fr/restaurant/etoiles-dorees-r847962"
+           target="_blank" rel="noopener"
+           class="btn btn-gold"
+           style="margin-top:.25rem; font-size:.78rem; padding:.65rem 1.4rem;">
+          Réserver sur TheFork
+        </a>
+        <div class="footer-tags" aria-label="Services">
+          <span class="footer-tag">Ouvert 7j/7</span>
+          <span class="footer-tag">Végétarien</span>
+          <span class="footer-tag">Privatisation</span>
+        </div>
+      </div>
+
+      <!-- Col 2 : Contact -->
+      <div>
+        <p class="footer-heading">Nous trouver</p>
+        <address class="footer-info" style="font-style:normal">
+          7 Avenue Philippe Auguste<br />
+          75011 Paris<br /><br />
+          <a href="tel:+33143711703">01 43 71 17 03</a><br /><br />
+          <strong style="color:var(--cream);">Accès :</strong><br />
+          Métro Nation (L1, L2, L6, L9)<br />
+          Métro Philippe Auguste (L2)
+        </address>
+        <a href="https://maps.google.com/?q=7+Avenue+Philippe+Auguste+75011+Paris"
+           target="_blank" rel="noopener"
+           class="footer-link"
+           aria-label="Voir sur Google Maps">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Voir sur Google Maps
+        </a>
+      </div>
+
+      <!-- Col 3 : Horaires -->
+      <div>
+        <p class="footer-heading">Horaires</p>
+        <div class="footer-info">
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid rgba(212,175,55,.08)">
+            <span>Lun – Ven</span><span style="color:var(--cream);">12h–15h · 18h–23h</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0">
+            <span>Sam – Dim</span><span style="color:var(--cream);">18h–23h soir</span>
+          </div>
+        </div>
+        <br />
+        <p class="footer-heading">Réservation</p>
+        <a href="https://www.thefork.fr/restaurant/etoiles-dorees-r847962"
+           target="_blank" rel="noopener"
+           class="footer-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          Réserver sur TheFork
+        </a><br />
+        <a href="tel:+33143711703" class="footer-link" style="margin-top:.4rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          01 43 71 17 03
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Étoiles Dorées · 香锅里辣 · 7 Av. Philippe Auguste, 75011 Paris</span>
+      <span>
+        <a href="https://maps.google.com/?q=7+Avenue+Philippe+Auguste+75011+Paris" target="_blank" rel="noopener">Google Maps</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.thefork.fr/restaurant/etoiles-dorees-r847962" target="_blank" rel="noopener">TheFork</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════════ -->
+<script>
+  // ── Navbar scroll ──────────────────────────────────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Mobile nav toggle ──────────────────────────────────────────
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMobile.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  function closeMobile() {
+    navMobile.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  // ── Menu tabs ──────────────────────────────────────────────────
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.menu-panel');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById('tab-' + target).classList.add('active');
+    });
+  });
+
+  // ── Smooth scroll offset for sticky nav ───────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = navbar.offsetHeight + 16;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1914 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Le Saint Cyrille — Cuisine égyptienne et méditerranéenne, Paris 13e</title>
+<meta name="description" content="Le Saint Cyrille d'Égypte — restaurant familial de cuisine égyptienne et méditerranéenne, Butte-aux-Cailles, Paris 13e. Depuis 1985." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --cream:#F8F1E3;
+  --cream-2:#FBF6EA;
+  --sand:#EBDFC7;
+  --ink:#2A211A;
+  --ink-soft:#4A3D32;
+  --terracotta:#C0562E;
+  --terracotta-dark:#A04522;
+  --ocre:#E0A23D;
+  --olive:#2F3A2C;
+  --olive-soft:#3a4636;
+  --night:#1F3A4D;
+  --line:#D9C9A8;
+  --line-soft:rgba(42,33,26,.12);
+
+  --serif:'Fraunces', 'Times New Roman', serif;
+  --sans:'DM Sans', system-ui, sans-serif;
+
+  --maxw:1320px;
+  --gutter:clamp(20px, 4vw, 56px);
+  --radius-card:22px;
+  --radius-pill:999px;
+
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--cream);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  line-height:1.55;
+  font-size:17px;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+
+/* selection */
+::selection{background:var(--terracotta);color:var(--cream)}
+
+/* utility */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.serif{font-family:var(--serif)}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--terracotta);
+  display:inline-flex;align-items:center;gap:.7em;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;display:inline-block}
+.eyebrow.center::before,.eyebrow.center::after{content:"";width:28px;height:1px;background:currentColor;display:inline-block}
+.eyebrow.center{justify-content:center}
+.section-num{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:14px;color:var(--terracotta);
+  letter-spacing:.04em;
+}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--ink);margin:0;line-height:1.05;letter-spacing:-.01em}
+h1{font-size:clamp(48px, 7.2vw, 96px);letter-spacing:-.02em;font-weight:500}
+h2{font-size:clamp(36px, 4.6vw, 64px);letter-spacing:-.015em}
+h3{font-size:clamp(22px, 2vw, 28px)}
+p{margin:0}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  padding:14px 26px;border-radius:var(--radius-pill);
+  font-family:var(--sans);font-weight:500;font-size:15px;
+  letter-spacing:.01em;
+  transition:transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease);
+  position:relative;overflow:hidden;
+  will-change:transform;
+}
+.btn .arrow{
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(255,255,255,.18);
+  display:inline-grid;place-items:center;
+  transition:transform .35s var(--ease), background .25s var(--ease);
+}
+.btn .arrow svg{width:11px;height:11px}
+.btn-primary{background:var(--terracotta);color:#fff}
+.btn-primary:hover{background:var(--terracotta-dark);transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(192,86,46,.55)}
+.btn-primary:hover .arrow{transform:translateX(4px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(42,33,26,.22)}
+.btn-ghost:hover{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:translateY(-2px)}
+.btn-light{background:var(--cream);color:var(--ink)}
+.btn-light:hover{background:#fff}
+.btn-outline-light{border:1px solid rgba(248,241,227,.35);color:var(--cream)}
+.btn-outline-light:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  padding:18px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  transition:background .35s var(--ease), padding .35s var(--ease), box-shadow .35s var(--ease), color .35s var(--ease);
+}
+.nav.scrolled{
+  background:rgba(248,241,227,.92);
+  backdrop-filter:saturate(160%) blur(10px);
+  -webkit-backdrop-filter:saturate(160%) blur(10px);
+  padding:12px var(--gutter);
+  box-shadow:0 2px 24px rgba(42,33,26,.06);
+}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand-mark{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--terracotta);color:var(--cream);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-weight:600;
+  font-style:italic;font-size:20px;
+  flex-shrink:0;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.15);
+}
+.brand-name{
+  font-family:var(--serif);font-weight:500;font-size:20px;line-height:1;
+  letter-spacing:-.005em;
+}
+.brand-name small{
+  display:block;font-family:var(--sans);font-size:10px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--terracotta);
+  margin-top:4px;font-weight:500;
+}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{
+  font-size:15px;font-weight:400;position:relative;padding:6px 0;
+  transition:color .2s var(--ease);
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;
+  background:var(--terracotta);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.nav-links a:hover::after, .nav-links a.active::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--terracotta)}
+.nav-right{display:flex;gap:14px;align-items:center}
+.nav-tel{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500}
+.nav-tel svg{width:14px;height:14px;color:var(--terracotta)}
+
+.burger{display:none;width:42px;height:42px;border:1px solid rgba(42,33,26,.18);border-radius:50%;align-items:center;justify-content:center;flex-direction:column;gap:5px;background:rgba(248,241,227,.6)}
+.burger span{width:16px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease), opacity .2s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(3.25px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-3.25px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;inset:0;background:var(--olive);color:var(--cream);
+  z-index:55;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;
+  opacity:0;pointer-events:none;transition:opacity .4s var(--ease);
+  padding:80px var(--gutter) 40px;
+}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:var(--serif);font-size:34px;font-style:italic;font-weight:400}
+.mobile-menu .btn{margin-top:18px}
+
+@media (max-width: 960px){
+  .nav-links, .nav-tel{display:none}
+  .burger{display:inline-flex}
+}
+
+/* ============================================================
+   HERO — asymétrique, photo qui déborde, badges flottants
+   ============================================================ */
+.hero{
+  position:relative;
+  padding:140px var(--gutter) 80px;
+  min-height:100vh;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-grid{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;grid-template-columns: 1.05fr 1fr;gap:60px;align-items:end;
+  position:relative;z-index:2;
+}
+.hero-left{position:relative;padding-bottom:30px}
+.hero-top-tag{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:8px 16px 8px 8px;border-radius:999px;
+  background:rgba(42,33,26,.06);
+  border:1px solid rgba(42,33,26,.1);
+  font-size:13px;margin-bottom:32px;
+}
+.hero-top-tag .pill{
+  background:var(--ink);color:var(--cream);
+  padding:4px 10px;border-radius:999px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+}
+
+.hero h1{
+  font-weight:500;
+  line-height:.96;
+}
+.hero h1 .row{display:block;overflow:hidden}
+.hero h1 .row span{display:inline-block;transform:translateY(110%);transition:transform 1s var(--ease)}
+.hero.in h1 .row:nth-child(1) span{transform:translateY(0);transition-delay:.05s}
+.hero.in h1 .row:nth-child(2) span{transform:translateY(0);transition-delay:.18s}
+.hero.in h1 .row:nth-child(3) span{transform:translateY(0);transition-delay:.31s}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--terracotta)}
+
+.hero-sub{
+  max-width:460px;margin-top:28px;font-size:17px;color:var(--ink-soft);
+  opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .6s, transform .8s var(--ease) .6s;
+}
+.hero-ctas{
+  margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .75s, transform .8s var(--ease) .75s;
+}
+.hero.in .hero-sub, .hero.in .hero-ctas{opacity:1;transform:none}
+
+.hero-meta{
+  margin-top:48px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  opacity:0;transition:opacity 1s var(--ease) 1s;
+}
+.hero.in .hero-meta{opacity:1}
+.hero-meta .divider{width:1px;height:34px;background:var(--line-soft)}
+.meta-block{display:flex;flex-direction:column;gap:2px}
+.meta-block strong{font-family:var(--serif);font-size:22px;font-weight:600}
+.meta-block span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* Right: photo + badges flottants, déborde */
+.hero-right{
+  position:relative;align-self:stretch;min-height:560px;
+}
+.hero-photo{
+  position:absolute;inset:0 -8% 0 0; /* déborde à droite */
+  border-radius:280px 280px 28px 28px / 320px 320px 28px 28px;
+  overflow:hidden;
+  background:#2a211a url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80') center/cover no-repeat;
+  box-shadow:0 30px 80px -30px rgba(42,33,26,.45);
+  transform:scale(.92);
+  opacity:0;
+  transition:transform 1.4s var(--ease) .3s, opacity 1s var(--ease) .3s;
+}
+.hero.in .hero-photo{transform:scale(1);opacity:1}
+
+/* watermark 1985 in background */
+.hero-watermark{
+  position:absolute;
+  bottom:-40px;left:-2%;
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(220px, 32vw, 460px);
+  color:var(--terracotta);
+  opacity:.06;
+  pointer-events:none;
+  line-height:.8;
+  letter-spacing:-.04em;
+  z-index:0;
+}
+
+/* badges */
+.badge-floating{
+  position:absolute;background:var(--cream);color:var(--ink);
+  border-radius:999px;padding:10px 16px;
+  display:inline-flex;align-items:center;gap:10px;
+  box-shadow:0 14px 28px -10px rgba(42,33,26,.35);
+  font-size:13px;font-weight:500;
+  z-index:3;
+  opacity:0;transform:translateY(20px) scale(.9);
+  transition:opacity .7s var(--ease), transform .9s var(--ease);
+}
+.hero.in .badge-floating{opacity:1;transform:none}
+.hero.in .badge-floating.b1{transition-delay:1s}
+.hero.in .badge-floating.b2{transition-delay:1.15s}
+.hero.in .badge-floating.b3{transition-delay:1.3s}
+
+.badge-1985{
+  top:8%;left:-8%;
+  background:var(--ocre);color:var(--ink);
+  padding:14px 22px;
+  font-family:var(--serif);font-style:italic;
+  border-radius:24px;
+  transform:rotate(-4deg);
+}
+.hero.in .badge-1985{transform:rotate(-4deg)}
+.badge-1985 strong{display:block;font-size:26px;font-weight:600;line-height:1}
+.badge-1985 small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-family:var(--sans);font-style:normal;display:block;margin-top:2px}
+
+.badge-google{
+  bottom:6%;left:-14%;
+  padding:14px 18px;border-radius:18px;
+  background:#fff;
+  flex-direction:column;align-items:flex-start;gap:6px;
+}
+.badge-google .stars{display:flex;gap:2px;color:var(--ocre);font-size:13px}
+.badge-google .stars + div{display:flex;align-items:center;gap:8px}
+.badge-google .note{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1}
+.badge-google .meta{font-size:11px;color:var(--ink-soft);letter-spacing:.05em}
+.badge-google .glogo{width:18px;height:18px;border-radius:50%;background:conic-gradient(from 0deg,#EA4335 0 25%, #FBBC05 25% 50%, #34A853 50% 75%, #4285F4 75% 100%);display:inline-block}
+
+.badge-tag{
+  top:42%;right:-12%;
+  background:var(--olive);color:var(--cream);
+  font-family:var(--serif);font-style:italic;
+  padding:12px 20px;
+  transform:rotate(5deg);
+}
+.hero.in .badge-tag{transform:rotate(5deg)}
+
+@media (max-width: 900px){
+  .hero{padding-top:110px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-right{min-height:420px;order:-1}
+  .hero-photo{inset:0;border-radius:200px 200px 20px 20px}
+  .hero-watermark{font-size:200px;bottom:-10px}
+  .badge-1985{left:auto;right:8%;top:4%}
+  .badge-google{left:4%;bottom:auto;top:auto;bottom:-20px}
+  .badge-tag{right:auto;left:50%;transform:translateX(-50%) rotate(0);top:auto;bottom:-30px;display:none}
+}
+
+/* ============================================================
+   BANDEAU HÉRITAGE — olive, compteurs, phrase forte
+   ============================================================ */
+.heritage{
+  background:var(--olive);color:var(--cream);
+  padding:110px var(--gutter);
+  position:relative;overflow:hidden;
+}
+.heritage::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(700px 400px at 90% 110%, rgba(224,162,61,.12), transparent 60%),
+    radial-gradient(500px 360px at 10% -20%, rgba(192,86,46,.10), transparent 60%);
+  pointer-events:none;
+}
+.heritage .container{position:relative;display:grid;grid-template-columns: 1.4fr 1fr;gap:80px;align-items:end}
+.heritage h2{
+  color:var(--cream);
+  font-size:clamp(36px, 4.8vw, 72px);
+  font-weight:400;
+}
+.heritage h2 em{color:var(--ocre);font-style:italic}
+.heritage .lede{
+  max-width:380px;margin-top:24px;
+  color:rgba(248,241,227,.78);
+  font-size:16px;
+}
+.stats{
+  display:grid;grid-template-columns: repeat(3, 1fr); gap:24px;
+  border-top:1px solid rgba(248,241,227,.18);
+  padding-top:36px;
+  margin-top:30px;
+}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat .val{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(40px, 4.5vw, 64px);line-height:1;color:var(--cream);
+}
+.stat .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,241,227,.6)}
+
+@media (max-width: 900px){
+  .heritage{padding:80px var(--gutter)}
+  .heritage .container{grid-template-columns:1fr;gap:40px}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:18px}
+}
+
+/* ============================================================
+   SIGNATURE — scroll horizontal
+   ============================================================ */
+.section{padding:130px 0;position:relative}
+.section-head{
+  display:flex;align-items:end;justify-content:space-between;gap:40px;
+  padding:0 var(--gutter);max-width:var(--maxw);margin:0 auto 60px;
+}
+.section-head h2{max-width:680px}
+.section-head .nav-arrows{display:flex;gap:10px}
+.arrow-btn{
+  width:54px;height:54px;border-radius:50%;
+  border:1px solid var(--line-soft);background:transparent;
+  display:grid;place-items:center;color:var(--ink);
+  transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+}
+.arrow-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.arrow-btn:disabled{opacity:.35;cursor:default}
+.arrow-btn svg{width:18px;height:18px}
+
+.signature-track{
+  display:flex;gap:24px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:10px var(--gutter) 30px;
+  scrollbar-width:none;
+}
+.signature-track::-webkit-scrollbar{display:none}
+
+.sig-card{
+  flex:0 0 360px;
+  background:var(--cream-2);
+  border-radius:var(--radius-card);
+  padding:20px;
+  scroll-snap-align:start;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  position:relative;
+  border:1px solid rgba(42,33,26,.06);
+}
+.sig-card:nth-child(2n){flex-basis:340px;margin-top:20px}
+.sig-card:nth-child(3n){flex-basis:380px;margin-top:-10px}
+.sig-card:hover{transform:translateY(-8px);box-shadow:0 26px 60px -20px rgba(42,33,26,.25)}
+.sig-card .img{
+  border-radius:16px;overflow:hidden;
+  aspect-ratio: 4/5;
+  background:#ccc center/cover no-repeat;
+  position:relative;
+}
+.sig-card .img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(42,33,26,.35), transparent 50%);
+  opacity:0;transition:opacity .4s var(--ease);
+}
+.sig-card:hover .img::after{opacity:1}
+.sig-card .img > div{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .8s var(--ease);
+}
+.sig-card:hover .img > div{transform:scale(1.06)}
+.sig-card .body{padding:18px 8px 8px}
+.sig-card h3{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:-.01em}
+.sig-card .desc{font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.55}
+.sig-card .num{
+  position:absolute;top:30px;right:30px;
+  font-family:var(--serif);font-style:italic;font-size:14px;color:var(--terracotta);
+  background:var(--cream);padding:4px 10px;border-radius:999px;
+}
+
+/* ============================================================
+   CARTE — bleu nuit, onglets, filtres, preview au survol
+   ============================================================ */
+.menu-section{background:var(--night);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
+.menu-section .eyebrow{color:var(--ocre)}
+.menu-section h2{color:var(--cream)}
+.menu-section h2 em{font-style:italic;color:var(--ocre)}
+
+.menu-head{
+  display:grid;grid-template-columns: 1.2fr 1fr;gap:60px;align-items:end;
+  max-width:var(--maxw);margin:0 auto 50px;padding:0 var(--gutter);
+}
+.menu-head .lede{color:rgba(248,241,227,.7);max-width:420px;font-size:16px}
+
+.menu-tabs-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.menu-tabs{
+  display:flex;gap:6px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:1px solid rgba(248,241,227,.18);
+  position:relative;
+}
+.menu-tab{
+  font-family:var(--sans);font-size:14px;font-weight:500;
+  color:rgba(248,241,227,.65);
+  padding:14px 22px;border-radius:999px;
+  transition:color .25s var(--ease), background .25s var(--ease);
+  position:relative;letter-spacing:.02em;
+}
+.menu-tab:hover{color:var(--cream)}
+.menu-tab.active{color:var(--ink);background:var(--ocre)}
+.menu-tab .count{font-size:11px;opacity:.6;margin-left:6px}
+
+.menu-filters{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;align-items:center}
+.filter-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,241,227,.5);margin-right:4px}
+.filter-pill{
+  padding:8px 14px;border-radius:999px;
+  border:1px solid rgba(248,241,227,.2);
+  font-size:13px;color:rgba(248,241,227,.85);
+  transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+}
+.filter-pill:hover{border-color:var(--ocre);color:var(--ocre)}
+.filter-pill.active{background:var(--ocre);color:var(--ink);border-color:var(--ocre)}
+
+.menu-body{
+  max-width:var(--maxw);margin:40px auto 0;padding:0 var(--gutter);
+  display:grid;grid-template-columns: 1.4fr 1fr;gap:60px;
+  position:relative;
+}
+.menu-list{
+  position:relative;min-height:300px;
+}
+.menu-panel{
+  display:none;
+  animation: panelIn .55s var(--ease);
+}
+.menu-panel.active{display:block}
+@keyframes panelIn{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:none}
+}
+.menu-row{
+  display:grid;grid-template-columns: auto 1fr auto;
+  align-items:baseline;gap:14px;
+  padding:18px 4px;
+  border-bottom:1px solid rgba(248,241,227,.1);
+  cursor:default;
+  transition:padding-left .25s var(--ease), background .25s var(--ease);
+  position:relative;
+}
+.menu-row::before{
+  content:"";position:absolute;left:-8px;top:0;bottom:0;width:2px;
+  background:var(--ocre);transform:scaleY(0);transform-origin:top;
+  transition:transform .35s var(--ease);
+}
+.menu-row:hover{padding-left:18px;background:rgba(248,241,227,.04)}
+.menu-row:hover::before{transform:scaleY(1)}
+.menu-row .name{
+  font-family:var(--serif);font-size:22px;font-weight:500;color:var(--cream);
+  display:flex;align-items:center;gap:12px;
+}
+.menu-row .name .veg{
+  width:18px;height:18px;border-radius:50%;
+  background:transparent;border:1.5px solid #6FBF8D;
+  display:inline-grid;place-items:center;color:#6FBF8D;
+  font-size:10px;
+}
+.menu-row .name .veg::before{content:"V";font-family:var(--sans);font-weight:700}
+.menu-row .desc{font-size:14px;color:rgba(248,241,227,.6);margin-top:4px;font-family:var(--sans);font-weight:400}
+.menu-row .dots{
+  flex:1;
+  border-bottom:1px dotted rgba(248,241,227,.25);
+  margin:0 6px;
+  transform:translateY(-6px);
+  position:relative;top:-6px;height:1px;
+  min-width:30px;
+}
+.menu-row .price{
+  font-family:var(--serif);font-style:italic;font-size:20px;font-weight:500;color:var(--ocre);
+  white-space:nowrap;
+  transition:color .25s var(--ease), transform .25s var(--ease);
+}
+.menu-row:hover .price{color:var(--terracotta);transform:translateX(-4px)}
+.menu-row.daily::after{
+  content:"Selon le jour";
+  font-family:var(--sans);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ocre);
+  position:absolute;top:14px;right:0;opacity:.7;
+}
+.menu-row .col-name{display:flex;flex-direction:column}
+
+/* preview card */
+.menu-preview{
+  position:sticky;top:120px;align-self:start;
+  border-radius:24px;overflow:hidden;
+  background:rgba(248,241,227,.05);
+  border:1px solid rgba(248,241,227,.12);
+  padding:20px;
+  min-height:480px;
+  display:flex;flex-direction:column;
+}
+.menu-preview .pv-img{
+  border-radius:18px;overflow:hidden;aspect-ratio:4/4;
+  background:#2a211a center/cover no-repeat;
+  position:relative;
+}
+.menu-preview .pv-img::after{
+  content:"Survolez un plat";
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(248,241,227,.5);
+  background:rgba(31,58,77,.6);
+  opacity:1;transition:opacity .4s var(--ease);
+  text-align:center;padding:20px;
+}
+.menu-preview.has-image .pv-img::after{opacity:0}
+.menu-preview .pv-meta{padding:18px 6px 6px}
+.menu-preview .pv-cat{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ocre)}
+.menu-preview .pv-name{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--cream);margin-top:8px}
+.menu-preview .pv-desc{font-size:13px;color:rgba(248,241,227,.65);margin-top:6px;line-height:1.55}
+.menu-preview .pv-price{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ocre);margin-top:10px;display:block}
+
+@media (max-width: 900px){
+  .menu-head{grid-template-columns:1fr;gap:20px}
+  .menu-body{grid-template-columns:1fr;gap:30px}
+  .menu-preview{display:none}
+  .menu-row{grid-template-columns: 1fr auto;gap:8px}
+  .menu-row .dots{display:none}
+  .menu-row .name{font-size:18px}
+}
+
+/* ============================================================
+   HISTOIRE — split sticky
+   ============================================================ */
+.story{background:var(--cream);padding:140px 0;overflow:hidden}
+.story-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);
+  display:grid;grid-template-columns: 1fr 1fr;gap:80px;
+  align-items:start;
+}
+.story-text{position:sticky;top:120px;padding-top:20px}
+.story-text h2{margin-top:18px}
+.story-text h2 em{font-style:italic;color:var(--terracotta)}
+.story-text p{margin-top:24px;font-size:16.5px;color:var(--ink-soft);max-width:460px}
+.story-text .signature{
+  margin-top:36px;
+  font-family:var(--serif);font-style:italic;font-size:24px;color:var(--ink);
+  display:flex;flex-direction:column;gap:4px;
+}
+.story-text .signature small{font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+
+.story-photos{display:flex;flex-direction:column;gap:30px}
+.story-photo{
+  border-radius:var(--radius-card);overflow:hidden;
+  background:#ccc center/cover no-repeat;
+  position:relative;
+}
+.story-photo.tall{aspect-ratio: 4/5}
+.story-photo.wide{aspect-ratio: 5/4}
+.story-photo .cap{
+  position:absolute;left:20px;bottom:20px;
+  background:rgba(248,241,227,.92);
+  padding:8px 14px;border-radius:999px;
+  font-family:var(--serif);font-style:italic;font-size:14px;
+}
+.story-photo:nth-child(even){margin-left:30px}
+.story-photo:nth-child(3){margin-right:40px}
+
+@media (max-width: 900px){
+  .story-inner{grid-template-columns:1fr;gap:40px}
+  .story-text{position:static}
+  .story-photo:nth-child(even){margin-left:0}
+  .story-photo:nth-child(3){margin-right:0}
+}
+
+/* ============================================================
+   GALERIE BENTO
+   ============================================================ */
+.gallery{padding:130px 0;background:var(--cream-2)}
+.gallery-grid{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);
+  display:grid;grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows:160px;gap:18px;
+}
+.g-cell{
+  border-radius:18px;overflow:hidden;
+  background:#ccc center/cover no-repeat;
+  position:relative;cursor:pointer;
+  transition:transform .5s var(--ease);
+}
+.g-cell::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(42,33,26,.55), transparent 60%);
+  opacity:0;transition:opacity .4s var(--ease);
+}
+.g-cell:hover::after{opacity:1}
+.g-cell > div{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  transition:transform .8s var(--ease);
+}
+.g-cell:hover > div{transform:scale(1.08)}
+.g-cell .lbl{
+  position:absolute;left:18px;bottom:18px;z-index:2;
+  color:var(--cream);font-family:var(--serif);font-style:italic;font-size:16px;
+  opacity:0;transform:translateY(10px);transition:opacity .4s var(--ease), transform .4s var(--ease);
+}
+.g-cell:hover .lbl{opacity:1;transform:none}
+
+.g-1{grid-column:span 2;grid-row:span 2}
+.g-2{grid-column:span 1;grid-row:span 2}
+.g-3{grid-column:span 1;grid-row:span 1}
+.g-4{grid-column:span 1;grid-row:span 1}
+.g-5{grid-column:span 2;grid-row:span 1}
+.g-6{grid-column:span 1;grid-row:span 2}
+.g-7{grid-column:span 2;grid-row:span 1}
+
+@media (max-width: 900px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}
+  .g-1{grid-column:span 2;grid-row:span 2}
+  .g-2,.g-3,.g-4,.g-5,.g-6,.g-7{grid-column:span 1;grid-row:span 1}
+}
+
+/* ============================================================
+   INFOS PRATIQUES
+   ============================================================ */
+.infos{padding:130px 0;background:var(--cream)}
+.infos-grid{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);
+  display:grid;grid-template-columns: 1fr 1fr;gap:60px;align-items:start;
+}
+.hours{
+  background:var(--cream-2);border-radius:var(--radius-card);
+  padding:36px;
+  border:1px solid rgba(42,33,26,.08);
+}
+.hours h3{font-family:var(--serif);font-size:24px;margin-bottom:6px;font-weight:500}
+.hours-list{margin-top:24px;display:flex;flex-direction:column;gap:2px}
+.hours-row{
+  display:grid;grid-template-columns: 130px 1fr auto;gap:14px;
+  align-items:center;padding:12px 14px;border-radius:12px;
+  font-size:15px;
+  transition:background .25s var(--ease);
+}
+.hours-row.today{background:var(--ocre);color:var(--ink);font-weight:500}
+.hours-row.today .dot{background:var(--terracotta)}
+.hours-row .day{font-weight:500;text-transform:capitalize;display:flex;align-items:center;gap:10px}
+.hours-row .dot{width:6px;height:6px;border-radius:50%;background:transparent;border:1px solid var(--ink-soft)}
+.hours-row.today .day{color:var(--ink)}
+.hours-row .time{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-soft);text-align:right}
+.hours-row.today .time{color:var(--ink);font-style:normal;font-weight:500}
+.hours-row.closed .time{color:var(--terracotta);font-weight:500}
+
+.map-wrap{
+  border-radius:var(--radius-card);overflow:hidden;
+  height:100%;min-height:520px;
+  position:relative;background:#1F3A4D;
+}
+.map-wrap iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.9)}
+.map-card{
+  position:absolute;top:20px;left:20px;right:20px;
+  background:var(--cream);
+  padding:18px 20px;border-radius:18px;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  box-shadow:0 14px 30px -12px rgba(42,33,26,.4);
+}
+.map-card .addr{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.3}
+.map-card .addr small{display:block;font-family:var(--sans);font-style:normal;font-size:12px;color:var(--ink-soft);letter-spacing:.05em;margin-top:2px}
+
+/* services */
+.services{
+  max-width:var(--maxw);margin:60px auto 0;padding:0 var(--gutter);
+  display:grid;grid-template-columns: repeat(5, 1fr);gap:14px;
+}
+.service{
+  background:var(--cream-2);
+  border:1px solid rgba(42,33,26,.06);
+  border-radius:18px;padding:24px 18px;
+  display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;
+  transition:transform .25s var(--ease), background .25s var(--ease);
+}
+.service:hover{transform:translateY(-4px);background:var(--sand)}
+.service .ico{width:44px;height:44px;border-radius:50%;background:var(--cream);display:grid;place-items:center;color:var(--terracotta);transition:transform .4s var(--ease)}
+.service:hover .ico{transform:rotate(-8deg) scale(1.08)}
+.service .ico svg{width:22px;height:22px}
+.service .lbl{font-family:var(--serif);font-size:16px;font-weight:500}
+.service .sub{font-size:12px;color:var(--ink-soft)}
+
+@media (max-width: 900px){
+  .infos-grid{grid-template-columns:1fr;gap:24px}
+  .map-wrap{min-height:340px}
+  .services{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ============================================================
+   RESA + CONTACT — fond olive
+   ============================================================ */
+.resa{background:var(--olive);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
+.resa::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(600px 400px at 90% 0%, rgba(224,162,61,.10), transparent 70%),
+    radial-gradient(600px 400px at 0% 100%, rgba(192,86,46,.08), transparent 70%);
+}
+.resa-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;
+}
+.resa h2{color:var(--cream)}
+.resa h2 em{color:var(--ocre);font-style:italic}
+.resa .lede{color:rgba(248,241,227,.7);margin-top:20px;max-width:420px}
+
+.resa-widget{
+  background:rgba(248,241,227,.06);
+  border:1px solid rgba(248,241,227,.15);
+  border-radius:24px;padding:28px;
+  margin-top:30px;
+  backdrop-filter:blur(8px);
+}
+.resa-widget h3{color:var(--cream);font-family:var(--serif);font-size:22px;font-weight:500}
+.resa-widget .row{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px;
+}
+.resa-field{
+  background:rgba(248,241,227,.05);border:1px solid rgba(248,241,227,.18);
+  border-radius:14px;padding:14px 16px;
+  display:flex;flex-direction:column;gap:4px;
+  cursor:pointer;
+  transition:border-color .25s var(--ease), background .25s var(--ease);
+}
+.resa-field:hover{border-color:var(--ocre);background:rgba(248,241,227,.08)}
+.resa-field label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,241,227,.55)}
+.resa-field .v{display:flex;align-items:center;justify-content:space-between;font-family:var(--serif);font-size:18px;color:var(--cream)}
+.resa-field .v svg{width:14px;height:14px;opacity:.6}
+.resa-widget .submit{
+  display:block;width:100%;margin-top:16px;padding:18px;
+  background:var(--terracotta);color:var(--cream);
+  border-radius:14px;font-family:var(--sans);font-weight:500;font-size:15px;
+  transition:background .25s var(--ease), transform .25s var(--ease);
+}
+.resa-widget .submit:hover{background:var(--terracotta-dark);transform:translateY(-2px)}
+.resa-widget .or{display:flex;align-items:center;gap:14px;margin-top:18px;color:rgba(248,241,227,.6);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.resa-widget .or::before,.resa-widget .or::after{content:"";flex:1;height:1px;background:rgba(248,241,227,.18)}
+.resa-widget .tel{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:16px;font-family:var(--serif);font-size:24px;color:var(--ocre);
+}
+.resa-widget .tel svg{width:18px;height:18px}
+
+/* contact form */
+.contact-form{display:flex;flex-direction:column;gap:14px;margin-top:36px}
+.contact-form .field{position:relative}
+.contact-form input,.contact-form textarea{
+  width:100%;background:transparent;border:0;border-bottom:1px solid rgba(248,241,227,.25);
+  padding:18px 0 10px;color:var(--cream);font-size:16px;font-family:var(--sans);
+  outline:none;transition:border-color .25s var(--ease);
+}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form label{
+  position:absolute;left:0;top:18px;
+  color:rgba(248,241,227,.55);pointer-events:none;font-size:14px;
+  transition:transform .25s var(--ease), color .25s var(--ease), font-size .25s var(--ease);
+}
+.contact-form input:focus, .contact-form textarea:focus{border-bottom-color:var(--ocre)}
+.contact-form input:focus + label, .contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:focus + label, .contact-form textarea:not(:placeholder-shown) + label{
+  transform:translateY(-22px);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ocre);
+}
+.contact-form .btn{align-self:flex-start;margin-top:20px}
+
+.contact-meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  margin-top:40px;padding-top:30px;border-top:1px solid rgba(248,241,227,.15);
+}
+.contact-meta .block strong{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,241,227,.55);
+  display:block;margin-bottom:8px;font-weight:500;
+}
+.contact-meta .block .v{font-family:var(--serif);font-size:18px}
+
+@media (max-width: 900px){
+  .resa-inner{grid-template-columns:1fr;gap:40px}
+  .resa-widget .row{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top:1px solid rgba(248,241,227,.08)}
+.foot-grid{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);
+  display:grid;grid-template-columns: 1.6fr 1fr 1fr 1fr;gap:40px;
+}
+.foot-brand{display:flex;flex-direction:column;gap:18px}
+.foot-brand .brand-name{color:var(--cream);font-size:26px}
+.foot-brand p{color:rgba(248,241,227,.7);max-width:340px;font-size:15px}
+.foot-col h4{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ocre);font-weight:500;margin-bottom:18px}
+.foot-col a, .foot-col p{display:block;color:rgba(248,241,227,.75);font-size:14.5px;margin-bottom:10px;transition:color .2s var(--ease)}
+.foot-col a:hover{color:var(--ocre)}
+.foot-bot{
+  max-width:var(--maxw);margin:50px auto 0;padding:24px var(--gutter) 0;
+  border-top:1px solid rgba(248,241,227,.12);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  color:rgba(248,241,227,.5);font-size:12px;
+}
+.foot-bot a:hover{color:var(--ocre)}
+.socials{display:flex;gap:10px}
+.socials a{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(248,241,227,.2);
+  display:grid;place-items:center;color:var(--cream);
+  transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+}
+.socials a:hover{background:var(--ocre);color:var(--ink);border-color:var(--ocre)}
+.socials svg{width:16px;height:16px}
+
+@media (max-width: 900px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .foot-brand{grid-column:span 2}
+}
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease), transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal-stagger > *{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease), transform .8s var(--ease)}
+.reveal-stagger.in > *{opacity:1;transform:none}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.05s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.13s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.21s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.29s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.37s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.45s}
+.reveal-stagger.in > *:nth-child(7){transition-delay:.53s}
+.reveal-stagger.in > *:nth-child(8){transition-delay:.61s}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition:none !important;animation:none !important}
+  .reveal,.reveal-stagger > *{opacity:1;transform:none}
+  .hero-photo,.hero h1 .row span,.hero-sub,.hero-ctas,.hero-meta,.badge-floating{opacity:1;transform:none}
+}
+
+/* progress bar */
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--terracotta);z-index:70;width:0%;transition:width .1s linear}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <a href="#" class="brand">
+    <span class="brand-mark">S</span>
+    <span class="brand-name">Le Saint Cyrille<small>d'Égypte — Depuis 1985</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#accueil" data-section="accueil" class="active">Accueil</a>
+    <a href="#carte" data-section="carte">La Carte</a>
+    <a href="#histoire" data-section="histoire">Notre histoire</a>
+    <a href="#galerie" data-section="galerie">Galerie</a>
+    <a href="#contact" data-section="contact">Infos &amp; Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+33145814690" class="nav-tel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      01 45 81 46 90
+    </a>
+    <a href="#resa" class="btn btn-primary">Réserver une table
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#accueil">Accueil</a>
+  <a href="#carte">La Carte</a>
+  <a href="#histoire">Notre histoire</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#contact">Infos &amp; Contact</a>
+  <a href="#resa" class="btn btn-primary">Réserver une table</a>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero" id="accueil">
+  <div class="hero-watermark" aria-hidden="true">1985</div>
+
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-top-tag">
+        <span class="pill">Paris 13<sup>e</sup></span>
+        <span>Restaurant familial — Butte-aux-Cailles</span>
+      </div>
+
+      <span class="section-num">— I.</span>
+      <h1>
+        <span class="row"><span>Une table</span></span>
+        <span class="row"><span><em>d'Égypte</em>, posée</span></span>
+        <span class="row"><span>à Paris depuis 1985.</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        Quarante ans que la même famille mijote, grille et reçoit
+        boulevard Auguste Blanqui. Cuisine égyptienne et méditerranéenne,
+        fait maison, généreuse, et un accueil qui fait la moitié du voyage.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#resa" class="btn btn-primary">Réserver une table
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a href="#carte" class="btn btn-ghost">Voir la carte</a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-block">
+          <strong>35</strong>
+          <span>Bd. Auguste Blanqui · 75013</span>
+        </div>
+        <div class="divider"></div>
+        <div class="meta-block">
+          <strong>4,8/5</strong>
+          <span>150+ avis Google</span>
+        </div>
+        <div class="divider"></div>
+        <div class="meta-block">
+          <strong>1985</strong>
+          <span>Maison familiale</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-photo" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=80')"></div>
+
+      <div class="badge-floating badge-1985">
+        <strong>1985</strong>
+        <small>Depuis 40 ans</small>
+      </div>
+
+      <div class="badge-floating badge-google">
+        <div class="stars">★★★★★</div>
+        <div>
+          <span class="note">4,8</span>
+          <span class="glogo"></span>
+          <span class="meta">150+ avis</span>
+        </div>
+      </div>
+
+      <div class="badge-floating badge-tag">
+        Fait maison ✦
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     BANDEAU HÉRITAGE
+     ============================================================ -->
+<section class="heritage">
+  <div class="container">
+    <div>
+      <span class="eyebrow" style="color:var(--ocre)">— II. Héritage</span>
+      <h2 class="reveal" style="margin-top:24px">
+        Quarante ans, <em>une seule maison</em>,<br/>
+        et la même recette : le soin.
+      </h2>
+      <p class="lede reveal">
+        Tout part de la cuisine familiale de Maria Fadel. Rien n'est sous-traité,
+        rien n'est congelé. Le pain, les sauces, les pâtisseries —
+        on les fait ici, comme avant.
+      </p>
+    </div>
+    <div>
+      <div class="stats reveal-stagger">
+        <div class="stat">
+          <span class="val" data-count="1985">1985</span>
+          <span class="lbl">Année d'ouverture</span>
+        </div>
+        <div class="stat">
+          <span class="val" data-count="40" data-suffix=" ans">0 ans</span>
+          <span class="lbl">De maison familiale</span>
+        </div>
+        <div class="stat">
+          <span class="val" data-count="100" data-suffix="%">0%</span>
+          <span class="lbl">Fait maison</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SIGNATURE — SCROLL HORIZONTAL
+     ============================================================ -->
+<section class="section" id="signature">
+  <div class="section-head reveal">
+    <div>
+      <span class="section-num">— III.</span>
+      <h2 style="margin-top:10px">Les plats <em style="font-style:italic;color:var(--terracotta)">signature</em> de la maison.</h2>
+    </div>
+    <div class="nav-arrows">
+      <button class="arrow-btn" id="sigPrev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+      <button class="arrow-btn" id="sigNext" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+
+  <div class="signature-track" id="sigTrack">
+    <article class="sig-card">
+      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900&q=80')"></div></div>
+      <div class="body">
+        <span class="num">— 01</span>
+        <h3>Moussaka</h3>
+        <p class="desc">Bœuf, aubergine, oignon, tomate et mozzarella, façon égyptienne.</p>
+      </div>
+    </article>
+
+    <article class="sig-card">
+      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=900&q=80')"></div></div>
+      <div class="body">
+        <span class="num">— 02</span>
+        <h3>Kochari</h3>
+        <p class="desc">Riz, pâtes, lentilles et pois chiches, sauce tomate épicée et oignons frits.</p>
+      </div>
+    </article>
+
+    <article class="sig-card">
+      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=900&q=80')"></div></div>
+      <div class="body">
+        <span class="num">— 03</span>
+        <h3>Assiette Égyptienne</h3>
+        <p class="desc">Falafels, gollèges, hommous, olives, crudités et légumes grillés.</p>
+      </div>
+    </article>
+
+    <article class="sig-card">
+      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&q=80')"></div></div>
+      <div class="body">
+        <span class="num">— 04</span>
+        <h3>Molokhia</h3>
+        <p class="desc">Soupe de feuilles vertes à la viande, servie avec riz vermicelles.</p>
+      </div>
+    </article>
+
+    <article class="sig-card">
+      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=900&q=80')"></div></div>
+      <div class="body">
+        <span class="num">— 05</span>
+        <h3>Coquelet farci</h3>
+        <p class="desc">Au boulgour, au riz ou aux légumes, doré à la perfection.</p>
+      </div>
+    </article>
+
+    <article class="sig-card">
+      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=900&q=80')"></div></div>
+      <div class="body">
+        <span class="num">— 06</span>
+        <h3>Mahchi</h3>
+        <p class="desc">Légumes farcis — poivron, courgette, feuilles de vigne, chou — selon le jour.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     CARTE — bleu nuit, onglets, filtres, preview
+     ============================================================ -->
+<section class="menu-section" id="carte">
+  <div class="menu-head">
+    <div>
+      <span class="eyebrow">— IV. La Carte</span>
+      <h2 class="reveal" style="margin-top:24px">Tout ce que <em>la maison</em> sert,<br/>de l'entrée au carcadé.</h2>
+    </div>
+    <p class="lede reveal">
+      Cliquez sur une catégorie. Au survol d'un plat, une vignette s'ouvre à droite.
+      Filtres pour les options végétariennes ou les spécialités du jour.
+    </p>
+  </div>
+
+  <div class="menu-tabs-wrap">
+    <div class="menu-tabs" id="menuTabs">
+      <button class="menu-tab active" data-cat="entrees">Entrées <span class="count">09</span></button>
+      <button class="menu-tab" data-cat="egyptiens">Plats Égyptiens <span class="count">11</span></button>
+      <button class="menu-tab" data-cat="grillades">Grillades &amp; Plats <span class="count">07</span></button>
+      <button class="menu-tab" data-cat="poissons">Poissons <span class="count">03</span></button>
+      <button class="menu-tab" data-cat="desserts">Desserts <span class="count">04</span></button>
+      <button class="menu-tab" data-cat="boissons">Boissons <span class="count">∞</span></button>
+    </div>
+    <div class="menu-filters">
+      <span class="filter-label">Filtres</span>
+      <button class="filter-pill" data-filter="veg">Végétarien</button>
+      <button class="filter-pill" data-filter="daily">Spécialité du jour</button>
+    </div>
+  </div>
+
+  <div class="menu-body">
+    <div class="menu-list" id="menuList">
+
+      <!-- ENTRÉES -->
+      <div class="menu-panel active" data-cat="entrees">
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1577805947697-89e18249d767?w=800&q=80" data-desc="Crème de pois chiches à l'huile d'olive et au tahini.">
+          <div class="col-name">
+            <span class="name">Hommous <span class="veg" title="Végétarien"></span></span>
+            <span class="desc">Crème de pois chiches</span>
+          </div>
+          <span class="dots"></span>
+          <span class="price">5,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=800&q=80" data-desc="Semoule, tomate, poivron, concombre, persil, avec ou sans raisin sec.">
+          <div class="col-name">
+            <span class="name">Taboulé Orientale <span class="veg"></span></span>
+            <span class="desc">Semoule, légumes frais, raisin sec</span>
+          </div>
+          <span class="dots"></span><span class="price">5,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&q=80" data-desc="Caviar d'aubergine fumée à l'égyptienne.">
+          <div class="col-name">
+            <span class="name">Baba Ghanoug <span class="veg"></span></span>
+            <span class="desc">Caviar d'aubergine à l'égyptienne</span>
+          </div>
+          <span class="dots"></span><span class="price">5,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80" data-desc="Soupe traditionnelle aux lentilles corail et légumes.">
+          <div class="col-name">
+            <span class="name">Soupe de Lentilles et Légumes <span class="veg"></span></span>
+            <span class="desc">Recette du jour</span>
+          </div>
+          <span class="dots"></span><span class="price">5,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1559847844-5315695dadae?w=800&q=80" data-desc="Pâte filo croustillante, 3 pièces — au choix.">
+          <div class="col-name">
+            <span class="name">Gollège — 3 pièces</span>
+            <span class="desc">Viande hachée, poulet, fromage, épinard ou thon</span>
+          </div>
+          <span class="dots"></span><span class="price">6,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1554998171-89445e31c52a?w=800&q=80" data-desc="Falafel, houmous, crudités, aubergine grillée, oignon frit.">
+          <div class="col-name">
+            <span class="name">Wrap Falafel <span class="veg"></span></span>
+            <span class="desc">Falafel, houmous, crudités, aubergine grillée</span>
+          </div>
+          <span class="dots"></span><span class="price">7,50 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1551248429-40975aa4de74?w=800&q=80" data-desc="Salade, tomate, concombre, noix, fromage de chèvre, toast.">
+          <div class="col-name">
+            <span class="name">Salade de Chèvre Chaud <span class="veg"></span></span>
+            <span class="desc">Noix, chèvre fondant, toast doré</span>
+          </div>
+          <span class="dots"></span><span class="price">11,50 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80" data-desc="Salade, tomate, concombre, oignon, poivron, olive, maïs, pomme de terre, thon.">
+          <div class="col-name">
+            <span class="name">Salade de Thon</span>
+            <span class="desc">Crudités, olives, maïs, pomme de terre, thon</span>
+          </div>
+          <span class="dots"></span><span class="price">11,50 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1601001815853-3835274d50ef?w=800&q=80" data-desc="Escargots de Bourgogne, beurre persillé.">
+          <div class="col-name">
+            <span class="name">Escargots</span>
+            <span class="desc">6 pièces / 12 pièces — beurre persillé</span>
+          </div>
+          <span class="dots"></span><span class="price">8,50 € / 15,00 €</span>
+        </div>
+      </div>
+
+      <!-- ÉGYPTIENS -->
+      <div class="menu-panel" data-cat="egyptiens">
+        <div class="menu-row daily" data-veg data-img="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80" data-desc="Aubergine marinée au citron, ail et coriandre.">
+          <div class="col-name"><span class="name">Basingane Mékhalel <span class="veg"></span></span><span class="desc">Aubergine marinée au citron</span></div>
+          <span class="dots"></span><span class="price">7,50 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&q=80" data-desc="Plat national égyptien : riz, pâtes, lentilles, pois chiches, sauce tomate, oignons frits.">
+          <div class="col-name"><span class="name">Kochari <span class="veg"></span></span><span class="desc">Riz, pâtes, lentilles, pois chiches, sauce tomate, oignons frits</span></div>
+          <span class="dots"></span><span class="price">11,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1590502593747-42a996133562?w=800&q=80" data-desc="Aubergine, sauce tomate, poivron, oignon, œufs.">
+          <div class="col-name"><span class="name">Chakchouka <span class="veg"></span></span><span class="desc">Aubergine, sauce tomate, poivron, oignon, œufs</span></div>
+          <span class="dots"></span><span class="price">11,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1567337710282-00832b415979?w=800&q=80" data-desc="Fèves mijotées, tomate, poivron, oignon, œufs — petit-déjeuner traditionnel.">
+          <div class="col-name"><span class="name">Foule <span class="veg"></span></span><span class="desc">Fèves, tomate, poivron, oignon, œufs</span></div>
+          <span class="dots"></span><span class="price">11,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1631898037228-3a8e7e6fafff?w=800&q=80" data-desc="Aubergine, oignon, poivron, sauce tomate, avec riz vermicelles.">
+          <div class="col-name"><span class="name">Mésacâa <span class="veg"></span></span><span class="desc">Aubergine, légumes, riz vermicelles</span></div>
+          <span class="dots"></span><span class="price">11,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=800&q=80" data-desc="Falafels, gollèges 3 pièces, hommous, olives, crudités, légumes grillés.">
+          <div class="col-name"><span class="name">Assiette Égyptienne</span><span class="desc">Falafels, gollèges, hommous, olives, crudités, légumes grillés</span></div>
+          <span class="dots"></span><span class="price">14,50 €</span>
+        </div>
+        <div class="menu-row daily" data-img="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=800&q=80" data-desc="Légumes farcis viande ou riz : poivron, courgette, feuilles de vignes, chou.">
+          <div class="col-name"><span class="name">Mahchi</span><span class="desc">Légumes farcis viande ou riz</span></div>
+          <span class="dots"></span><span class="price">15,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80" data-desc="Gombos mijotés, sauce tomate, riz vermicelles, avec ou sans viande.">
+          <div class="col-name"><span class="name">Bamia</span><span class="desc">Gombos, sauce tomate, riz vermicelles</span></div>
+          <span class="dots"></span><span class="price">11,00 € / 15,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80" data-desc="Soupe de molokhia (feuilles vertes) avec viande, riz vermicelles, bol de crudités.">
+          <div class="col-name"><span class="name">Molokhia</span><span class="desc">Soupe de feuilles vertes, viande, riz vermicelles</span></div>
+          <span class="dots"></span><span class="price">18,50 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1574484184081-afea8a62f9b8?w=800&q=80" data-desc="Bouillon parfumé sur lit de pain grillé et de riz, viande tendre.">
+          <div class="col-name"><span class="name">Fatteh de viande</span><span class="desc">Bouillon, pain grillé, riz, viande</span></div>
+          <span class="dots"></span><span class="price">18,50 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=800&q=80" data-desc="Coquelet farci au boulgour, au riz ou aux légumes.">
+          <div class="col-name"><span class="name">Coquelet farci</span><span class="desc">Au boulgour, au riz ou aux légumes</span></div>
+          <span class="dots"></span><span class="price">20,00 €</span>
+        </div>
+      </div>
+
+      <!-- GRILLADES -->
+      <div class="menu-panel" data-cat="grillades">
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1619895092538-128f4d4d8b8b?w=800&q=80" data-desc="Bœuf, oignon, tomate, mozzarella, crème.">
+          <div class="col-name"><span class="name">Lasagne</span><span class="desc">Bœuf, mozzarella, crème</span></div>
+          <span class="dots"></span><span class="price">14,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&q=80" data-desc="Émincé de dinde ou poulet, oignon, citron, crème fraîche.">
+          <div class="col-name"><span class="name">Fricassée de Volaille</span><span class="desc">Émincé dinde/poulet, citron, crème</span></div>
+          <span class="dots"></span><span class="price">14,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=800&q=80" data-desc="Dinde ou poulet panée, dorée à la poêle.">
+          <div class="col-name"><span class="name">Escalope Milanaise</span><span class="desc">Dinde ou poulet panée</span></div>
+          <span class="dots"></span><span class="price">14,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80" data-desc="Bœuf, aubergine, oignon, tomate, mozzarella.">
+          <div class="col-name"><span class="name">Moussaka</span><span class="desc">Bœuf, aubergine, tomate, mozzarella</span></div>
+          <span class="dots"></span><span class="price">14,50 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80" data-desc="Veau, crème fraîche, champignons.">
+          <div class="col-name"><span class="name">Escalope de Veau à la Normande</span><span class="desc">Crème fraîche, champignons</span></div>
+          <span class="dots"></span><span class="price">18,50 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=800&q=80" data-desc="Bœuf selon le marché, grillé minute.">
+          <div class="col-name"><span class="name">Pièce du Boucher</span><span class="desc">Bœuf selon le marché</span></div>
+          <span class="dots"></span><span class="price">18,50 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=800&q=80" data-desc="Rouelle de gigot d'agneau rôti, à la coupe.">
+          <div class="col-name"><span class="name">Rouelle de Gigot d'Agneau</span><span class="desc">Rôti, à la coupe</span></div>
+          <span class="dots"></span><span class="price">18,50 €</span>
+        </div>
+      </div>
+
+      <!-- POISSONS -->
+      <div class="menu-panel" data-cat="poissons">
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80" data-desc="Saumon, sauce crémée à l'estragon frais.">
+          <div class="col-name"><span class="name">Saumon à l'Estragon</span><span class="desc">Sauce crémée à l'estragon</span></div>
+          <span class="dots"></span><span class="price">18,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1532980400857-e8d9d275d858?w=800&q=80" data-desc="Sole entière dorée au beurre, citron, persil.">
+          <div class="col-name"><span class="name">Sole Meunière</span><span class="desc">Beurre, citron, persil</span></div>
+          <span class="dots"></span><span class="price">25,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80" data-desc="Coquilles Saint-Jacques poêlées, beurre noisette.">
+          <div class="col-name"><span class="name">Coquille St Jacques</span><span class="desc">Poêlées, beurre noisette</span></div>
+          <span class="dots"></span><span class="price">25,00 €</span>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="menu-panel" data-cat="desserts">
+        <div class="menu-row daily" data-veg data-img="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80" data-desc="Tarte du jour préparée maison.">
+          <div class="col-name"><span class="name">Tarte du Jour <span class="veg"></span></span><span class="desc">Préparation maison</span></div>
+          <span class="dots"></span><span class="price">5,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=80" data-desc="Crème caramel onctueuse façon maison.">
+          <div class="col-name"><span class="name">Crème Caramel <span class="veg"></span></span><span class="desc">Onctueuse, façon maison</span></div>
+          <span class="dots"></span><span class="price">4,50 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=800&q=80" data-desc="Mousse au chocolat noir, légère et aérienne.">
+          <div class="col-name"><span class="name">Mousse au Chocolat <span class="veg"></span></span><span class="desc">Chocolat noir, légère</span></div>
+          <span class="dots"></span><span class="price">4,50 €</span>
+        </div>
+        <div class="menu-row daily" data-veg data-img="https://images.unsplash.com/photo-1519676867240-f03562e64548?w=800&q=80" data-desc="Caunafa, basseboussa, baclawa, kahke, goraieba… selon disponibilité.">
+          <div class="col-name"><span class="name">Pâtisseries Égyptiennes <span class="veg"></span></span><span class="desc">Caunafa, basseboussa, baclawa, kahke, goraieba…</span></div>
+          <span class="dots"></span><span class="price">5,00 €</span>
+        </div>
+      </div>
+
+      <!-- BOISSONS -->
+      <div class="menu-panel" data-cat="boissons">
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80" data-desc="Vin du pays au pichet, blanc ou rosé.">
+          <div class="col-name"><span class="name">Pichet — Blanc / Rosé</span><span class="desc">25cl / 50cl</span></div>
+          <span class="dots"></span><span class="price">4,50 € / 8,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=80" data-desc="Côtes du Rhône, servi au pichet.">
+          <div class="col-name"><span class="name">Pichet — Côtes du Rhône</span><span class="desc">25cl / 50cl</span></div>
+          <span class="dots"></span><span class="price">5,00 € / 9,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=800&q=80" data-desc="Chablis, vin blanc de Bourgogne.">
+          <div class="col-name"><span class="name">Chablis (blanc)</span><span class="desc">75 cl</span></div>
+          <span class="dots"></span><span class="price">35,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=80" data-desc="Tavel, rosé du Rhône.">
+          <div class="col-name"><span class="name">Tavel (rosé)</span><span class="desc">37,5 cl / 75 cl</span></div>
+          <span class="dots"></span><span class="price">16,50 € / 27,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80" data-desc="Saumur Champigny, rouge de Loire.">
+          <div class="col-name"><span class="name">Saumur Champigny (rouge)</span><span class="desc">37,5 cl / 75 cl</span></div>
+          <span class="dots"></span><span class="price">18,00 € / 30,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=80" data-desc="Brouilly, cru du Beaujolais.">
+          <div class="col-name"><span class="name">Brouilly (rouge)</span><span class="desc">37,5 cl / 75 cl</span></div>
+          <span class="dots"></span><span class="price">17,50 € / 28,00 €</span>
+        </div>
+        <div class="menu-row" data-img="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=800&q=80" data-desc="Lussac Saint-Émilion, rouge du Bordelais.">
+          <div class="col-name"><span class="name">Lussac Saint-Émilion (rouge)</span><span class="desc">37,5 cl / 75 cl</span></div>
+          <span class="dots"></span><span class="price">19,00 € / 31,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80" data-desc="Soda 33cl au choix.">
+          <div class="col-name"><span class="name">Sodas 33cl <span class="veg"></span></span><span class="desc">Coca, Orangina, Schweppes…</span></div>
+          <span class="dots"></span><span class="price">3,00 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800&q=80" data-desc="Bière pression et bouteilles : Leffe, Heineken, 1664.">
+          <div class="col-name"><span class="name">Bières 33cl <span class="veg"></span></span><span class="desc">Leffe, Heineken, 1664</span></div>
+          <span class="dots"></span><span class="price">4,50 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80" data-desc="Carcadé — infusion d'hibiscus traditionnelle d'Égypte.">
+          <div class="col-name"><span class="name">Carcadé <span class="veg"></span></span><span class="desc">Infusion d'hibiscus traditionnelle</span></div>
+          <span class="dots"></span><span class="price">3,50 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=800&q=80" data-desc="Jus de fruits frais pressé minute.">
+          <div class="col-name"><span class="name">Jus de fruits pressé <span class="veg"></span></span><span class="desc">Frais, minute</span></div>
+          <span class="dots"></span><span class="price">6,50 €</span>
+        </div>
+        <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" data-desc="Café expresso de torréfacteur parisien.">
+          <div class="col-name"><span class="name">Café expresso <span class="veg"></span></span><span class="desc">Torréfaction parisienne</span></div>
+          <span class="dots"></span><span class="price">2,00 €</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- preview -->
+    <aside class="menu-preview" id="menuPreview">
+      <div class="pv-img" id="pvImg"></div>
+      <div class="pv-meta">
+        <span class="pv-cat" id="pvCat">Aperçu</span>
+        <div class="pv-name" id="pvName">Survolez un plat pour voir la photo</div>
+        <div class="pv-desc" id="pvDesc">Chaque ligne de la carte ouvre ici une vignette du plat et un mot sur sa préparation.</div>
+        <span class="pv-price" id="pvPrice"></span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================
+     NOTRE HISTOIRE — sticky split
+     ============================================================ -->
+<section class="story" id="histoire">
+  <div class="story-inner">
+    <div class="story-text">
+      <span class="section-num">— V.</span>
+      <span class="eyebrow" style="margin-top:14px">Notre histoire</span>
+      <h2>Une famille,<br/><em>une cuisine</em>,<br/>quarante ans.</h2>
+      <p>
+        En 1985, la famille Wahba pose ses fourneaux boulevard Auguste Blanqui.
+        Le Caire dans une assiette, la Méditerranée dans la sauce.
+      </p>
+      <p>
+        Depuis, Maria Fadel veille sur la salle, sur les fonds de sauce,
+        sur l'accueil — celui qui fait revenir le client de la table 4 depuis
+        deux décennies. Le pain est cuit ici. Les pâtisseries aussi. La molokhia
+        attend son heure dans la cuisine arrière, comme elle l'a toujours fait.
+      </p>
+      <p>
+        Pas de chichis, pas de filtre — juste une maison, et tout ce qu'on
+        sait y faire.
+      </p>
+      <div class="signature">
+        Maria Fadel
+        <small>Maîtresse de maison · depuis 1985</small>
+      </div>
+    </div>
+
+    <div class="story-photos">
+      <div class="story-photo tall" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80')">
+        <span class="cap">La salle, boulevard Blanqui</span>
+      </div>
+      <div class="story-photo wide" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=900&q=80')">
+        <span class="cap">Aux fourneaux, comme depuis 40 ans</span>
+      </div>
+      <div class="story-photo tall" style="background-image:url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=900&q=80')">
+        <span class="cap">Une table dressée pour vous</span>
+      </div>
+      <div class="story-photo wide" style="background-image:url('https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=900&q=80')">
+        <span class="cap">La terrasse en été</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALERIE BENTO
+     ============================================================ -->
+<section class="gallery" id="galerie">
+  <div class="section-head reveal">
+    <div>
+      <span class="section-num">— VI.</span>
+      <h2 style="margin-top:10px">Un aperçu de <em style="font-style:italic;color:var(--terracotta)">la maison</em>.</h2>
+    </div>
+    <a href="#contact" class="btn btn-ghost">Venir nous voir</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-cell g-1"><div style="background-image:url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1200&q=80')"></div><span class="lbl">L'assiette égyptienne</span></div>
+    <div class="g-cell g-2"><div style="background-image:url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=900&q=80')"></div><span class="lbl">La salle</span></div>
+    <div class="g-cell g-3"><div style="background-image:url('https://images.unsplash.com/photo-1525518392674-39ba1fca2ec2?w=600&q=80')"></div><span class="lbl">Falafels maison</span></div>
+    <div class="g-cell g-4"><div style="background-image:url('https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80')"></div><span class="lbl">Pâtisseries du jour</span></div>
+    <div class="g-cell g-5"><div style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80')"></div><span class="lbl">L'ambiance</span></div>
+    <div class="g-cell g-6"><div style="background-image:url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900&q=80')"></div><span class="lbl">Grillades</span></div>
+    <div class="g-cell g-7"><div style="background-image:url('https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=1200&q=80')"></div><span class="lbl">La terrasse</span></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INFOS PRATIQUES
+     ============================================================ -->
+<section class="infos" id="contact">
+  <div class="section-head reveal">
+    <div>
+      <span class="section-num">— VII.</span>
+      <h2 style="margin-top:10px">Infos <em style="font-style:italic;color:var(--terracotta)">pratiques</em>.</h2>
+    </div>
+    <p style="max-width:340px;color:var(--ink-soft)">
+      Réservation par téléphone vivement conseillée, surtout le week-end.
+    </p>
+  </div>
+
+  <div class="infos-grid">
+    <div class="hours">
+      <h3>Horaires d'ouverture</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:6px">La ligne du jour est mise en valeur.</p>
+      <div class="hours-list" id="hoursList">
+        <div class="hours-row" data-day="1"><span class="day"><span class="dot"></span>Lundi</span><span class="time"></span><span class="closed-tag" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);font-weight:500">Fermé</span></div>
+        <div class="hours-row" data-day="2"><span class="day"><span class="dot"></span>Mardi</span><span class="time">8h30 – 15h00  ·  19h00 – 22h30</span><span></span></div>
+        <div class="hours-row" data-day="3"><span class="day"><span class="dot"></span>Mercredi</span><span class="time">12h00 – 15h00  ·  19h00 – 22h30</span><span></span></div>
+        <div class="hours-row" data-day="4"><span class="day"><span class="dot"></span>Jeudi</span><span class="time">12h00 – 15h00  ·  19h00 – 22h30</span><span></span></div>
+        <div class="hours-row" data-day="5"><span class="day"><span class="dot"></span>Vendredi</span><span class="time">8h30 – 15h00  ·  19h00 – 22h30</span><span></span></div>
+        <div class="hours-row" data-day="6"><span class="day"><span class="dot"></span>Samedi</span><span class="time">12h00 – 15h00  ·  19h00 – 22h30</span><span></span></div>
+        <div class="hours-row" data-day="0"><span class="day"><span class="dot"></span>Dimanche</span><span class="time">8h30 – 15h00  ·  19h00 – 22h30</span><span></span></div>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <div class="map-card">
+        <div class="addr">
+          35 boulevard Auguste Blanqui
+          <small>75013 Paris · Butte-aux-Cailles</small>
+        </div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=48.8297927,2.3516422" target="_blank" rel="noopener">Itinéraire
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=2.345%2C8.827%2C2.358%2C48.833&amp;layer=mapnik&amp;marker=48.8297927%2C2.3516422"></iframe>
+    </div>
+  </div>
+
+  <div class="services reveal-stagger">
+    <div class="service">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></span>
+      <span class="lbl">Terrasse</span>
+      <span class="sub">Grande, ouverte</span>
+    </div>
+    <div class="service">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></span>
+      <span class="lbl">À emporter</span>
+      <span class="sub">Sur place ou commande</span>
+    </div>
+    <div class="service">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M2 6h11v12H8M13 9h5l3 5h-3"/></svg></span>
+      <span class="lbl">Livraison</span>
+      <span class="sub">Via Deliveroo</span>
+    </div>
+    <div class="service">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></span>
+      <span class="lbl">Climatisation</span>
+      <span class="sub">Confort toute saison</span>
+    </div>
+    <div class="service">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <span class="lbl">Privatisation</span>
+      <span class="sub">Anniversaires, EVJF</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESA & CONTACT
+     ============================================================ -->
+<section class="resa" id="resa">
+  <div class="resa-inner">
+    <div>
+      <span class="eyebrow" style="color:var(--ocre)">— VIII. Réserver</span>
+      <h2 class="reveal" style="margin-top:24px">Choisissez votre soir.<br/><em>On garde la table.</em></h2>
+      <p class="lede reveal">
+        Salle ou terrasse, déjeuner ou dîner, en duo ou à huit — dites-nous ce
+        qui vous va. On confirme dans la foulée.
+      </p>
+
+      <div class="resa-widget reveal">
+        <h3>Demande de réservation</h3>
+        <div class="row">
+          <button class="resa-field" type="button">
+            <label>Personnes</label>
+            <span class="v">2 personnes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <button class="resa-field" type="button">
+            <label>Date</label>
+            <span class="v">Ven. 15 mai <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <button class="resa-field" type="button">
+            <label>Heure</label>
+            <span class="v">20 h 00 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+        </div>
+        <button class="submit" type="button">Vérifier les disponibilités</button>
+        <div class="or"><span>ou</span></div>
+        <a href="tel:+33145814690" class="tel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          01 45 81 46 90
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow" style="color:var(--ocre)">— IX. Nous écrire</span>
+      <h2 class="reveal" style="margin-top:24px">Un message,<br/><em>une question ?</em></h2>
+      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Merci ! On revient vers vous.';">
+        <div class="field"><input type="text" placeholder=" " required /><label>Votre nom</label></div>
+        <div class="field"><input type="email" placeholder=" " required /><label>E-mail</label></div>
+        <div class="field"><textarea placeholder=" " required></textarea><label>Votre message</label></div>
+        <button type="submit" class="btn btn-light">Envoyer
+          <span class="arrow" style="background:rgba(42,33,26,.1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+      </form>
+
+      <div class="contact-meta">
+        <div class="block">
+          <strong>Téléphone</strong>
+          <span class="v">01 45 81 46 90</span>
+        </div>
+        <div class="block">
+          <strong>E-mail</strong>
+          <span class="v">wahba.minamichel@gmail.com</span>
+        </div>
+        <div class="block">
+          <strong>Adresse</strong>
+          <span class="v">35 bd Auguste Blanqui, 75013</span>
+        </div>
+        <div class="block">
+          <strong>Paiement</strong>
+          <span class="v">Espèces · CB · Sans contact</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-name" style="color:var(--cream)">Le Saint Cyrille<small style="color:var(--ocre)">d'Égypte — Depuis 1985</small></span>
+      </div>
+      <p>Restaurant familial — spécialités égyptiennes et méditerranéennes.
+        Une maison, une famille, quarante ans.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Google"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><path d="M12 12h9"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <a href="#accueil">Accueil</a>
+      <a href="#carte">La Carte</a>
+      <a href="#histoire">Notre histoire</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Infos &amp; Contact</a>
+      <a href="#resa">Réserver</a>
+    </div>
+    <div class="foot-col">
+      <h4>Venir</h4>
+      <p>35 boulevard Auguste Blanqui<br/>75013 Paris</p>
+      <p>Métro Corvisart, Glacière</p>
+      <a href="tel:+33145814690">01 45 81 46 90</a>
+      <a href="mailto:wahba.minamichel@gmail.com">wahba.minamichel@gmail.com</a>
+    </div>
+    <div class="foot-col">
+      <h4>Horaires</h4>
+      <p>Lun. <span style="color:var(--terracotta)">Fermé</span></p>
+      <p>Mar. – Dim.<br/>déjeuner &amp; dîner</p>
+      <p>8h30/12h – 15h<br/>19h – 22h30</p>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 1985–2026 SARL IRINI PACI · Responsable Maria Fadel · RCS Paris 531 881 662 · SIRET 531 881 662 00013 · Capital social 1 000 €</span>
+    <span><a href="#">Mentions légales</a> · <a href="#">Cookies</a></span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     SCRIPT
+     ============================================================ -->
+<script>
+(() => {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Nav scroll state ---- */
+  const nav = document.getElementById('nav');
+  const progress = document.getElementById('progress');
+  function onScroll(){
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 30);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (y/h*100) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---- Burger ---- */
+  const burger = document.getElementById('burger');
+  const mm = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mm.classList.toggle('open');
+  });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open'); mm.classList.remove('open');
+  }));
+
+  /* ---- Hero entrance ---- */
+  const hero = document.querySelector('.hero');
+  requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('in')));
+
+  /* ---- Reveal on scroll ---- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  // auto-tag sections for reveal
+  document.querySelectorAll('.section, .heritage, .menu-section, .story, .gallery, .infos, .resa')
+    .forEach(s => {
+      const head = s.querySelector('.section-head, .container, .menu-head, .story-inner');
+    });
+
+  /* ---- Counters ---- */
+  const counters = document.querySelectorAll('[data-count]');
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const dur = 1400;
+      const start = performance.now();
+      const from = (target > 100) ? target - 60 : 0;
+      function tick(t){
+        const k = Math.min((t-start)/dur, 1);
+        const ease = 1 - Math.pow(1-k, 3);
+        const v = Math.round(from + (target-from)*ease);
+        el.textContent = v + suffix;
+        if(k < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  }, {threshold:.4});
+  counters.forEach(c => cio.observe(c));
+
+  /* ---- Section active in nav ---- */
+  const links = document.querySelectorAll('.nav-links a[data-section]');
+  const sections = ['accueil','carte','histoire','galerie','contact'].map(id => document.getElementById(id)).filter(Boolean);
+  const aio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const id = e.target.id;
+        links.forEach(l => l.classList.toggle('active', l.dataset.section === id));
+      }
+    });
+  }, {threshold:.3, rootMargin:'-30% 0px -50% 0px'});
+  sections.forEach(s => aio.observe(s));
+
+  /* ---- Signature carousel ---- */
+  const track = document.getElementById('sigTrack');
+  document.getElementById('sigPrev').addEventListener('click', () => track.scrollBy({left: -380, behavior:'smooth'}));
+  document.getElementById('sigNext').addEventListener('click', () => track.scrollBy({left:  380, behavior:'smooth'}));
+  // wheel: convert vertical to horizontal when hovering track
+  track.addEventListener('wheel', (e) => {
+    if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+      track.scrollLeft += e.deltaY;
+      e.preventDefault();
+    }
+  }, {passive:false});
+
+  /* ---- Menu tabs ---- */
+  const tabs = document.querySelectorAll('.menu-tab');
+  const panels = document.querySelectorAll('.menu-panel');
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    panels.forEach(p => p.classList.toggle('active', p.dataset.cat === cat));
+    applyFilters();
+    resetPreview();
+  }));
+
+  /* ---- Menu filters ---- */
+  const filterPills = document.querySelectorAll('.filter-pill');
+  let activeFilters = new Set();
+  filterPills.forEach(p => p.addEventListener('click', () => {
+    const f = p.dataset.filter;
+    if(activeFilters.has(f)){ activeFilters.delete(f); p.classList.remove('active'); }
+    else{ activeFilters.add(f); p.classList.add('active'); }
+    applyFilters();
+  }));
+  function applyFilters(){
+    const active = document.querySelector('.menu-panel.active');
+    if(!active) return;
+    active.querySelectorAll('.menu-row').forEach(row => {
+      let show = true;
+      if(activeFilters.has('veg') && !row.hasAttribute('data-veg')) show = false;
+      if(activeFilters.has('daily') && !row.classList.contains('daily')) show = false;
+      row.style.transition = 'opacity .4s ease, transform .4s ease, padding .25s ease';
+      if(show){ row.style.opacity = '1'; row.style.transform = 'none'; row.style.pointerEvents='auto'; row.style.maxHeight='100px'; }
+      else{ row.style.opacity = '0'; row.style.transform = 'translateY(-8px)'; row.style.pointerEvents='none'; row.style.position='absolute'; row.style.left='-9999px'; }
+    });
+    // simple approach: hide via display none after delay
+    setTimeout(() => {
+      active.querySelectorAll('.menu-row').forEach(row => {
+        let show = true;
+        if(activeFilters.has('veg') && !row.hasAttribute('data-veg')) show = false;
+        if(activeFilters.has('daily') && !row.classList.contains('daily')) show = false;
+        row.style.display = show ? '' : 'none';
+        if(show){ row.style.position=''; row.style.left=''; }
+      });
+    }, 50);
+  }
+
+  /* ---- Menu preview on hover ---- */
+  const preview = document.getElementById('menuPreview');
+  const pvImg = document.getElementById('pvImg');
+  const pvName = document.getElementById('pvName');
+  const pvDesc = document.getElementById('pvDesc');
+  const pvPrice = document.getElementById('pvPrice');
+  const pvCat = document.getElementById('pvCat');
+  function resetPreview(){
+    preview.classList.remove('has-image');
+    pvImg.style.backgroundImage = '';
+    pvName.textContent = 'Survolez un plat pour voir la photo';
+    pvDesc.textContent = 'Chaque ligne de la carte ouvre ici une vignette du plat et un mot sur sa préparation.';
+    pvPrice.textContent = '';
+    pvCat.textContent = 'Aperçu';
+  }
+  function bindRowPreview(row){
+    row.addEventListener('mouseenter', () => {
+      const img = row.dataset.img;
+      const name = row.querySelector('.name').firstChild.textContent.trim();
+      const desc = row.dataset.desc || row.querySelector('.desc')?.textContent || '';
+      const price = row.querySelector('.price').textContent;
+      const cat = row.closest('.menu-panel').dataset.cat;
+      const labels = {entrees:'Entrée', egyptiens:'Plat égyptien', grillades:'Grillades & Plats', poissons:'Poisson', desserts:'Dessert', boissons:'Boisson'};
+      pvImg.style.backgroundImage = `url('${img}')`;
+      pvName.textContent = name;
+      pvDesc.textContent = desc;
+      pvPrice.textContent = price;
+      pvCat.textContent = labels[cat] || 'Plat';
+      preview.classList.add('has-image');
+    });
+  }
+  document.querySelectorAll('.menu-row').forEach(bindRowPreview);
+
+  /* ---- Hours today highlight ---- */
+  const today = new Date().getDay();
+  const todayRow = document.querySelector(`.hours-row[data-day="${today}"]`);
+  if(todayRow){
+    todayRow.classList.add('today');
+    if(today === 1) todayRow.classList.add('closed');
+  }
+
+  /* ---- Parallax hero photo & watermark (rAF) ---- */
+  if(!prefersReduced){
+    const heroPhoto = document.querySelector('.hero-photo');
+    const watermark = document.querySelector('.hero-watermark');
+    const storyPhotos = document.querySelectorAll('.story-photo');
+    let ticking = false;
+    function parallax(){
+      const y = window.scrollY;
+      if(heroPhoto) heroPhoto.style.transform = `translateY(${y*0.08}px) scale(1)`;
+      if(watermark) watermark.style.transform = `translateY(${y*-0.15}px)`;
+      storyPhotos.forEach((p, i) => {
+        const rect = p.getBoundingClientRect();
+        const center = rect.top + rect.height/2 - window.innerHeight/2;
+        p.style.transform = `translateY(${center * -0.04}px)`;
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if(!ticking){ requestAnimationFrame(parallax); ticking = true; }
+    }, {passive:true});
+  }
+
+  /* ---- Resa widget faux interactivity ---- */
+  document.querySelectorAll('.resa-field').forEach(f => {
+    f.addEventListener('click', () => {
+      const v = f.querySelector('.v');
+      const samples = {
+        Personnes: ['1 personne','2 personnes','3 personnes','4 personnes','5 personnes','6 personnes','7 personnes','8 personnes','+ de 8'],
+        Date: ['Jeu. 14 mai','Ven. 15 mai','Sam. 16 mai','Dim. 17 mai','Mar. 19 mai','Mer. 20 mai'],
+        Heure: ['12 h 30','13 h 00','13 h 30','19 h 30','20 h 00','20 h 30','21 h 00','21 h 30']
+      };
+      const label = f.querySelector('label').textContent;
+      const list = samples[label];
+      if(!list) return;
+      const cur = v.firstChild.textContent.trim();
+      const idx = list.findIndex(s => s.trim() === cur);
+      const next = list[(idx+1) % list.length];
+      v.firstChild.textContent = next + ' ';
+    });
+  });
+})();
+</script>
+</body>
+</html>
