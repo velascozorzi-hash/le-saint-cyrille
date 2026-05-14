@@ -538,7 +538,7 @@ p{margin:0}
 /* ============================================================
    CARTE — bleu nuit, onglets, filtres, preview au survol
    ============================================================ */
-.menu-section{background:var(--night);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
+.menu-section{background:var(--olive);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
 .menu-section .eyebrow{color:var(--ocre)}
 .menu-section h2{color:var(--cream)}
 .menu-section h2 em{font-style:italic;color:var(--ocre)}
@@ -808,17 +808,34 @@ p{margin:0}
 }
 .gallery-dot.active{opacity:1;transform:scale(1.4)}
 
+/* hint scroll galerie mobile */
+.gallery-hint{
+  display:none;
+  align-items:center;gap:7px;
+  font-family:var(--sans);font-size:12px;color:var(--ink-soft);
+  margin-top:14px;letter-spacing:.04em;
+}
+.gallery-hint svg{opacity:.5;animation:hint-bounce 1.6s ease-in-out infinite}
+@keyframes hint-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
 @media(max-width:860px){
   .gallery-layout{flex-direction:column;height:auto}
   .gallery-sticky{
-    width:100%;position:static;height:auto;
-    justify-content:flex-start;padding:72px var(--gutter) 0;
+    width:100%;position:sticky;top:60px;z-index:10;height:auto;
+    justify-content:flex-start;
+    padding:24px var(--gutter) 16px;
+    background:var(--cream-2);
+    border-bottom:1px solid rgba(42,33,26,.07);
   }
+  .gallery-sticky-inner{max-width:100%}
+  .gallery-sticky-inner h2{font-size:clamp(20px,5vw,26px);margin-top:4px}
   .gallery-scroll{width:100%;height:auto;overflow-y:visible;scroll-snap-type:none}
-  .gallery-item{height:auto;padding:24px var(--gutter);scroll-snap-align:none}
+  .gallery-item{height:auto;padding:20px var(--gutter);scroll-snap-align:none}
   .gallery-item-img{max-width:100%;aspect-ratio:3/2}
-  .gallery-label{min-height:auto;font-size:clamp(20px,5vw,28px)}
-  .gallery-dots{display:none}
+  .gallery-label{min-height:36px;font-size:clamp(18px,4.5vw,24px);margin-top:8px}
+  .gallery-dots{margin-top:10px}
+  .gallery-hint{display:flex}
+  .btn.btn-ghost[href="#contact"]{display:none}
 }
 
 /* ============================================================
@@ -1049,13 +1066,13 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
    ============================================================ */
 @media (max-width: 600px){
   /* Padding sections réduit */
-  .section{padding:72px 0}
-  .heritage{padding:72px var(--gutter)}
-  .menu-section{padding:72px 0}
-  .story{padding:72px 0}
-  .gallery{padding:72px 0}
-  .infos{padding:72px 0}
-  .resa{padding:72px 0}
+  .section{padding:48px 0}
+  .heritage{padding:56px var(--gutter)}
+  .menu-section{padding:48px 0}
+  .story{padding:40px 0 0}
+  .gallery{padding:0}
+  .infos{padding:56px 0}
+  .resa{padding:56px 0}
   footer{padding:56px 0 24px}
 
   /* Hero moins haut */
@@ -1066,17 +1083,22 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
   .hero-ctas{gap:10px}
   .hero-ctas .btn{font-size:14px;padding:12px 20px}
 
-  /* Nav — brand compact, petite sub-ligne masquée */
+  /* Nav — brand compact, petite sub-ligne masquée, bouton réserver réduit */
   .brand-name{font-size:16px}
   .brand-name small{display:none}
+  .nav-right .btn-primary{font-size:12px;padding:8px 14px;border-radius:20px}
+  .nav-right .btn-primary .arrow{display:none}
 
   /* Heritage stats — reste 3 col mais fonte plus petite */
   .stat .val{font-size:clamp(26px,8vw,42px)}
   .stat .lbl{font-size:10px;letter-spacing:.1em}
 
-  /* Signature carousel — carte quasi pleine largeur */
+  /* Signature carousel — carte quasi pleine largeur, vague désactivée */
   .sig-card{flex:0 0 calc(100vw - 44px)}
-  .sig-card:nth-child(2n),.sig-card:nth-child(3n){flex-basis:calc(100vw - 44px);margin-top:0}
+  .sig-card:nth-child(1),.sig-card:nth-child(2),.sig-card:nth-child(3),
+  .sig-card:nth-child(4),.sig-card:nth-child(5),.sig-card:nth-child(6){
+    flex-basis:calc(100vw - 44px);margin-top:0;transform:none
+  }
   .section-head{flex-direction:column;align-items:flex-start;gap:18px}
 
   /* Menu tabs — scroll horizontal, pas de wrap */
@@ -1462,7 +1484,6 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     <div class="menu-filters">
       <span class="filter-label">Filtres</span>
       <button class="filter-pill" data-filter="veg">Végétarien</button>
-      <button class="filter-pill" data-filter="daily">Spécialité du jour</button>
     </div>
   </div>
 
@@ -1779,6 +1800,10 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
         <h2 style="margin-top:10px">Un aperçu de <em style="font-style:italic;color:var(--terracotta)">la maison</em>.</h2>
         <div class="gallery-label" id="galleryLabel" aria-live="polite"></div>
         <div class="gallery-dots" id="galleryDots"></div>
+        <p class="gallery-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Faites défiler les photos
+        </p>
         <a href="#contact" class="btn btn-ghost" style="margin-top:32px">Venir nous voir</a>
       </div>
     </div>
@@ -1876,33 +1901,6 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     </div>
   </div>
 
-  <div class="services reveal-stagger">
-    <div class="service">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></span>
-      <span class="lbl">Terrasse</span>
-      <span class="sub">Grande, ouverte</span>
-    </div>
-    <div class="service">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></span>
-      <span class="lbl">À emporter</span>
-      <span class="sub">Sur place ou commande</span>
-    </div>
-    <div class="service">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M2 6h11v12H8M13 9h5l3 5h-3"/></svg></span>
-      <span class="lbl">Livraison</span>
-      <span class="sub">Via Deliveroo</span>
-    </div>
-    <div class="service">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></span>
-      <span class="lbl">Climatisation</span>
-      <span class="sub">Confort toute saison</span>
-    </div>
-    <div class="service">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-      <span class="lbl">Privatisation</span>
-      <span class="sub">Anniversaires, EVJF</span>
-    </div>
-  </div>
 </section>
 
 <!-- ============================================================
@@ -2116,11 +2114,15 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
   const track = document.getElementById('sigTrack');
   document.getElementById('sigPrev').addEventListener('click', () => track.scrollBy({left: -380, behavior:'smooth'}));
   document.getElementById('sigNext').addEventListener('click', () => track.scrollBy({left:  380, behavior:'smooth'}));
-  // wheel: convert vertical to horizontal when hovering track
+  // wheel: convert vertical → horizontal seulement si le track n'est pas en bout de course
   track.addEventListener('wheel', (e) => {
     if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
-      track.scrollLeft += e.deltaY;
-      e.preventDefault();
+      const atStart = track.scrollLeft <= 0;
+      const atEnd   = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      if((e.deltaY < 0 && !atStart) || (e.deltaY > 0 && !atEnd)){
+        track.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
     }
   }, {passive:false});
 
