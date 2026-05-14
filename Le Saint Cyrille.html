@@ -1139,7 +1139,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
 <!-- ============================================================
      PASSWORD GATE
      ============================================================ -->
-<div id="pw-screen" style="display:none">
+<div id="pw-screen">
   <div class="pw-card">
     <div class="pw-logo">
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -1173,10 +1173,9 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
 (function(){
   var el = document.getElementById('pw-screen');
   if(sessionStorage.getItem('lsc_auth') === '1'){
-    el.remove();
+    el.style.display = 'none';
     return;
   }
-  el.style.display = 'flex';
   document.getElementById('pwForm').addEventListener('submit', function(e){
     e.preventDefault();
     var val = document.getElementById('pwInput').value;
