@@ -668,48 +668,73 @@ p{margin:0}
 /* ============================================================
    GALERIE BENTO
    ============================================================ */
-.gallery{padding:130px 0;background:var(--cream-2)}
-.gallery-grid{
-  max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);
-  display:grid;grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows:160px;gap:18px;
+.gallery{background:var(--cream-2)}
+.gallery-layout{display:flex;height:100vh}
+.gallery-sticky{
+  width:50%;position:sticky;top:0;height:100vh;
+  display:flex;align-items:center;justify-content:flex-end;
+  padding:0 60px 0 var(--gutter);
 }
-.g-cell{
-  border-radius:18px;overflow:hidden;
-  background:#ccc center/cover no-repeat;
-  position:relative;cursor:pointer;
-  transition:transform .5s var(--ease);
+.gallery-sticky-inner{max-width:380px;width:100%}
+.gallery-scroll{
+  width:50%;height:100vh;
+  overflow-y:auto;scroll-snap-type:y mandatory;
+  scrollbar-width:none;
 }
-.g-cell::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(to top, rgba(42,33,26,.55), transparent 60%);
-  opacity:0;transition:opacity .4s var(--ease);
+.gallery-scroll::-webkit-scrollbar{display:none}
+.gallery-item{
+  height:100vh;display:flex;align-items:center;justify-content:center;
+  scroll-snap-align:center;padding:40px 48px 40px 24px;
 }
-.g-cell:hover::after{opacity:1}
-.g-cell > div{
-  position:absolute;inset:0;background-size:cover;background-position:center;
-  transition:transform .8s var(--ease);
+.gallery-item-img{
+  width:100%;max-width:460px;aspect-ratio:4/3;
+  border-radius:20px;overflow:hidden;position:relative;
+  box-shadow:0 24px 64px -20px rgba(42,33,26,.4);
 }
-.g-cell:hover > div{transform:scale(1.08)}
-.g-cell .lbl{
-  position:absolute;left:18px;bottom:18px;z-index:2;
-  color:var(--cream);font-family:var(--serif);font-style:italic;font-size:16px;
-  opacity:0;transform:translateY(10px);transition:opacity .4s var(--ease), transform .4s var(--ease);
+.gallery-item-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.gallery-item-img:hover img{transform:scale(1.06)}
+.gallery-item-cap{
+  position:absolute;left:14px;bottom:14px;
+  background:rgba(248,241,227,.9);
+  padding:6px 14px;border-radius:999px;
+  font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink);
 }
-.g-cell:hover .lbl{opacity:1;transform:none}
+/* TextRotate label */
+.gallery-label{
+  display:flex;flex-wrap:wrap;align-items:baseline;
+  font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);
+  color:var(--ink);min-height:52px;margin-top:18px;gap:0;
+  overflow:hidden;
+}
+.gallery-label-word{display:inline-flex;overflow:hidden;padding-bottom:3px}
+.gallery-label-char{
+  display:inline-block;
+  opacity:0;transform:translateY(90%);
+  animation:char-in .45s cubic-bezier(.23,1,.32,1) forwards;
+}
+@keyframes char-in{
+  to{opacity:1;transform:translateY(0)}
+}
+/* progress dots */
+.gallery-dots{display:flex;gap:8px;margin-top:28px}
+.gallery-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--ink);opacity:.18;
+  transition:opacity .4s,transform .4s;
+}
+.gallery-dot.active{opacity:1;transform:scale(1.4)}
 
-.g-1{grid-column:span 2;grid-row:span 2}
-.g-2{grid-column:span 1;grid-row:span 2}
-.g-3{grid-column:span 1;grid-row:span 1}
-.g-4{grid-column:span 1;grid-row:span 1}
-.g-5{grid-column:span 2;grid-row:span 1}
-.g-6{grid-column:span 1;grid-row:span 2}
-.g-7{grid-column:span 2;grid-row:span 1}
-
-@media (max-width: 900px){
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}
-  .g-1{grid-column:span 2;grid-row:span 2}
-  .g-2,.g-3,.g-4,.g-5,.g-6,.g-7{grid-column:span 1;grid-row:span 1}
+@media(max-width:860px){
+  .gallery-layout{flex-direction:column;height:auto}
+  .gallery-sticky{
+    width:100%;position:static;height:auto;
+    justify-content:flex-start;padding:72px var(--gutter) 0;
+  }
+  .gallery-scroll{width:100%;height:auto;overflow-y:visible;scroll-snap-type:none}
+  .gallery-item{height:auto;padding:24px var(--gutter);scroll-snap-align:none}
+  .gallery-item-img{max-width:100%;aspect-ratio:3/2}
+  .gallery-label{min-height:auto;font-size:clamp(20px,5vw,28px)}
+  .gallery-dots{display:none}
 }
 
 /* ============================================================
@@ -1602,21 +1627,65 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
      GALERIE BENTO
      ============================================================ -->
 <section class="gallery" id="galerie">
-  <div class="section-head reveal">
-    <div>
-      <span class="section-num">— VI.</span>
-      <h2 style="margin-top:10px">Un aperçu de <em style="font-style:italic;color:var(--terracotta)">la maison</em>.</h2>
+  <div class="gallery-layout">
+
+    <!-- Gauche sticky -->
+    <div class="gallery-sticky">
+      <div class="gallery-sticky-inner reveal-stagger">
+        <span class="section-num">— VI.</span>
+        <h2 style="margin-top:10px">Un aperçu de <em style="font-style:italic;color:var(--terracotta)">la maison</em>.</h2>
+        <div class="gallery-label" id="galleryLabel" aria-live="polite"></div>
+        <div class="gallery-dots" id="galleryDots"></div>
+        <a href="#contact" class="btn btn-ghost" style="margin-top:32px">Venir nous voir</a>
+      </div>
     </div>
-    <a href="#contact" class="btn btn-ghost">Venir nous voir</a>
-  </div>
-  <div class="gallery-grid">
-    <div class="g-cell g-1"><div style="background-image:url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1200&q=80')"></div><span class="lbl">L'assiette égyptienne</span></div>
-    <div class="g-cell g-2"><div style="background-image:url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=900&q=80')"></div><span class="lbl">La salle</span></div>
-    <div class="g-cell g-3"><div style="background-image:url('https://images.unsplash.com/photo-1525518392674-39ba1fca2ec2?w=600&q=80')"></div><span class="lbl">Falafels maison</span></div>
-    <div class="g-cell g-4"><div style="background-image:url('https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80')"></div><span class="lbl">Pâtisseries du jour</span></div>
-    <div class="g-cell g-5"><div style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80')"></div><span class="lbl">L'ambiance</span></div>
-    <div class="g-cell g-6"><div style="background-image:url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900&q=80')"></div><span class="lbl">Grillades</span></div>
-    <div class="g-cell g-7"><div style="background-image:url('https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=1200&q=80')"></div><span class="lbl">La terrasse</span></div>
+
+    <!-- Droite scroll -->
+    <div class="gallery-scroll" id="galleryScroll">
+      <div class="gallery-item" data-label="L'assiette égyptienne">
+        <div class="gallery-item-img">
+          <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1200&q=80" alt="L'assiette égyptienne" loading="lazy">
+          <span class="gallery-item-cap">L'assiette égyptienne</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-label="La salle">
+        <div class="gallery-item-img">
+          <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1200&q=80" alt="La salle" loading="lazy">
+          <span class="gallery-item-cap">La salle</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-label="Falafels maison">
+        <div class="gallery-item-img">
+          <img src="https://images.unsplash.com/photo-1525518392674-39ba1fca2ec2?w=1200&q=80" alt="Falafels maison" loading="lazy">
+          <span class="gallery-item-cap">Falafels maison</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-label="Pâtisseries du jour">
+        <div class="gallery-item-img">
+          <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?w=1200&q=80" alt="Pâtisseries du jour" loading="lazy">
+          <span class="gallery-item-cap">Pâtisseries du jour</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-label="L'ambiance">
+        <div class="gallery-item-img">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80" alt="L'ambiance" loading="lazy">
+          <span class="gallery-item-cap">L'ambiance</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-label="Grillades">
+        <div class="gallery-item-img">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&q=80" alt="Grillades" loading="lazy">
+          <span class="gallery-item-cap">Grillades</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-label="La terrasse">
+        <div class="gallery-item-img">
+          <img src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=1200&q=80" alt="La terrasse" loading="lazy">
+          <span class="gallery-item-cap">La terrasse</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2045,6 +2114,89 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
       if(!ticking){ requestAnimationFrame(parallax); ticking = true; }
     }, {passive:true});
   }
+
+  /* ---- Gallery TextRotate ---- */
+  (() => {
+    const labelEl = document.getElementById('galleryLabel');
+    const dotsEl  = document.getElementById('galleryDots');
+    const scroll  = document.getElementById('galleryScroll');
+    const items   = document.querySelectorAll('.gallery-item');
+    if(!labelEl || !items.length) return;
+
+    const seg = typeof Intl !== 'undefined' && Intl.Segmenter
+      ? new Intl.Segmenter('fr', {granularity:'grapheme'})
+      : null;
+
+    function splitChars(str){ return seg ? [...seg.segment(str)].map(s=>s.segment) : [...str]; }
+
+    // Build dots
+    items.forEach((_, i) => {
+      const d = document.createElement('span');
+      d.className = 'gallery-dot' + (i===0?' active':'');
+      dotsEl.appendChild(d);
+    });
+
+    let currentIndex = -1;
+
+    function setLabel(text, index){
+      if(index === currentIndex) return;
+      currentIndex = index;
+
+      // Update dots
+      dotsEl.querySelectorAll('.gallery-dot').forEach((d,i) => d.classList.toggle('active', i===index));
+
+      // Build animated chars
+      labelEl.innerHTML = '';
+      const words = text.split(' ');
+      let delay = 0;
+      words.forEach((word, wi) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'gallery-label-word';
+        splitChars(word).forEach(ch => {
+          const span = document.createElement('span');
+          span.className = 'gallery-label-char';
+          span.textContent = ch;
+          span.style.animationDelay = delay * 1000 + 'ms';
+          delay += 0.022;
+          wordSpan.appendChild(span);
+        });
+        labelEl.appendChild(wordSpan);
+        if(wi < words.length - 1){
+          const sp = document.createElement('span');
+          sp.innerHTML = ' ';
+          labelEl.appendChild(sp);
+        }
+      });
+    }
+
+    // On desktop: observe within the scroll container
+    // On mobile: observe relative to viewport
+    function buildObserver(){
+      const isMob = window.innerWidth <= 860;
+      const root  = isMob ? null : scroll;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            const idx = [...items].indexOf(e.target);
+            setLabel(e.target.dataset.label, idx);
+          }
+        });
+      }, { root, threshold: 0.5 });
+      items.forEach(item => obs.observe(item));
+      return obs;
+    }
+
+    let obs = buildObserver();
+    // Init first label
+    setLabel(items[0].dataset.label, 0);
+
+    // Rebuild on resize (desktop <-> mobile swap)
+    let lastMob = window.innerWidth <= 860;
+    window.addEventListener('resize', () => {
+      const mob = window.innerWidth <= 860;
+      if(mob !== lastMob){ lastMob = mob; obs.disconnect(); obs = buildObserver(); }
+    });
+  })();
 
   /* ---- Resa widget faux interactivity ---- */
   document.querySelectorAll('.resa-field').forEach(f => {
