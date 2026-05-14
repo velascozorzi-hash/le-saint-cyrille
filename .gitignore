@@ -42,3 +42,11 @@ next-env.d.ts
 
 # design exports
 /_design_extract
+
+# claude code local files
+/.claude
+
+# embedded sub-repos
+/etoiles-dorees
+
+.vercel

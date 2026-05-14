@@ -1,5 +1,5 @@
-import GlassButtonDemo from "@/components/demo/glass-button-demo";
+import { GalerieApercu } from "@/components/sections/galerie-apercu"
 
 export default function Home() {
-  return <GlassButtonDemo />;
+  return <GalerieApercu />
 }
