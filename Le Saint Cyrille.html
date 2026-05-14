@@ -912,6 +912,112 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
 
 /* progress bar */
 .progress{position:fixed;top:0;left:0;height:2px;background:var(--terracotta);z-index:70;width:0%;transition:width .1s linear}
+
+/* ============================================================
+   MOBILE — corrections complètes (≤ 600px)
+   ============================================================ */
+@media (max-width: 600px){
+  /* Padding sections réduit */
+  .section{padding:72px 0}
+  .heritage{padding:72px var(--gutter)}
+  .menu-section{padding:72px 0}
+  .story{padding:72px 0}
+  .gallery{padding:72px 0}
+  .infos{padding:72px 0}
+  .resa{padding:72px 0}
+  footer{padding:56px 0 24px}
+
+  /* Hero moins haut */
+  .hero{padding:90px var(--gutter) 52px;min-height:auto}
+  .hero-meta{gap:14px;margin-top:32px}
+  .meta-block strong{font-size:18px}
+  .meta-block span{font-size:11px}
+  .hero-ctas{gap:10px}
+  .hero-ctas .btn{font-size:14px;padding:12px 20px}
+
+  /* Nav — brand compact, petite sub-ligne masquée */
+  .brand-name{font-size:16px}
+  .brand-name small{display:none}
+
+  /* Heritage stats — reste 3 col mais fonte plus petite */
+  .stat .val{font-size:clamp(26px,8vw,42px)}
+  .stat .lbl{font-size:10px;letter-spacing:.1em}
+
+  /* Signature carousel — carte quasi pleine largeur */
+  .sig-card{flex:0 0 calc(100vw - 44px)}
+  .sig-card:nth-child(2n),.sig-card:nth-child(3n){flex-basis:calc(100vw - 44px);margin-top:0}
+  .section-head{flex-direction:column;align-items:flex-start;gap:18px}
+
+  /* Menu tabs — scroll horizontal, pas de wrap */
+  .menu-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:4px;border-bottom:1px solid rgba(248,241,227,.1);padding-bottom:2px}
+  .menu-tabs::-webkit-scrollbar{display:none}
+  .menu-tab{flex-shrink:0;font-size:12px;padding:10px 14px}
+  .menu-tabs-wrap{overflow:visible}
+
+  /* Menu rows mobile */
+  .menu-row{padding:14px 4px;cursor:pointer}
+  .menu-row .name{font-size:16px}
+  .menu-row .price{font-size:17px}
+  /* Tag "Selon le jour" masqué (chevauche le prix) */
+  .menu-row.daily::after{display:none}
+
+  /* Hours — colonne jour plus étroite */
+  .hours{padding:22px 16px}
+  .hours-row{grid-template-columns:80px 1fr auto;gap:6px;font-size:13px;padding:9px 8px}
+  .hours-row .time{font-size:13px}
+  .hours-row .dot{display:none}
+
+  /* Services — 2×2 */
+  .services{grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}
+  .service{padding:16px 10px;gap:8px}
+  .service .lbl{font-size:14px}
+  .service .sub{font-size:11px}
+
+  /* Resa widget — 1 colonne */
+  .resa-widget .row{grid-template-columns:1fr}
+  .resa{padding:72px 0}
+
+  /* Contact meta — 1 colonne */
+  .contact-meta{grid-template-columns:1fr;gap:18px}
+
+  /* Footer — 1 colonne */
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .foot-brand{grid-column:span 1}
+  .foot-bot{flex-direction:column;align-items:flex-start;gap:12px}
+
+  /* Map */
+  .map-wrap{min-height:260px}
+
+  /* Gallery — légendes toujours visibles */
+  .g-cell .lbl{opacity:1;transform:none;background:linear-gradient(transparent,rgba(42,33,26,.5));padding:18px;bottom:0;left:0;right:0;text-align:left}
+  .g-cell::after{opacity:.45}
+}
+
+/* ============================================================
+   MOBILE — carte : tap-to-reveal (panneau photo)
+   ============================================================ */
+.mobile-dish-card{
+  display:grid;
+  grid-template-columns:100px 1fr;
+  background:rgba(248,241,227,.06);
+  border:1px solid rgba(248,241,227,.15);
+  border-radius:16px;
+  overflow:hidden;
+  margin:2px 0 6px;
+  opacity:0;
+  transform:translateY(-6px);
+  transition:opacity .3s var(--ease), transform .3s var(--ease), max-height .3s var(--ease);
+  max-height:0;
+  pointer-events:none;
+}
+.mobile-dish-card.open{opacity:1;transform:none;max-height:160px;pointer-events:auto}
+.mobile-dish-card .mdc-img{background-size:cover;background-position:center;min-height:120px}
+.mobile-dish-card .mdc-body{padding:13px;display:flex;flex-direction:column;gap:4px}
+.mobile-dish-card .mdc-name{font-family:var(--serif);font-size:15px;font-weight:500;color:var(--cream);line-height:1.1}
+.mobile-dish-card .mdc-desc{font-size:11.5px;color:rgba(248,241,227,.62);line-height:1.4;flex:1}
+.mobile-dish-card .mdc-price{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ocre)}
+/* Caché sur desktop */
+@media (min-width:901px){.mobile-dish-card{display:none!important}}
 </style>
 </head>
 <body>
@@ -1719,6 +1825,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
   requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('in')));
 
   /* ---- Reveal on scroll ---- */
+  const isMobile = window.innerWidth <= 600;
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if(e.isIntersecting){
@@ -1726,7 +1833,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
         io.unobserve(e.target);
       }
     });
-  }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  }, {threshold: isMobile ? 0.04 : 0.12, rootMargin: isMobile ? '0px 0px -2% 0px' : '0px 0px -8% 0px'});
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
   // auto-tag sections for reveal
   document.querySelectorAll('.section, .heritage, .menu-section, .story, .gallery, .infos, .resa')
@@ -1755,7 +1862,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
       requestAnimationFrame(tick);
       cio.unobserve(el);
     });
-  }, {threshold:.4});
+  }, {threshold: isMobile ? 0.15 : 0.4});
   counters.forEach(c => cio.observe(c));
 
   /* ---- Section active in nav ---- */
@@ -1859,6 +1966,33 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     });
   }
   document.querySelectorAll('.menu-row').forEach(bindRowPreview);
+
+  /* ---- Tap mobile → carte photo inline ---- */
+  if(isMobile){
+    document.querySelectorAll('.menu-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const existing = row.nextElementSibling;
+        if(existing && existing.classList.contains('mobile-dish-card')){
+          existing.classList.remove('open');
+          setTimeout(() => existing.remove(), 320);
+          return;
+        }
+        document.querySelectorAll('.mobile-dish-card').forEach(c => {
+          c.classList.remove('open');
+          setTimeout(() => c.remove(), 320);
+        });
+        const img = row.dataset.img || '';
+        const name = row.querySelector('.name').firstChild.textContent.trim();
+        const desc = row.dataset.desc || row.querySelector('.desc')?.textContent || '';
+        const price = row.querySelector('.price').textContent;
+        const card = document.createElement('div');
+        card.className = 'mobile-dish-card';
+        card.innerHTML = `<div class="mdc-img" style="background-image:url('${img}')"></div><div class="mdc-body"><span class="mdc-name">${name}</span><p class="mdc-desc">${desc}</p><span class="mdc-price">${price}</span></div>`;
+        row.after(card);
+        requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('open')));
+      });
+    });
+  }
 
   /* ---- Hours today highlight ---- */
   const today = new Date().getDay();
