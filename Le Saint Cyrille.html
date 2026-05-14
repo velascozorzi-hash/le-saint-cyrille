@@ -12,6 +12,73 @@
 
 <style>
 /* ============================================================
+   PASSWORD GATE
+   ============================================================ */
+#pw-screen{
+  position:fixed;inset:0;z-index:9999;
+  background:#F8F1E3;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans',system-ui,sans-serif;
+  transition:opacity .45s ease,transform .45s ease;
+}
+#pw-screen.pw-out{opacity:0;transform:scale(1.04);pointer-events:none}
+.pw-card{
+  width:100%;max-width:400px;
+  padding:56px 48px;
+  text-align:center;
+}
+.pw-logo{
+  display:flex;justify-content:center;margin-bottom:28px;
+}
+.pw-eyebrow{
+  font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:#C0562E;font-weight:500;margin:0 0 10px;
+}
+.pw-title{
+  font-family:'Fraunces','Times New Roman',serif;
+  font-size:32px;font-weight:500;font-style:italic;
+  color:#2A211A;margin:0 0 16px;letter-spacing:-.01em;
+}
+.pw-sub{
+  font-size:14px;color:#8B7355;line-height:1.6;
+  margin:0 0 36px;
+}
+.pw-form{display:flex;flex-direction:column;gap:0}
+.pw-field-wrap{
+  display:flex;align-items:center;
+  border:1.5px solid rgba(42,33,26,.18);
+  border-radius:12px;overflow:hidden;
+  background:#fff;
+  transition:border-color .25s;
+}
+.pw-field-wrap:focus-within{border-color:#C0562E}
+.pw-input{
+  flex:1;border:none;outline:none;
+  padding:14px 18px;
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:15px;color:#2A211A;background:transparent;
+}
+.pw-input::placeholder{color:#B8A89A}
+.pw-btn{
+  padding:0 18px;height:50px;
+  background:#C0562E;border:none;cursor:pointer;
+  color:#F8F1E3;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;flex-shrink:0;
+}
+.pw-btn:hover{background:#A8461F}
+.pw-error{
+  font-size:13px;color:#C0562E;margin:10px 0 0;
+  opacity:0;transition:opacity .25s;
+}
+.pw-error.visible{opacity:1}
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  20%,60%{transform:translateX(-6px)}
+  40%,80%{transform:translateX(6px)}
+}
+.pw-input.shake{animation:shake .45s ease}
+
+/* ============================================================
    TOKENS
    ============================================================ */
 :root{
@@ -1068,6 +1135,66 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
 </style>
 </head>
 <body>
+
+<!-- ============================================================
+     PASSWORD GATE
+     ============================================================ -->
+<div id="pw-screen" style="display:none">
+  <div class="pw-card">
+    <div class="pw-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="17" stroke="#C0562E" stroke-width="1.5"/>
+        <text x="18" y="23" text-anchor="middle" font-family="'Fraunces',serif" font-size="14" font-style="italic" fill="#2A211A">SC</text>
+      </svg>
+    </div>
+    <p class="pw-eyebrow">Aperçu client</p>
+    <h2 class="pw-title">Le Saint Cyrille</h2>
+    <p class="pw-sub">Ce site est une démo réservée. Entrez le code d'accès pour continuer.</p>
+    <form class="pw-form" id="pwForm" autocomplete="off">
+      <div class="pw-field-wrap">
+        <input
+          class="pw-input"
+          id="pwInput"
+          type="password"
+          placeholder="Code d'accès"
+          autocomplete="current-password"
+          autofocus
+        />
+        <button class="pw-btn" type="submit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <p class="pw-error" id="pwError">Code incorrect. Réessayez.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var el = document.getElementById('pw-screen');
+  if(sessionStorage.getItem('lsc_auth') === '1'){
+    el.remove();
+    return;
+  }
+  el.style.display = 'flex';
+  document.getElementById('pwForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var val = document.getElementById('pwInput').value;
+    if(val === 'code123'){
+      sessionStorage.setItem('lsc_auth','1');
+      el.classList.add('pw-out');
+      setTimeout(function(){ el.remove(); }, 500);
+    } else {
+      var err = document.getElementById('pwError');
+      err.classList.add('visible');
+      var inp = document.getElementById('pwInput');
+      inp.value = '';
+      inp.classList.add('shake');
+      setTimeout(function(){ inp.classList.remove('shake'); }, 500);
+    }
+  });
+})();
+</script>
 
 <div class="progress" id="progress"></div>
 
