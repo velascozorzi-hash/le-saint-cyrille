@@ -472,31 +472,45 @@ p{margin:0}
 .arrow-btn svg{width:18px;height:18px}
 
 .signature-track{
-  display:flex;gap:24px;
+  display:flex;gap:20px;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
-  padding:10px var(--gutter) 30px;
+  padding:20px var(--gutter) 100px;
   scrollbar-width:none;
+  align-items:flex-start;
 }
 .signature-track::-webkit-scrollbar{display:none}
 
 .sig-card{
-  flex:0 0 360px;
+  flex:0 0 320px;
   background:var(--cream-2);
   border-radius:var(--radius-card);
-  padding:20px;
+  padding:18px;
   scroll-snap-align:start;
-  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
   position:relative;
   border:1px solid rgba(42,33,26,.06);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
 }
-.sig-card:nth-child(2n){flex-basis:340px;margin-top:20px}
-.sig-card:nth-child(3n){flex-basis:380px;margin-top:-10px}
-.sig-card:hover{transform:translateY(-8px);box-shadow:0 26px 60px -20px rgba(42,33,26,.25)}
+
+/* Wave — décalages verticaux + rotations légères par carte */
+.sig-card:nth-child(1){margin-top:0;   transform:rotate(-1.2deg);flex-basis:310px}
+.sig-card:nth-child(2){margin-top:75px;transform:rotate(1.6deg); flex-basis:345px}
+.sig-card:nth-child(3){margin-top:15px;transform:rotate(-0.7deg);flex-basis:300px}
+.sig-card:nth-child(4){margin-top:95px;transform:rotate(1.1deg); flex-basis:355px}
+.sig-card:nth-child(5){margin-top:25px;transform:rotate(-1.5deg);flex-basis:330px}
+.sig-card:nth-child(6){margin-top:65px;transform:rotate(0.9deg); flex-basis:320px}
+
+/* Hover — conserve la rotation, ajoute le lift */
+.sig-card:nth-child(1):hover{transform:rotate(-1.2deg) translateY(-10px);box-shadow:0 28px 64px -20px rgba(42,33,26,.28)}
+.sig-card:nth-child(2):hover{transform:rotate(1.6deg)  translateY(-10px);box-shadow:0 28px 64px -20px rgba(42,33,26,.28)}
+.sig-card:nth-child(3):hover{transform:rotate(-0.7deg) translateY(-10px);box-shadow:0 28px 64px -20px rgba(42,33,26,.28)}
+.sig-card:nth-child(4):hover{transform:rotate(1.1deg)  translateY(-10px);box-shadow:0 28px 64px -20px rgba(42,33,26,.28)}
+.sig-card:nth-child(5):hover{transform:rotate(-1.5deg) translateY(-10px);box-shadow:0 28px 64px -20px rgba(42,33,26,.28)}
+.sig-card:nth-child(6):hover{transform:rotate(0.9deg)  translateY(-10px);box-shadow:0 28px 64px -20px rgba(42,33,26,.28)}
+
 .sig-card .img{
-  border-radius:16px;overflow:hidden;
-  aspect-ratio: 4/5;
+  border-radius:14px;overflow:hidden;
   background:#ccc center/cover no-repeat;
   position:relative;
 }
@@ -512,13 +526,13 @@ p{margin:0}
   transition:transform .8s var(--ease);
 }
 .sig-card:hover .img > div{transform:scale(1.06)}
-.sig-card .body{padding:18px 8px 8px}
-.sig-card h3{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:-.01em}
-.sig-card .desc{font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.55}
+.sig-card .body{padding:16px 6px 6px}
+.sig-card h3{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:-.01em}
+.sig-card .desc{font-size:13.5px;color:var(--ink-soft);margin-top:7px;line-height:1.55}
 .sig-card .num{
-  position:absolute;top:30px;right:30px;
-  font-family:var(--serif);font-style:italic;font-size:14px;color:var(--terracotta);
-  background:var(--cream);padding:4px 10px;border-radius:999px;
+  position:absolute;top:28px;right:28px;
+  font-family:var(--serif);font-style:italic;font-size:13px;color:var(--terracotta);
+  background:var(--cream);padding:3px 10px;border-radius:999px;
 }
 
 /* ============================================================
@@ -1366,7 +1380,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
 
   <div class="signature-track" id="sigTrack">
     <article class="sig-card">
-      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900&q=80')"></div></div>
+      <div class="img" style="aspect-ratio:3/4"><div style="background-image:url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900&q=80')"></div></div>
       <div class="body">
         <span class="num">— 01</span>
         <h3>Moussaka</h3>
@@ -1375,7 +1389,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     </article>
 
     <article class="sig-card">
-      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=900&q=80')"></div></div>
+      <div class="img" style="aspect-ratio:4/5"><div style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=900&q=80')"></div></div>
       <div class="body">
         <span class="num">— 02</span>
         <h3>Kochari</h3>
@@ -1384,7 +1398,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     </article>
 
     <article class="sig-card">
-      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=900&q=80')"></div></div>
+      <div class="img" style="aspect-ratio:1/1"><div style="background-image:url('https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=900&q=80')"></div></div>
       <div class="body">
         <span class="num">— 03</span>
         <h3>Assiette Égyptienne</h3>
@@ -1393,7 +1407,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     </article>
 
     <article class="sig-card">
-      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&q=80')"></div></div>
+      <div class="img" style="aspect-ratio:2/3"><div style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&q=80')"></div></div>
       <div class="body">
         <span class="num">— 04</span>
         <h3>Molokhia</h3>
@@ -1402,7 +1416,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     </article>
 
     <article class="sig-card">
-      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=900&q=80')"></div></div>
+      <div class="img" style="aspect-ratio:4/5"><div style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=900&q=80')"></div></div>
       <div class="body">
         <span class="num">— 05</span>
         <h3>Coquelet farci</h3>
@@ -1411,7 +1425,7 @@ footer{background:var(--olive);color:var(--cream);padding:80px 0 30px;border-top
     </article>
 
     <article class="sig-card">
-      <div class="img"><div style="background-image:url('https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=900&q=80')"></div></div>
+      <div class="img" style="aspect-ratio:3/4"><div style="background-image:url('https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=900&q=80')"></div></div>
       <div class="body">
         <span class="num">— 06</span>
         <h3>Mahchi</h3>
