@@ -1,0 +1,2542 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Saigon Hanoi — Cuisine vietnamienne, Paris 11e · Charonne</title>
+<meta name="description" content="Saigon Hanoi — Restaurant vietnamien familial, 168 bis rue de Charonne, Paris 11e. Phở, bún, bò bún, traiteur. Depuis trois décennies à Charonne." />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="restaurant.restaurant" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Saigon Hanoi — Cuisine vietnamienne, Paris 11e" />
+<meta property="og:description" content="Phở 12h, bò bún, bánh cuốn. Cuisine vietnamienne du Nord et du Sud, faite minute, depuis trois décennies rue de Charonne." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1200&q=85" />
+<meta property="og:url" content="https://open-xi-beige.vercel.app/saigon-hanoi.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#15201A" />
+
+<!-- JSON-LD structured data for Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Saigon Hanoi",
+  "alternateName": "Traiteur Phương Thảo",
+  "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1200&q=85",
+  "url": "https://open-xi-beige.vercel.app/saigon-hanoi.html",
+  "telephone": "+33143674241",
+  "priceRange": "€€",
+  "servesCuisine": ["Vietnamienne", "Asiatique"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "168 bis rue de Charonne",
+    "addressLocality": "Paris",
+    "postalCode": "75011",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.8533,
+    "longitude": 2.3919
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"11:30","closes":"15:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"18:30","closes":"22:30"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "246"
+  },
+  "acceptsReservations": true
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS — Saigon Hanoi
+   ============================================================ */
+:root{
+  --paper:#FAF6EC;
+  --paper-2:#F4EDD8;
+  --ink:#15201A;
+  --ink-soft:#3A4A42;
+  --jade:#1B3A2E;
+  --jade-soft:#7A9978;
+  --jade-deep:#0E2419;
+  --vermillion:#D2452A;
+  --vermillion-dark:#A8341E;
+  --gold:#C9A961;
+  --cream:#FFF8E7;
+  --line:rgba(21,32,26,.14);
+  --line-soft:rgba(21,32,26,.06);
+
+  --serif:'Cormorant Garamond','Times New Roman',serif;
+  --sans:'Be Vietnam Pro',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+
+  --maxw:1380px;
+  --gutter:clamp(22px,4.5vw,64px);
+  --radius:20px;
+  --ease:cubic-bezier(.16,.84,.44,1);
+  --ease-soft:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  line-height:1.6;
+  font-size:16px;
+  font-weight:400;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+::selection{background:var(--vermillion);color:var(--paper)}
+
+/* TYPOGRAPHY */
+.serif{font-family:var(--serif)}
+.italic{font-style:italic}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;margin:0;line-height:1.02;letter-spacing:-.015em;color:var(--ink)}
+h1{font-size:clamp(58px,11vw,180px);font-weight:500;letter-spacing:-.035em;line-height:.88}
+h2{font-size:clamp(38px,5.6vw,82px);letter-spacing:-.025em;font-weight:500}
+h3{font-size:clamp(22px,2.2vw,32px);letter-spacing:-.01em}
+p{margin:0}
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--vermillion);
+  display:inline-flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:"";width:36px;height:1px;background:currentColor;display:inline-block}
+.eyebrow.no-line::before{display:none}
+
+.chapter{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:14px;color:var(--vermillion);letter-spacing:.06em;
+}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:16px 28px;
+  border-radius:999px;
+  font-family:var(--sans);font-weight:500;font-size:14.5px;
+  letter-spacing:.01em;
+  position:relative;overflow:hidden;
+  transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+  will-change:transform;
+  cursor:pointer;
+}
+.btn .arrow{
+  width:24px;height:24px;border-radius:50%;
+  display:inline-grid;place-items:center;
+  background:rgba(255,255,255,.16);
+  transition:transform .4s var(--ease),background .35s var(--ease);
+}
+.btn .arrow svg{width:11px;height:11px}
+.btn-primary{background:var(--vermillion);color:var(--paper)}
+.btn-primary:hover{background:var(--vermillion-dark);transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(210,69,42,.5)}
+.btn-primary:hover .arrow{transform:translateX(4px)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--jade-deep);transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(21,32,26,.45)}
+.btn-ink:hover .arrow{transform:translateX(4px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink);transform:translateY(-2px)}
+.btn-ghost .arrow{background:rgba(21,32,26,.08)}
+.btn-paper{background:var(--paper);color:var(--ink)}
+.btn-paper:hover{background:var(--cream)}
+.btn:active{transform:scale(.97)!important;transition-duration:.1s!important}
+
+/* SHIMMER on primary CTA */
+@keyframes shimmer-sweep{0%{transform:translateX(-200%)}100%{transform:translateX(200%)}}
+.btn-primary::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);
+  transform:translateX(-200%);
+  animation:shimmer-sweep 3.6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* ============================================================
+   NAV — floating pill, no standard navbar
+   ============================================================ */
+.nav{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);
+  z-index:60;
+  display:flex;align-items:center;gap:0;
+  background:rgba(250,246,236,.85);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border:1px solid var(--line-soft);
+  border-radius:999px;
+  padding:8px 8px 8px 22px;
+  box-shadow:0 12px 40px -16px rgba(21,32,26,.18);
+  transition:padding .35s var(--ease);
+}
+.nav-brand{
+  display:flex;align-items:center;gap:10px;
+  margin-right:24px;
+}
+.nav-brand-mark{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--ink);color:var(--paper);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px;
+}
+.nav-brand-name{
+  font-family:var(--serif);font-weight:600;font-size:18px;
+  letter-spacing:-.005em;line-height:1;
+}
+.nav-brand-name small{
+  display:block;font-family:var(--sans);font-size:9px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--vermillion);
+  font-weight:500;margin-top:3px;
+}
+.nav-links{display:flex;gap:6px;align-items:center;margin-right:8px}
+.nav-links a{
+  font-size:13.5px;font-weight:400;
+  padding:9px 15px;border-radius:999px;
+  transition:background .25s var(--ease),color .25s var(--ease);
+  position:relative;
+}
+.nav-links a:hover{background:rgba(21,32,26,.06)}
+.nav-links a.active{background:var(--ink);color:var(--paper)}
+.nav-cta{
+  background:var(--vermillion);color:var(--paper);
+  padding:11px 20px;border-radius:999px;
+  font-size:13.5px;font-weight:500;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background .25s var(--ease),transform .25s var(--ease);
+}
+.nav-cta:hover{background:var(--vermillion-dark);transform:translateY(-1px)}
+.nav-cta svg{width:13px;height:13px}
+
+.burger{
+  display:none;width:38px;height:38px;border-radius:50%;
+  background:var(--ink);color:var(--paper);
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;
+}
+.burger span{width:14px;height:1.5px;background:currentColor;transition:transform .3s var(--ease),opacity .2s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(3px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-3px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;inset:0;background:var(--jade-deep);color:var(--paper);
+  z-index:55;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;
+  opacity:0;pointer-events:none;transition:opacity .4s var(--ease);
+  padding:80px var(--gutter);
+}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:var(--serif);font-size:36px;font-style:italic;font-weight:400;color:var(--paper)}
+.mobile-menu a.cta{
+  margin-top:18px;background:var(--vermillion);
+  padding:14px 28px;border-radius:999px;
+  font-family:var(--sans);font-style:normal;font-size:15px;font-weight:500;
+}
+
+@media (max-width:980px){
+  .nav-links{display:none}
+  .nav-brand{margin-right:auto}
+  .burger{display:inline-flex;margin-left:8px}
+  .nav{left:18px;right:18px;transform:none;padding:8px 8px 8px 18px}
+}
+
+/* SCROLL PROGRESS */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--vermillion);z-index:70;transition:width .12s linear}
+
+/* ============================================================
+   HERO — kinetic editorial typography (no-template)
+   ============================================================ */
+.hero{
+  position:relative;
+  padding:130px var(--gutter) 80px;
+  min-height:100dvh;
+  overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:var(--paper);
+}
+
+.hero-top{
+  display:flex;align-items:center;justify-content:space-between;gap:30px;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+  z-index:3;position:relative;
+}
+.hero-meta-row{
+  display:flex;align-items:center;gap:18px;
+  font-size:12.5px;color:var(--ink-soft);
+  letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+}
+.hero-meta-row .dot{width:6px;height:6px;border-radius:50%;background:var(--jade-soft);box-shadow:0 0 0 0 rgba(122,153,120,.5)}
+.hero-meta-row .live{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.hero-meta-row .vrt{width:1px;height:14px;background:var(--line)}
+
+.hero-kinetic{
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+}
+
+.hero-title-block{
+  position:relative;
+  z-index:2;
+}
+.hero-line{
+  display:block;overflow:hidden;line-height:.88;
+}
+.hero-line span{
+  display:inline-block;transform:translateY(110%);
+  transition:transform 1.1s var(--ease);
+}
+.hero.in .hero-line:nth-child(1) span{transform:translateY(0);transition-delay:.08s}
+.hero.in .hero-line:nth-child(2) span{transform:translateY(0);transition-delay:.22s}
+.hero-title{
+  font-size:clamp(72px,14.5vw,240px);
+  font-weight:500;
+  letter-spacing:-.045em;
+  line-height:.86;
+  font-family:var(--serif);
+}
+.hero-title .accent{color:var(--vermillion);font-style:italic;font-weight:500}
+.hero-title .diacritic{position:relative;display:inline-block}
+
+/* Right-side imagery sliver */
+.hero-imagery{
+  position:absolute;
+  top:18%;right:0;
+  width:clamp(220px,28vw,420px);
+  height:clamp(280px,42vw,560px);
+  border-radius:300px 300px 24px 24px;
+  overflow:hidden;
+  z-index:1;
+  background:#0e2419 url('https://images.unsplash.com/photo-1583932692577-1d3e1f3c2e02?w=1000&q=85') center/cover no-repeat;
+  box-shadow:0 30px 80px -30px rgba(21,32,26,.5);
+  opacity:0;
+  transform:translateY(40px) scale(.94);
+  transition:transform 1.4s var(--ease) .35s,opacity 1s var(--ease) .35s;
+}
+.hero.in .hero-imagery{opacity:1;transform:none}
+
+/* Watermark in background */
+.hero-watermark{
+  position:absolute;
+  bottom:6%;left:50%;
+  transform:translateX(-50%);
+  font-family:var(--serif);
+  font-size:clamp(80px,14vw,220px);
+  font-weight:400;font-style:italic;
+  color:var(--jade);
+  opacity:.05;
+  pointer-events:none;
+  z-index:0;
+  line-height:1;
+  white-space:nowrap;
+  letter-spacing:-.04em;
+}
+
+.hero-bottom{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:end;
+  margin-top:auto;
+  padding-top:60px;
+  z-index:3;position:relative;
+}
+
+.hero-lede{
+  max-width:480px;
+  font-size:18px;
+  color:var(--ink-soft);
+  line-height:1.55;
+  font-weight:300;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .9s var(--ease) .7s,transform .9s var(--ease) .7s;
+}
+.hero.in .hero-lede{opacity:1;transform:none}
+.hero-lede strong{font-weight:500;color:var(--ink)}
+
+.hero-actions{
+  display:flex;flex-direction:column;align-items:flex-end;gap:24px;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .9s var(--ease) .85s,transform .9s var(--ease) .85s;
+}
+.hero.in .hero-actions{opacity:1;transform:none}
+
+.hero-rating{
+  display:flex;align-items:center;gap:14px;
+  padding:10px 18px 10px 14px;
+  background:rgba(21,32,26,.04);
+  border:1px solid var(--line-soft);
+  border-radius:999px;
+  font-size:13px;
+}
+.hero-rating .stars{display:flex;gap:1px;color:var(--gold);font-size:14px}
+.hero-rating .num{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);line-height:1}
+.hero-rating .who{font-size:11px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase}
+.hero-rating .glogo{
+  width:22px;height:22px;border-radius:50%;
+  background:conic-gradient(from 0deg,#EA4335 0 25%,#FBBC05 25% 50%,#34A853 50% 75%,#4285F4 75% 100%);
+}
+
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+
+@media (max-width:900px){
+  .hero{padding-top:110px;min-height:auto}
+  .hero-bottom{grid-template-columns:1fr;gap:32px;align-items:start}
+  .hero-actions{align-items:flex-start}
+  .hero-rating{align-self:flex-start}
+  .hero-imagery{
+    position:relative;top:auto;right:auto;
+    width:100%;height:340px;margin-top:30px;
+    border-radius:240px 240px 20px 20px;
+  }
+  .hero-kinetic{order:0}
+  .hero-imagery{order:1}
+}
+
+/* FLOATING badges on hero */
+.hero-badge{
+  position:absolute;
+  background:var(--paper);
+  border-radius:18px;
+  padding:14px 18px;
+  display:inline-flex;align-items:center;gap:12px;
+  box-shadow:0 16px 36px -12px rgba(21,32,26,.25);
+  font-size:13px;font-weight:500;
+  z-index:4;
+  opacity:0;transform:translateY(16px) scale(.92);
+  transition:opacity .7s var(--ease),transform .9s var(--ease);
+}
+.hero.in .hero-badge{opacity:1;transform:none}
+.hero.in .hero-badge.b1{transition-delay:1.1s}
+.hero.in .hero-badge.b2{transition-delay:1.3s}
+
+.badge-phở{
+  top:30%;right:30%;
+  background:var(--vermillion);color:var(--paper);
+  font-family:var(--serif);font-style:italic;font-size:18px;font-weight:500;
+  padding:14px 22px;border-radius:999px;
+  transform:rotate(-6deg) translateY(16px) scale(.92);
+}
+.hero.in .badge-phở{transform:rotate(-6deg)}
+.hero.in .badge-phở:hover{transform:rotate(-6deg) translateY(-4px)}
+
+.badge-since{
+  bottom:24%;right:8%;
+  background:var(--ink);color:var(--paper);
+  flex-direction:column;align-items:flex-start;gap:2px;
+  padding:14px 18px;
+  transform:rotate(4deg) translateY(16px) scale(.92);
+}
+.badge-since strong{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1;color:var(--gold)}
+.badge-since small{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(250,246,236,.65)}
+.hero.in .badge-since{transform:rotate(4deg)}
+
+/* Perpetual float */
+@keyframes float-a{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-6deg) translateY(-10px)}}
+@keyframes float-b{0%,100%{transform:rotate(4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-9px)}}
+.hero.in .badge-phở{animation:float-a 4.2s var(--ease-soft) infinite}
+.hero.in .badge-since{animation:float-b 4.8s var(--ease-soft) .8s infinite}
+
+@media (max-width:900px){
+  .badge-phở,.badge-since{display:none}
+}
+
+/* Pulse on live dot */
+@keyframes pulse-live{0%{box-shadow:0 0 0 0 rgba(122,153,120,.55)}70%{box-shadow:0 0 0 8px rgba(122,153,120,0)}100%{box-shadow:0 0 0 0 rgba(122,153,120,0)}}
+.hero-meta-row.live-on .dot{animation:pulse-live 2s ease-out infinite}
+
+/* ============================================================
+   MARQUEE — kinetic band with Vietnamese ↔ French
+   ============================================================ */
+.marquee-band{
+  background:var(--jade-deep);color:var(--paper);
+  padding:18px 0;overflow:hidden;
+  border-top:1px solid var(--line-soft);
+}
+.marquee-track{
+  display:flex;white-space:nowrap;flex-shrink:0;
+  animation:marquee-scroll 38s linear infinite;
+}
+.marquee-band:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{
+  display:inline-flex;align-items:center;gap:22px;padding:0 32px;
+  font-family:var(--serif);font-size:clamp(16px,1.4vw,22px);
+  color:rgba(250,246,236,.78);
+  font-weight:400;
+}
+.marquee-item .vt{font-style:italic;color:var(--gold)}
+.marquee-item .sep{width:4px;height:4px;border-radius:50%;background:var(--vermillion);flex-shrink:0}
+
+/* ============================================================
+   DEUX VILLES — narrative split (no-template)
+   ============================================================ */
+.cities{
+  padding:140px 0 100px;
+  position:relative;
+}
+.cities .container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.cities-intro{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:80px;
+  margin-bottom:80px;
+  align-items:end;
+}
+.cities-intro h2{
+  font-size:clamp(46px,7vw,108px);
+  font-weight:500;
+  letter-spacing:-.035em;
+  line-height:.96;
+}
+.cities-intro h2 em{font-style:italic;color:var(--vermillion);font-weight:500}
+.cities-intro h2 .strike{
+  text-decoration:line-through;
+  text-decoration-thickness:2px;
+  text-decoration-color:var(--vermillion);
+  color:var(--ink-soft);
+}
+.cities-intro p{
+  font-size:17px;color:var(--ink-soft);line-height:1.55;
+  max-width:380px;font-weight:300;
+}
+
+.city-card{
+  position:relative;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--cream);
+  padding:36px 36px 32px;
+  display:flex;flex-direction:column;gap:18px;
+  border:1px solid var(--line-soft);
+  transition:transform .6s var(--ease),box-shadow .6s var(--ease);
+}
+.city-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -18px rgba(21,32,26,.2)}
+.city-tag{
+  font-family:var(--sans);font-size:10.5px;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--vermillion);font-weight:600;
+}
+.city-name{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(54px,7vw,96px);line-height:.88;letter-spacing:-.025em;
+  color:var(--ink);
+}
+.city-name small{
+  display:block;font-style:normal;font-family:var(--sans);
+  font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-soft);margin-top:14px;font-weight:500;
+}
+.city-image{
+  height:280px;
+  border-radius:14px;overflow:hidden;
+  background:#0e2419 center/cover no-repeat;
+  margin:6px -2px 0;
+  position:relative;
+}
+.city-image::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(14,36,25,.4) 100%);
+}
+.city-desc{font-size:15px;color:var(--ink-soft);line-height:1.6}
+.city-dish{
+  font-family:var(--serif);font-style:italic;font-size:18px;color:var(--vermillion);
+  margin-top:6px;
+}
+
+@media (max-width:900px){
+  .cities .container{grid-template-columns:1fr;gap:30px}
+  .cities-intro{grid-template-columns:1fr;gap:24px;margin-bottom:50px}
+}
+
+/* ============================================================
+   PHỞ — editorial spread (signature dish hero treatment)
+   ============================================================ */
+.pho{
+  background:var(--jade-deep);color:var(--paper);
+  padding:140px 0;
+  position:relative;overflow:hidden;
+}
+.pho::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(800px 500px at 90% 10%,rgba(201,169,97,.08),transparent 60%),
+    radial-gradient(600px 400px at 0% 90%,rgba(210,69,42,.10),transparent 60%);
+  pointer-events:none;
+}
+.pho-watermark{
+  position:absolute;
+  top:50%;left:-2%;transform:translateY(-50%);
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(280px,38vw,520px);
+  font-weight:400;
+  color:rgba(201,169,97,.06);
+  pointer-events:none;line-height:.85;letter-spacing:-.04em;
+  z-index:0;
+}
+.pho .container{
+  display:grid;
+  grid-template-columns:1fr 1.05fr;
+  gap:80px;
+  align-items:center;
+  position:relative;z-index:1;
+}
+.pho-text{}
+.pho-text h2{
+  color:var(--paper);
+  font-size:clamp(48px,6.5vw,108px);
+  letter-spacing:-.03em;font-weight:500;
+  line-height:.94;
+}
+.pho-text h2 em{font-style:italic;color:var(--gold);font-weight:500}
+.pho-eyebrow{margin-bottom:28px;color:var(--gold)}
+.pho-eyebrow::before{background:var(--gold)}
+.pho-lede{
+  margin-top:28px;font-size:18px;color:rgba(250,246,236,.78);
+  line-height:1.6;max-width:440px;font-weight:300;
+}
+.pho-quote{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:24px;line-height:1.4;margin-top:36px;
+  color:var(--gold);
+  padding-left:24px;border-left:1px solid rgba(201,169,97,.4);
+  max-width:480px;
+}
+.pho-quote small{
+  display:block;margin-top:14px;font-family:var(--sans);font-style:normal;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(250,246,236,.6);font-weight:500;
+}
+
+.pho-visual{
+  position:relative;
+  height:560px;
+}
+.pho-photo{
+  position:absolute;inset:0;
+  border-radius:24px;
+  overflow:hidden;
+  background:#0e2419 url('https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1200&q=85') center/cover no-repeat;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.5);
+  transform:scale(.95);
+  opacity:0;
+  transition:transform 1.2s var(--ease) .2s,opacity 1s var(--ease) .2s;
+}
+.pho.in .pho-photo{transform:scale(1);opacity:1}
+
+.pho-stats{
+  position:absolute;
+  bottom:-32px;left:24px;right:24px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  background:var(--paper);color:var(--ink);
+  border-radius:14px;
+  padding:22px 18px;
+  box-shadow:0 20px 50px -18px rgba(0,0,0,.5);
+}
+.pho-stat{display:flex;flex-direction:column;gap:4px;padding:0 14px}
+.pho-stat + .pho-stat{border-left:1px solid var(--line)}
+.pho-stat .val{
+  font-family:var(--serif);font-weight:500;font-size:28px;line-height:1;
+  color:var(--vermillion);font-style:italic;
+}
+.pho-stat .lbl{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+
+@media (max-width:900px){
+  .pho{padding:90px 0 70px}
+  .pho .container{grid-template-columns:1fr;gap:50px}
+  .pho-visual{height:380px}
+  .pho-stats{position:relative;bottom:auto;left:auto;right:auto;margin-top:20px}
+}
+
+/* ============================================================
+   LA CARTE — editorial menu (chapters not tabs)
+   ============================================================ */
+.carte{
+  padding:140px 0 100px;
+  position:relative;
+}
+.carte-head{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end;
+  margin-bottom:80px;
+}
+.carte-head h2{
+  font-size:clamp(46px,6.4vw,100px);
+  font-weight:500;letter-spacing:-.03em;
+  line-height:.94;
+}
+.carte-head h2 em{font-style:italic;color:var(--vermillion);font-weight:500}
+.carte-head p{max-width:380px;font-size:16px;color:var(--ink-soft);line-height:1.6;font-weight:300}
+
+.carte-filters{
+  display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;
+}
+.filter-pill{
+  padding:8px 16px;border-radius:999px;
+  background:var(--paper);border:1px solid var(--line);
+  font-size:12.5px;color:var(--ink-soft);font-weight:500;
+  letter-spacing:.04em;cursor:pointer;
+  transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+}
+.filter-pill:hover{border-color:var(--ink)}
+.filter-pill.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.filter-pill .icon{display:inline-block;margin-right:6px}
+
+.carte-grid{
+  display:grid;
+  grid-template-columns:280px 1fr 360px;
+  gap:60px;
+  align-items:start;
+}
+
+/* sticky chapters nav */
+.carte-chapters{
+  position:sticky;top:120px;
+  display:flex;flex-direction:column;gap:2px;
+}
+.chapter-link{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 0;
+  font-family:var(--serif);font-size:22px;font-style:italic;font-weight:400;
+  color:var(--ink-soft);
+  border-bottom:1px solid var(--line-soft);
+  transition:color .25s var(--ease),padding .35s var(--ease);
+  cursor:pointer;text-align:left;width:100%;
+}
+.chapter-link .num{
+  font-family:var(--sans);font-style:normal;font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--vermillion);
+  font-weight:500;width:24px;flex-shrink:0;
+}
+.chapter-link:hover,.chapter-link.active{color:var(--ink);padding-left:8px}
+.chapter-link.active .num{color:var(--vermillion)}
+
+/* menu rows */
+.carte-rows{display:flex;flex-direction:column;gap:0}
+.menu-chapter{display:none}
+.menu-chapter.active{display:flex;flex-direction:column;gap:0}
+
+.menu-row{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  align-items:baseline;gap:14px;
+  padding:22px 0;
+  border-bottom:1px solid var(--line-soft);
+  cursor:default;
+  position:relative;
+}
+.menu-row:last-child{border-bottom:0}
+.menu-row .meta{display:flex;flex-direction:column;gap:6px}
+.menu-row .vt{
+  font-family:var(--serif);font-style:italic;font-size:14px;color:var(--vermillion);
+  letter-spacing:.02em;
+  opacity:0;height:0;overflow:hidden;
+  transition:opacity .3s var(--ease),height .3s var(--ease);
+}
+.menu-row:hover .vt{opacity:1;height:auto}
+.menu-row .name{
+  font-family:var(--serif);font-size:23px;font-weight:500;
+  letter-spacing:-.01em;line-height:1.2;
+}
+.menu-row .name .veg{
+  display:inline-block;width:8px;height:8px;border-radius:50%;
+  background:var(--jade-soft);margin-left:8px;vertical-align:middle;
+}
+.menu-row .desc{font-size:14px;color:var(--ink-soft);line-height:1.5;max-width:520px}
+.menu-row .dots{
+  height:1px;background-image:radial-gradient(circle,var(--line) 1px,transparent 1px);
+  background-size:6px 1px;background-repeat:repeat-x;background-position:0 bottom;
+  align-self:end;margin-bottom:8px;
+}
+.menu-row .price{
+  font-family:var(--mono);font-size:14.5px;font-weight:500;
+  color:var(--ink);letter-spacing:.01em;
+  white-space:nowrap;
+}
+
+/* cascade animation on chapter switch */
+@keyframes row-cascade{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.menu-chapter.active .menu-row{animation:row-cascade .45s var(--ease) both}
+.menu-chapter.active .menu-row:nth-child(1){animation-delay:.02s}
+.menu-chapter.active .menu-row:nth-child(2){animation-delay:.05s}
+.menu-chapter.active .menu-row:nth-child(3){animation-delay:.08s}
+.menu-chapter.active .menu-row:nth-child(4){animation-delay:.11s}
+.menu-chapter.active .menu-row:nth-child(5){animation-delay:.14s}
+.menu-chapter.active .menu-row:nth-child(6){animation-delay:.17s}
+.menu-chapter.active .menu-row:nth-child(7){animation-delay:.20s}
+.menu-chapter.active .menu-row:nth-child(8){animation-delay:.23s}
+.menu-chapter.active .menu-row:nth-child(9){animation-delay:.26s}
+.menu-chapter.active .menu-row:nth-child(10){animation-delay:.29s}
+.menu-chapter.active .menu-row:nth-child(11){animation-delay:.32s}
+.menu-chapter.active .menu-row:nth-child(12){animation-delay:.35s}
+
+/* preview panel */
+.carte-preview{
+  position:sticky;top:120px;
+  background:var(--cream);border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line-soft);
+  display:flex;flex-direction:column;
+}
+.preview-img{
+  height:280px;
+  background:var(--paper-2) center/cover no-repeat;
+  transition:background-image .4s ease;
+  position:relative;
+}
+.preview-img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 60%,rgba(21,32,26,.25) 100%);
+}
+.preview-body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px}
+.preview-tag{
+  font-family:var(--sans);font-size:10.5px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--vermillion);font-weight:600;
+}
+.preview-name{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.15;letter-spacing:-.01em}
+.preview-vt{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--jade-soft)}
+.preview-desc{font-size:14px;color:var(--ink-soft);line-height:1.55}
+.preview-price{
+  font-family:var(--mono);font-size:18px;font-weight:600;color:var(--vermillion);
+  margin-top:6px;
+}
+
+@media (max-width:1100px){
+  .carte-grid{grid-template-columns:240px 1fr;gap:40px}
+  .carte-preview{display:none}
+}
+@media (max-width:760px){
+  .carte-head{grid-template-columns:1fr;gap:24px}
+  .carte-grid{grid-template-columns:1fr;gap:30px}
+  .carte-chapters{position:relative;top:auto;flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:6px}
+  .chapter-link{padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:14px;white-space:nowrap}
+  .chapter-link.active{background:var(--ink);color:var(--paper);border-color:var(--ink);padding-left:16px}
+  .chapter-link .num{display:none}
+  .menu-row{grid-template-columns:1fr auto;gap:8px}
+  .menu-row .dots{display:none}
+  .menu-row .vt{opacity:1;height:auto}
+}
+
+/* ============================================================
+   SERVICES — bento-style cards
+   ============================================================ */
+.services{
+  padding:130px 0 100px;
+  background:var(--paper-2);
+  position:relative;
+}
+.services-head{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end;margin-bottom:70px;
+}
+.services-head h2{
+  font-size:clamp(40px,5.5vw,84px);letter-spacing:-.025em;
+}
+.services-head h2 em{font-style:italic;color:var(--vermillion);font-weight:500}
+.services-head p{max-width:380px;font-size:16px;color:var(--ink-soft);line-height:1.6;font-weight:300}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:18px;
+  grid-template-areas:
+    "salle traiteur emporter"
+    "salle livraison emporter";
+}
+.service-card{
+  background:var(--paper);
+  border-radius:var(--radius);
+  padding:32px 30px;
+  border:1px solid var(--line-soft);
+  display:flex;flex-direction:column;gap:14px;
+  position:relative;overflow:hidden;
+  transition:transform .55s var(--ease),box-shadow .55s var(--ease);
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -18px rgba(21,32,26,.2)}
+.service-card.large{grid-area:salle;padding:0;background:var(--ink);color:var(--paper);min-height:480px;justify-content:flex-end}
+.service-card.tall{grid-area:emporter;padding:32px 28px;background:var(--jade);color:var(--paper)}
+.service-card.short.traiteur{grid-area:traiteur}
+.service-card.short.livraison{grid-area:livraison;background:var(--vermillion);color:var(--paper)}
+
+.service-card .icon{
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(21,32,26,.06);
+  margin-bottom:6px;
+}
+.service-card.tall .icon,.service-card.large .icon,.service-card.short.livraison .icon{background:rgba(250,246,236,.12)}
+.service-card .icon svg{width:18px;height:18px}
+.service-card h3{font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:-.01em}
+.service-card.large h3,.service-card.tall h3,.service-card.short.livraison h3{color:var(--paper)}
+.service-card.large h3{font-size:38px}
+.service-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+.service-card.large p,.service-card.tall p,.service-card.short.livraison p{color:rgba(250,246,236,.78)}
+.service-card.large{
+  background-image:linear-gradient(180deg,rgba(21,32,26,.2) 0%,rgba(21,32,26,.85) 70%,rgba(21,32,26,.95)),
+    url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85');
+  background-size:cover;background-position:center;
+}
+.service-card.large .body{padding:32px 32px 32px}
+.service-card .more{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:auto;padding-top:14px;
+  font-size:13px;font-weight:500;letter-spacing:.04em;
+  color:inherit;
+}
+.service-card .more svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.service-card:hover .more svg{transform:translateX(4px)}
+
+@media (max-width:900px){
+  .services-head{grid-template-columns:1fr;gap:24px}
+  .services-grid{grid-template-columns:1fr;grid-template-areas:"salle" "traiteur" "emporter" "livraison"}
+  .service-card.large{min-height:360px}
+}
+
+/* ============================================================
+   COIN DE LA MAISON — infos + map + resa combinés
+   ============================================================ */
+.coin{
+  padding:140px 0 120px;
+  position:relative;
+}
+.coin-head{
+  margin-bottom:70px;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;
+}
+.coin-head h2{font-size:clamp(46px,6.4vw,100px);letter-spacing:-.03em;line-height:.94}
+.coin-head h2 em{font-style:italic;color:var(--vermillion);font-weight:500}
+.coin-head p{max-width:380px;font-size:16px;color:var(--ink-soft);line-height:1.6;font-weight:300}
+
+.coin-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:30px;
+}
+
+/* Hours card */
+.hours-card{
+  background:var(--cream);border:1px solid var(--line-soft);
+  border-radius:var(--radius);padding:36px 38px;
+}
+.hours-card h3{font-family:var(--serif);font-size:24px;margin-bottom:4px;font-weight:500}
+.hours-card .sub{font-size:13px;color:var(--ink-soft);margin-bottom:24px}
+.hours-list{display:flex;flex-direction:column;gap:0}
+.hours-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:16px;
+  padding:14px 0;align-items:center;
+  border-bottom:1px solid var(--line-soft);
+  transition:padding-left .35s var(--ease),background .35s var(--ease);
+  font-size:14.5px;
+}
+.hours-row:last-child{border-bottom:0}
+.hours-row .day{
+  display:flex;align-items:center;gap:10px;
+  font-weight:500;color:var(--ink);
+}
+.hours-row .dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--line);
+}
+.hours-row .time{
+  font-family:var(--mono);font-size:13px;color:var(--ink-soft);letter-spacing:.02em;
+  font-weight:400;
+}
+.hours-row .closed{
+  font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--vermillion);font-weight:600;
+}
+.hours-row.today{
+  background:rgba(21,32,26,.04);
+  border-radius:10px;padding:14px 16px;margin:0 -16px;
+}
+.hours-row.today .dot{background:var(--jade-soft);animation:pulse-live 2s ease-out infinite}
+.hours-row.today .day{font-family:var(--serif);font-style:italic;color:var(--vermillion);font-size:16px}
+
+/* Map card */
+.map-card{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  background:var(--ink);min-height:420px;
+  border:1px solid var(--line-soft);
+}
+.map-iframe{
+  position:absolute;inset:0;width:100%;height:100%;
+  border:0;filter:grayscale(.4) contrast(1.05);
+}
+.map-overlay{
+  position:absolute;top:24px;left:24px;right:24px;
+  background:rgba(250,246,236,.95);
+  backdrop-filter:blur(8px);
+  border-radius:14px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:8px;
+  box-shadow:0 18px 40px -16px rgba(21,32,26,.3);
+  z-index:2;
+}
+.map-overlay .addr-line-1{font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2}
+.map-overlay .addr-line-2{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em}
+.map-overlay .metro{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11.5px;color:var(--vermillion);font-weight:500;
+  margin-top:6px;letter-spacing:.04em;
+}
+.map-overlay .metro::before{
+  content:"";width:14px;height:14px;border-radius:50%;
+  background:#0066A1;color:white;
+  font-family:var(--sans);font-size:9px;font-weight:700;
+  display:inline-grid;place-items:center;
+}
+.map-cta{
+  position:absolute;bottom:24px;left:24px;right:24px;
+  display:flex;gap:10px;
+}
+
+/* Resa widget */
+.resa-card{
+  grid-column:1 / -1;
+  background:var(--ink);color:var(--paper);
+  border-radius:var(--radius);padding:50px;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:50px;
+  align-items:center;
+  position:relative;overflow:hidden;
+}
+.resa-card::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 400px at 110% 50%,rgba(210,69,42,.18),transparent 60%);
+  pointer-events:none;
+}
+.resa-card h3{
+  font-family:var(--serif);font-size:clamp(28px,3.5vw,46px);
+  font-weight:500;letter-spacing:-.02em;color:var(--paper);line-height:1.05;
+  position:relative;z-index:1;
+}
+.resa-card h3 em{font-style:italic;color:var(--gold)}
+.resa-card .sub{
+  margin-top:14px;font-size:15px;color:rgba(250,246,236,.75);max-width:380px;line-height:1.55;
+  position:relative;z-index:1;
+}
+.resa-form{
+  display:flex;flex-direction:column;gap:14px;
+  position:relative;z-index:1;
+}
+.resa-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.resa-field{
+  background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.14);
+  border-radius:14px;padding:13px 16px;cursor:pointer;
+  transition:background .25s var(--ease),border-color .25s var(--ease);
+}
+.resa-field:hover{background:rgba(250,246,236,.12);border-color:rgba(250,246,236,.3)}
+.resa-field label{
+  display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(250,246,236,.5);margin-bottom:5px;font-weight:600;
+}
+.resa-field .v{
+  font-family:var(--serif);font-size:18px;color:var(--paper);font-style:italic;
+  display:flex;align-items:center;gap:6px;
+}
+.resa-field .v svg{width:11px;height:11px;opacity:.6}
+.resa-card .btn{align-self:flex-start}
+
+@media (max-width:900px){
+  .coin-head{grid-template-columns:1fr;gap:24px}
+  .coin-grid{grid-template-columns:1fr}
+  .resa-card{grid-template-columns:1fr;padding:32px;gap:30px}
+  .resa-fields{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   AVIS — testimonial conversation (no carousel)
+   ============================================================ */
+.avis{
+  padding:120px 0 100px;
+  background:var(--paper-2);position:relative;
+}
+.avis-head{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end;
+  margin-bottom:70px;
+}
+.avis-head h2{font-size:clamp(40px,5.5vw,80px);letter-spacing:-.025em;line-height:.96}
+.avis-head h2 em{font-style:italic;color:var(--vermillion);font-weight:500}
+.avis-rating{
+  display:flex;align-items:flex-end;gap:24px;
+  padding:24px 30px;
+  background:var(--paper);border-radius:18px;
+  border:1px solid var(--line-soft);
+  min-width:280px;
+}
+.avis-rating .big{
+  font-family:var(--serif);font-style:italic;
+  font-size:64px;font-weight:500;line-height:.85;color:var(--vermillion);
+}
+.avis-rating .meta{display:flex;flex-direction:column;gap:5px}
+.avis-rating .stars{color:var(--gold);font-size:15px;letter-spacing:1px}
+.avis-rating .meta small{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+
+.avis-thread{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  align-items:start;
+}
+.avis-card{
+  background:var(--paper);border-radius:18px;padding:26px 28px;
+  border:1px solid var(--line-soft);
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease);
+}
+.avis-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -16px rgba(21,32,26,.18)}
+.avis-card:nth-child(2){margin-top:36px}
+.avis-card:nth-child(3){margin-top:18px}
+.avis-card .stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+.avis-card .quote{
+  font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.45;color:var(--ink);
+  font-weight:400;
+}
+.avis-card .person{
+  display:flex;align-items:center;gap:12px;
+  padding-top:14px;border-top:1px solid var(--line-soft);
+}
+.avis-card .av{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--vermillion);color:var(--paper);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-style:italic;font-weight:500;font-size:15px;
+  flex-shrink:0;
+}
+.avis-card .who{display:flex;flex-direction:column;gap:1px}
+.avis-card .who strong{font-size:14px;font-weight:500}
+.avis-card .who small{font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em}
+
+@media (max-width:900px){
+  .avis-head{grid-template-columns:1fr;gap:24px}
+  .avis-thread{grid-template-columns:1fr;gap:14px}
+  .avis-card:nth-child(2),.avis-card:nth-child(3){margin-top:0}
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  background:var(--jade-deep);color:var(--paper);
+  padding:90px var(--gutter) 28px;position:relative;overflow:hidden;
+}
+footer::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 400px at 90% 100%,rgba(201,169,97,.06),transparent 60%);
+  pointer-events:none;
+}
+.foot{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;
+  position:relative;z-index:1;
+}
+.foot-brand{display:flex;flex-direction:column;gap:18px}
+.foot-brand .brand{display:flex;align-items:center;gap:12px}
+.foot-brand .brand-mark{width:38px;height:38px;border-radius:50%;background:var(--vermillion);color:var(--paper);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-weight:600;font-size:20px}
+.foot-brand .brand-name{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1}
+.foot-brand .brand-name small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:4px;font-weight:500}
+.foot-brand p{font-size:14.5px;color:rgba(250,246,236,.65);line-height:1.55;max-width:340px}
+.foot-socials{display:flex;gap:10px;margin-top:6px}
+.foot-socials a{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(250,246,236,.18);
+  display:grid;place-items:center;
+  transition:background .25s var(--ease),border-color .25s var(--ease);
+}
+.foot-socials a:hover{background:var(--vermillion);border-color:var(--vermillion)}
+.foot-socials svg{width:14px;height:14px}
+
+.foot-col h4{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:14px;color:rgba(250,246,236,.68);margin-bottom:8px;line-height:1.5;transition:color .25s var(--ease)}
+.foot-col a:hover{color:var(--paper)}
+
+.foot-bot{
+  max-width:var(--maxw);margin:60px auto 0;padding-top:24px;
+  border-top:1px solid rgba(250,246,236,.1);
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:11.5px;color:rgba(250,246,236,.45);letter-spacing:.04em;
+  position:relative;z-index:1;
+}
+.foot-bot a{color:rgba(250,246,236,.55);transition:color .25s var(--ease)}
+.foot-bot a:hover{color:var(--paper)}
+
+@media (max-width:900px){
+  .foot{grid-template-columns:1fr 1fr;gap:40px}
+  .foot-brand{grid-column:1 / -1}
+}
+@media (max-width:560px){
+  .foot{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   REVEAL animations
+   ============================================================ */
+.reveal{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .95s var(--ease),transform .95s var(--ease);
+}
+.reveal.in{opacity:1;transform:none}
+
+.reveal-stagger > *{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .85s var(--ease),transform .85s var(--ease);
+}
+.reveal-stagger.in > *:nth-child(1){opacity:1;transform:none;transition-delay:.06s}
+.reveal-stagger.in > *:nth-child(2){opacity:1;transform:none;transition-delay:.16s}
+.reveal-stagger.in > *:nth-child(3){opacity:1;transform:none;transition-delay:.26s}
+.reveal-stagger.in > *:nth-child(4){opacity:1;transform:none;transition-delay:.36s}
+
+/* ============================================================
+   TWEAK 1 — Typewriter cursor
+   ============================================================ */
+@keyframes tw-blink{0%,100%{opacity:1}49%{opacity:1}50%{opacity:0}}
+.tw-cursor{display:inline-block;width:2px;height:.82em;background:var(--vermillion);margin-left:3px;vertical-align:middle;animation:tw-blink 1.1s step-start infinite;flex-shrink:0}
+
+/* ============================================================
+   TWEAK 2 — Magnetic CTA + tactile press already on .btn:active
+   (magnetic is JS-driven; CSS just preps the transition)
+   ============================================================ */
+.btn-magnetic{will-change:transform;transition:transform .35s cubic-bezier(.16,.84,.44,1),background .35s var(--ease),box-shadow .35s var(--ease)}
+.btn-magnetic .arrow{transition:transform .35s cubic-bezier(.16,.84,.44,1) !important}
+
+/* ============================================================
+   TWEAK 3 — Scale-on-scroll hero title (CSS prep)
+   ============================================================ */
+.hero-title-block{transform-origin:left top;will-change:transform,opacity}
+
+/* ============================================================
+   TWEAK 4 — Marquee items clickable + highlight on target
+   ============================================================ */
+.marquee-item{cursor:pointer;transition:color .25s var(--ease)}
+.marquee-item:hover{color:var(--gold)}
+@keyframes row-flash{
+  0%{background:transparent}
+  20%{background:rgba(210,69,42,.18)}
+  100%{background:transparent}
+}
+.menu-row.flash{animation:row-flash 2s ease-out}
+.menu-row.flash .name{color:var(--vermillion)}
+
+/* ============================================================
+   TWEAK 5 — Phở massive stats (cinematic typography)
+   ============================================================ */
+.pho-mega-stats{
+  margin-top:80px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid rgba(201,169,97,.18);
+  border-bottom:1px solid rgba(201,169,97,.18);
+  padding:50px 0;
+  position:relative;z-index:1;
+}
+.pho-mega-stats .pho-mega{
+  display:flex;flex-direction:column;gap:14px;
+  padding:0 30px;text-align:left;
+  position:relative;
+}
+.pho-mega-stats .pho-mega + .pho-mega{border-left:1px solid rgba(201,169,97,.18)}
+.pho-mega .val{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(64px,9vw,140px);
+  line-height:.88;letter-spacing:-.035em;
+  color:var(--gold);
+  display:flex;align-items:baseline;gap:6px;
+}
+.pho-mega .val .unit{
+  font-family:var(--serif);font-style:normal;font-weight:400;
+  font-size:.32em;color:rgba(250,246,236,.55);letter-spacing:.04em;
+}
+.pho-mega .lbl{
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(250,246,236,.6);font-weight:500;
+}
+.pho-mega .sub{font-size:14px;color:rgba(250,246,236,.55);line-height:1.5;max-width:240px;font-style:italic;font-family:var(--serif)}
+
+/* hide the old small stats overlay since we replace it */
+.pho-stats{display:none !important}
+
+@media (max-width:760px){
+  .pho-mega-stats{grid-template-columns:1fr;border-bottom:0;padding:40px 0 20px}
+  .pho-mega-stats .pho-mega + .pho-mega{border-left:0;border-top:1px solid rgba(201,169,97,.18);padding-top:40px;margin-top:20px}
+}
+
+/* ============================================================
+   TWEAK 6 — Nord/Sud toggle interactive
+   ============================================================ */
+.cities-toggle{
+  display:inline-flex;align-items:center;gap:0;
+  margin-top:24px;padding:5px;
+  background:var(--cream);border:1px solid var(--line);
+  border-radius:999px;
+  position:relative;
+  font-size:12.5px;
+}
+.cities-toggle button{
+  padding:9px 18px;border-radius:999px;
+  font-family:var(--sans);font-weight:500;letter-spacing:.04em;
+  color:var(--ink-soft);position:relative;z-index:2;
+  transition:color .35s var(--ease);
+  cursor:pointer;
+}
+.cities-toggle button .vt{font-family:var(--serif);font-style:italic;margin-right:6px;color:var(--vermillion);font-weight:500}
+.cities-toggle button.active{color:var(--paper)}
+.cities-toggle button.active .vt{color:var(--gold)}
+.cities-toggle .slider{
+  position:absolute;top:5px;bottom:5px;
+  width:calc(50% - 5px);
+  background:var(--ink);
+  border-radius:999px;
+  z-index:1;
+  transition:transform .5s cubic-bezier(.16,.84,.44,1);
+}
+.cities-toggle[data-active="nam"] .slider{transform:translateX(100%)}
+
+/* Cities cards now flip-respond to toggle */
+.city-card{
+  transition:transform .6s cubic-bezier(.16,.84,.44,1),box-shadow .6s var(--ease),opacity .5s var(--ease),filter .5s var(--ease);
+}
+.cities[data-focus="bac"] .city-card.nam,
+.cities[data-focus="nam"] .city-card.bac{
+  opacity:.42;filter:saturate(.6) brightness(.95);
+}
+.cities[data-focus="bac"] .city-card.bac,
+.cities[data-focus="nam"] .city-card.nam{
+  transform:scale(1.015);box-shadow:0 24px 50px -18px rgba(21,32,26,.22);
+}
+
+/* ============================================================
+   TWEAK 7 — Custom illustrated SVG street map
+   ============================================================ */
+.illu-map{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  background:var(--cream);min-height:420px;
+  border:1px solid var(--line-soft);
+  display:flex;flex-direction:column;
+}
+.illu-map-svg{
+  flex:1;width:100%;display:block;
+  background:linear-gradient(180deg,#FAF3DC 0%,#F4EAC8 100%);
+}
+.illu-map-svg .street{stroke:#D9C9A2;stroke-width:14;fill:none;stroke-linecap:round}
+.illu-map-svg .street-main{stroke:#C9A961;stroke-width:22}
+.illu-map-svg .street-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;fill:#3A4A42;letter-spacing:.02em}
+.illu-map-svg .block{fill:#EFE3C0;stroke:#D9C9A2;stroke-width:1}
+.illu-map-svg .park{fill:#C8D8B8}
+.illu-map-svg .pin-ring{fill:none;stroke:var(--vermillion);stroke-width:1.5;opacity:.5}
+.illu-map-svg .pin-dot{fill:var(--vermillion)}
+.illu-map-svg .pin-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--ink)}
+.illu-map-svg .metro-circle{fill:#0066A1}
+.illu-map-svg .metro-text{font-family:'Be Vietnam Pro',sans-serif;font-size:7.5px;font-weight:700;fill:white}
+.illu-map-svg .metro-label{font-family:'Be Vietnam Pro',sans-serif;font-size:9px;fill:#3A4A42;letter-spacing:.04em;text-transform:uppercase;font-weight:500}
+
+/* Animated pin pulse */
+@keyframes pin-pulse{
+  0%{transform:scale(1);opacity:.7}
+  100%{transform:scale(2.2);opacity:0}
+}
+.illu-map-svg .pin-pulse{
+  fill:var(--vermillion);
+  transform-origin:center;transform-box:fill-box;
+  animation:pin-pulse 2.2s ease-out infinite;
+}
+.illu-map-svg .pin-pulse.delay{animation-delay:1.1s}
+
+.illu-map-overlay{
+  position:absolute;top:24px;left:24px;right:24px;
+  background:rgba(250,246,236,.95);
+  backdrop-filter:blur(8px);
+  border-radius:14px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:8px;
+  box-shadow:0 18px 40px -16px rgba(21,32,26,.18);
+  z-index:2;
+}
+.illu-map-overlay .addr-line-1{font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2}
+.illu-map-overlay .addr-line-2{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em}
+.illu-map-overlay .metro{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11.5px;color:var(--vermillion);font-weight:500;
+  margin-top:6px;letter-spacing:.04em;
+}
+.illu-map-cta{
+  position:absolute;bottom:24px;left:24px;right:24px;
+  display:flex;gap:10px;z-index:2;
+}
+
+/* ============================================================
+   TWEAK 8 — "Le choix de Hoang" badge
+   ============================================================ */
+.menu-row .hoang{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-left:10px;
+  font-family:var(--serif);font-style:italic;font-size:13px;
+  color:var(--vermillion);font-weight:500;
+  letter-spacing:.01em;
+  vertical-align:middle;
+}
+.menu-row .hoang::before{
+  content:"";display:inline-block;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--vermillion);
+  margin-right:2px;
+}
+
+/* ============================================================
+   TWEAK 10 — Hero photo Ken Burns slow zoom (no video, more reliable)
+   ============================================================ */
+@keyframes ken-burns{
+  0%{transform:scale(1) translateY(0);}
+  50%{transform:scale(1.08) translateY(-1%);}
+  100%{transform:scale(1) translateY(0);}
+}
+.hero-imagery{
+  background-size:cover;background-position:center;
+  animation:ken-burns 16s ease-in-out infinite;
+  animation-delay:1.2s;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .marquee-track{animation:none}
+  .hero-imagery{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="progress" id="progress"></div>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-brand">
+    <span class="nav-brand-mark">S</span>
+    <span class="nav-brand-name">Saigon Hanoi<small>Paris 11<sup>e</sup> · Charonne</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="#top" data-sec="top" class="active">Accueil</a>
+    <a href="#villes" data-sec="villes">Deux villes</a>
+    <a href="#pho" data-sec="pho">Le phở</a>
+    <a href="#carte" data-sec="carte">La carte</a>
+    <a href="#services" data-sec="services">Services</a>
+    <a href="#coin" data-sec="coin">Venir</a>
+  </div>
+  <a href="tel:+33143674241" class="nav-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+    Réserver
+  </a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#villes">Deux villes</a>
+  <a href="#pho">Le phở</a>
+  <a href="#carte">La carte</a>
+  <a href="#services">Services</a>
+  <a href="#coin">Venir nous voir</a>
+  <a href="tel:+33143674241" class="cta">Réserver — 01 43 67 42 41</a>
+</div>
+
+<!-- ============================================================
+     HERO — kinetic typography (no-template cold open)
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-top">
+    <div class="hero-meta-row live-on">
+      <span class="live"><span class="dot"></span>Ouvert · service du soir 18 h 30</span>
+      <span class="vrt"></span>
+      <span>168 bis rue de Charonne · Paris 11<sup>e</sup></span>
+    </div>
+    <div class="hero-meta-row">
+      <span>Phở · Bún · Bò bún · Bánh cuốn</span>
+    </div>
+  </div>
+
+  <div class="hero-kinetic">
+    <div class="hero-title-block">
+      <h1 class="hero-title">
+        <span class="hero-line"><span>S<em class="accent">à</em>igon</span></span>
+        <span class="hero-line"><span>H<em class="accent">à</em> N<em class="accent">ộ</em>i.</span></span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="hero-watermark" aria-hidden="true">phở</div>
+
+  <div class="hero-imagery" aria-hidden="true"></div>
+
+  <div class="hero-badge badge-phở b1">Phở đặc biệt</div>
+  <div class="hero-badge badge-since b2">
+    <strong>30 ans</strong>
+    <small>Rue de Charonne</small>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-lede" id="heroLede">
+      Deux villes, une <strong>maison</strong>. Trois décennies rue de Charonne.
+    </p>
+    <div class="hero-actions">
+      <div class="hero-rating">
+        <span class="glogo" aria-hidden="true"></span>
+        <span class="num">4,6</span>
+        <div>
+          <span class="stars">★★★★★</span><br/>
+          <span class="who">246 avis · Google</span>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#carte" class="btn btn-ghost">Voir la carte</a>
+        <a href="tel:+33143674241" class="btn btn-primary btn-magnetic" data-magnetic>Réserver une table
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MARQUEE — bilingual kinetic band
+     ============================================================ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item" data-dish="Phở đặc biệt"><span class="vt">Phở đặc biệt</span> — Soupe tonkinoise au bœuf<span class="sep"></span></span>
+    <span class="marquee-item" data-dish="Bún bò chả giò"><span class="vt">Bò bún</span> — Vermicelles tièdes au bœuf<span class="sep"></span></span>
+    <span class="marquee-item" data-dish="Bánh cuốn"><span class="vt">Bánh cuốn</span> — Raviolis vapeur<span class="sep"></span></span>
+    <span class="marquee-item" data-dish="Bò lúc lắc"><span class="vt">Bò lúc lắc</span> — Bœuf sauté au wok<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Chả giò</span> — Nems maison<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Gỏi tôm</span> — Salade aux crevettes<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Bánh xèo</span> — Crêpe vietnamienne<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Chè</span> — Haricot rouge, lait de coco<span class="sep"></span></span>
+    <!-- duplicate seamless -->
+    <span class="marquee-item" data-dish="Phở đặc biệt"><span class="vt">Phở đặc biệt</span> — Soupe tonkinoise au bœuf<span class="sep"></span></span>
+    <span class="marquee-item" data-dish="Bún bò chả giò"><span class="vt">Bò bún</span> — Vermicelles tièdes au bœuf<span class="sep"></span></span>
+    <span class="marquee-item" data-dish="Bánh cuốn"><span class="vt">Bánh cuốn</span> — Raviolis vapeur<span class="sep"></span></span>
+    <span class="marquee-item" data-dish="Bò lúc lắc"><span class="vt">Bò lúc lắc</span> — Bœuf sauté au wok<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Chả giò</span> — Nems maison<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Gỏi tôm</span> — Salade aux crevettes<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Bánh xèo</span> — Crêpe vietnamienne<span class="sep"></span></span>
+    <span class="marquee-item"><span class="vt">Chè</span> — Haricot rouge, lait de coco<span class="sep"></span></span>
+  </div>
+</div>
+
+<!-- ============================================================
+     DEUX VILLES — narrative split
+     ============================================================ -->
+<section class="cities" id="villes" data-focus="bac">
+  <div class="container">
+
+    <div class="cities-intro reveal-stagger">
+      <div>
+        <span class="chapter">— I.</span>
+        <h2>Pas <span class="strike">un</span> mais <em>deux</em><br/>noms sur l'enseigne.</h2>
+        <div class="cities-toggle" id="citiesToggle" data-active="bac">
+          <span class="slider" aria-hidden="true"></span>
+          <button type="button" data-city="bac" class="active"><span class="vt">Bắc</span>Le Nord</button>
+          <button type="button" data-city="nam"><span class="vt">Nam</span>Le Sud</button>
+        </div>
+      </div>
+      <p>
+        Le Nord, le Sud. Hanoï pour le bouillon long et la fraîcheur des herbes ;
+        Saïgon pour le sucré-salé, le piment et le wok qui claque. Une seule
+        cuisine, deux capitales, trente ans rue de Charonne.
+      </p>
+    </div>
+
+    <article class="city-card bac reveal">
+      <span class="city-tag">Bắc · Le Nord</span>
+      <h3 class="city-name">Hà Nội<small>Capitale du phở</small></h3>
+      <div class="city-image" style="background-image:url('https://images.unsplash.com/photo-1583932692577-1d3e1f3c2e02?w=900&q=85')"></div>
+      <p class="city-desc">
+        Bouillon de bœuf qui mijote douze heures, badiane, cardamome,
+        cannelle et gingembre torréfié. La pâte de riz fine, le coriandre,
+        l'oignon nouveau. Servi brûlant.
+      </p>
+      <span class="city-dish">→ Phở đặc biệt, 14 €</span>
+    </article>
+
+    <article class="city-card nam reveal">
+      <span class="city-tag">Nam · Le Sud</span>
+      <h3 class="city-name">Sài Gòn<small>Le wok et le sucré</small></h3>
+      <div class="city-image" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85')"></div>
+      <p class="city-desc">
+        Le bœuf sauté à la sauce d'huître, la citronnelle, la cacahuète
+        pilée. Les nouilles qui dansent dans le wok, le caramel qui
+        chante. Plus rapide, plus piquant.
+      </p>
+      <span class="city-dish">→ Bò lúc lắc, 13,50 €</span>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     PHỞ — editorial spread for the signature
+     ============================================================ -->
+<section class="pho" id="pho">
+  <div class="pho-watermark" aria-hidden="true">phở</div>
+  <div class="container">
+
+    <div class="pho-text reveal">
+      <span class="eyebrow pho-eyebrow no-line" style="color:var(--gold);margin-bottom:24px">— II. Le bouillon</span>
+      <h2>Douze heures<br/>de <em>bouillon</em>.</h2>
+      <p class="pho-lede">
+        Os de bœuf et badiane, gingembre torréfié, oignon brûlé sur la
+        plaque. Le secret n'est pas dans la recette — elle tient sur une
+        carte postale — mais dans le temps qu'on lui donne, et dans la main
+        qui écume.
+      </p>
+      <blockquote class="pho-quote">
+        « Un phở, ça ne se sert pas. Ça se reçoit. »
+        <small>Hoang Minh, gérant · Saigon Hanoi depuis 1996</small>
+      </blockquote>
+    </div>
+
+    <div class="pho-visual reveal">
+      <div class="pho-photo"></div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="pho-mega-stats reveal-stagger">
+      <div class="pho-mega">
+        <span class="val" data-count-mega="12">12<span class="unit">heures</span></span>
+        <span class="lbl">Cuisson du bouillon</span>
+        <span class="sub">Os de bœuf, gingembre torréfié, oignon brûlé sur la plaque. Le feu doux, sans relâche.</span>
+      </div>
+      <div class="pho-mega">
+        <span class="val" data-count-mega="7">7<span class="unit">épices</span></span>
+        <span class="lbl">Entières, jamais en poudre</span>
+        <span class="sub">Badiane, cardamome, cannelle, clou de girofle, coriandre, fenouil, gingembre.</span>
+      </div>
+      <div class="pho-mega">
+        <span class="val" data-count-mega="100" data-suffix="%">100<span class="unit">%</span></span>
+        <span class="lbl">Fait maison</span>
+        <span class="sub">Rien n'arrive en sachet. Le bouillon, les nems, les sauces. Tout sort de la cuisine de Hoang.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LA CARTE — editorial chapters (no template tabs)
+     ============================================================ -->
+<section class="carte" id="carte">
+  <div class="container">
+
+    <div class="carte-head reveal-stagger">
+      <div>
+        <span class="chapter">— III.</span>
+        <h2>La <em>carte</em>,<br/>chapitre par chapitre.</h2>
+      </div>
+      <div>
+        <p>Tout est préparé minute, dans la cuisine de Hoang. Filtrez par envie — végétarien, sans gluten — la carte s'adapte.</p>
+        <div class="carte-filters">
+          <button class="filter-pill" data-filter="veg"><span class="icon" style="color:var(--jade-soft)">●</span>Végétarien</button>
+          <button class="filter-pill" data-filter="gf"><span class="icon">⌀</span>Sans gluten</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="carte-grid">
+
+      <nav class="carte-chapters">
+        <button class="chapter-link active" data-chap="entrees"><span class="num">01</span>Entrées</button>
+        <button class="chapter-link" data-chap="soupes"><span class="num">02</span>Soupes &amp; phở</button>
+        <button class="chapter-link" data-chap="bun"><span class="num">03</span>Bò bún</button>
+        <button class="chapter-link" data-chap="plats"><span class="num">04</span>Plats</button>
+        <button class="chapter-link" data-chap="desserts"><span class="num">05</span>Desserts</button>
+        <button class="chapter-link" data-chap="boissons"><span class="num">06</span>Boissons</button>
+      </nav>
+
+      <div class="carte-rows">
+
+        <!-- ENTRÉES -->
+        <div class="menu-chapter active" data-chap="entrees">
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1606471191009-63994c53433b?w=900&q=85" data-vt="Chả giò">
+            <div class="meta"><span class="vt">Chả giò</span><span class="name">Nems maison ×4</span><span class="desc">Porc ou poulet, vermicelles, champignons noirs. Roulés ici.</span></div>
+            <span class="dots"></span><span class="price">5,00 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1625938145744-e380515399b7?w=900&q=85" data-vt="Bánh cuốn">
+            <div class="meta"><span class="vt">Bánh cuốn</span><span class="name">Raviolis vapeur</span><span class="desc">Pâte de riz, viande hachée, champignons. Sauce nuoc-cham.</span></div>
+            <span class="dots"></span><span class="price">6,00 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1604497181015-76590d828aae?w=900&q=85" data-vt="Há cảo tôm">
+            <div class="meta"><span class="vt">Há cảo tôm</span><span class="name">Raviolis aux crevettes ×5</span><span class="desc">Pâte translucide, crevettes entières, vapeur.</span></div>
+            <span class="dots"></span><span class="price">5,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1626501100025-fdcdb27ddc63?w=900&q=85" data-vt="Samosa">
+            <div class="meta"><span class="vt">Samosa</span><span class="name">Samossas ×4</span><span class="desc">Triangles croustillants, légumes ou viande.</span></div>
+            <span class="dots"></span><span class="price">5,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1551326844-4df70f78d0e9?w=900&q=85" data-vt="Gỏi cuốn">
+            <div class="meta"><span class="vt">Gỏi cuốn</span><span class="name">Rouleau de printemps porc &amp; crevettes</span><span class="desc">Galette de riz, vermicelles, menthe, coriandre.</span></div>
+            <span class="dots"></span><span class="price">3,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1561626423-a51b45aef0a1?w=900&q=85" data-vt="Gỏi cuốn bò">
+            <div class="meta"><span class="vt">Gỏi cuốn bò</span><span class="name">Rouleau de printemps au bœuf</span><span class="desc">Galette de riz, bœuf émincé, salade, menthe.</span></div>
+            <span class="dots"></span><span class="price">3,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85" data-vt="Gỏi bò">
+            <div class="meta"><span class="vt">Gỏi bò</span><span class="name">Salade de bœuf au citron vert</span><span class="desc">Bœuf saisi, salade, herbes, sauce piquante.</span></div>
+            <span class="dots"></span><span class="price">7,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1626501100025-fdcdb27ddc63?w=900&q=85" data-vt="Gỏi tôm">
+            <div class="meta"><span class="vt">Gỏi tôm</span><span class="name">Salade spéciale aux crevettes</span><span class="desc">Crevettes, papaye verte, cacahuètes, herbes.</span></div>
+            <span class="dots"></span><span class="price">8,50 €</span>
+          </div>
+        </div>
+
+        <!-- SOUPES -->
+        <div class="menu-chapter" data-chap="soupes">
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1583932692577-1d3e1f3c2e02?w=900&q=85" data-vt="Phở đặc biệt">
+            <div class="meta"><span class="vt">Phở đặc biệt</span><span class="name">Soupe tonkinoise spéciale au bœuf<span class="hoang">★ Le choix de Hoang</span></span><span class="desc">Bouillon 12 h, pâtes de riz, bœuf, boulettes, herbes. Le plat signature.</span></div>
+            <span class="dots"></span><span class="price">14,00 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1604497181015-76590d828aae?w=900&q=85" data-vt="Phở bò">
+            <div class="meta"><span class="vt">Phở bò</span><span class="name">Phở au bœuf classique</span><span class="desc">Bouillon, pâtes de riz, fines tranches de bœuf, oignon nouveau.</span></div>
+            <span class="dots"></span><span class="price">12,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1606471191009-63994c53433b?w=900&q=85" data-vt="Phở gà">
+            <div class="meta"><span class="vt">Phở gà</span><span class="name">Phở au poulet</span><span class="desc">Bouillon de volaille, pâtes de riz, poulet effiloché, gingembre.</span></div>
+            <span class="dots"></span><span class="price">11,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85" data-vt="Súp vịt">
+            <div class="meta"><span class="vt">Súp vịt</span><span class="name">Soupe de canard</span><span class="desc">Bouillon de canard, vermicelles, gingembre, ciboule.</span></div>
+            <span class="dots"></span><span class="price">13,00 €</span>
+          </div>
+        </div>
+
+        <!-- BÒ BÚN -->
+        <div class="menu-chapter" data-chap="bun">
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1551326844-4df70f78d0e9?w=900&q=85" data-vt="Bún chay">
+            <div class="meta"><span class="vt">Bún chay</span><span class="name">Bò bún végétarien <span class="veg"></span></span><span class="desc">Vermicelles tièdes, tofu sauté, légumes, cacahuètes, herbes.</span></div>
+            <span class="dots"></span><span class="price">12,00 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1606471191009-63994c53433b?w=900&q=85" data-vt="Bún bò chả giò">
+            <div class="meta"><span class="vt">Bún bò chả giò</span><span class="name">Vermicelles au bœuf + nem<span class="hoang">★ Le choix de Hoang</span></span><span class="desc">Bœuf à la citronnelle, nem émincé, vermicelles, herbes.</span></div>
+            <span class="dots"></span><span class="price">12,00 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1625938145744-e380515399b7?w=900&q=85" data-vt="Bún thịt nướng chả giò">
+            <div class="meta"><span class="vt">Bún thịt nướng chả giò</span><span class="name">Vermicelles, viande grillée, nems</span><span class="desc">Porc mariné grillé, nem, vermicelles, sauce nuoc-cham.</span></div>
+            <span class="dots"></span><span class="price">12,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85" data-vt="Bún tôm">
+            <div class="meta"><span class="vt">Bún tôm</span><span class="name">Vermicelles aux crevettes</span><span class="desc">Crevettes grillées, vermicelles, salade, herbes.</span></div>
+            <span class="dots"></span><span class="price">13,50 €</span>
+          </div>
+        </div>
+
+        <!-- PLATS -->
+        <div class="menu-chapter" data-chap="plats">
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85" data-vt="Bò lúc lắc">
+            <div class="meta"><span class="vt">Bò lúc lắc</span><span class="name">Bœuf Lúc Lắc<span class="hoang">★ Le choix de Hoang</span></span><span class="desc">Bœuf sauté au wok, poivron, oignon, sauce d'huître. La star du wok.</span></div>
+            <span class="dots"></span><span class="price">13,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1606471191009-63994c53433b?w=900&q=85" data-vt="Mì xào tôm">
+            <div class="meta"><span class="vt">Mì xào tôm</span><span class="name">Nouilles sautées aux crevettes</span><span class="desc">Nouilles, crevettes, légumes croquants, sauce wok.</span></div>
+            <span class="dots"></span><span class="price">12,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85" data-vt="Gà sả ớt">
+            <div class="meta"><span class="vt">Gà sả ớt</span><span class="name">Poulet à la citronnelle</span><span class="desc">Émincé de poulet, citronnelle fraîche, piment.</span></div>
+            <span class="dots"></span><span class="price">11,50 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1604497181015-76590d828aae?w=900&q=85" data-vt="Heo kho">
+            <div class="meta"><span class="vt">Heo kho</span><span class="name">Porc au caramel</span><span class="desc">Travers de porc mijotés, sauce caramel, gingembre.</span></div>
+            <span class="dots"></span><span class="price">12,00 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1626501100025-fdcdb27ddc63?w=900&q=85" data-vt="Vịt kho gừng">
+            <div class="meta"><span class="vt">Vịt kho gừng</span><span class="name">Canard au gingembre</span><span class="desc">Canard braisé, gingembre frais, sauce soja claire.</span></div>
+            <span class="dots"></span><span class="price">14,00 €</span>
+          </div>
+          <div class="menu-row" data-img="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85" data-vt="Bò saté">
+            <div class="meta"><span class="vt">Bò saté</span><span class="name">Bœuf saté</span><span class="desc">Brochettes de bœuf marinées, sauce cacahuète maison.</span></div>
+            <span class="dots"></span><span class="price">13,50 €</span>
+          </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-chapter" data-chap="desserts">
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&q=85" data-vt="Chè đậu đỏ">
+            <div class="meta"><span class="vt">Chè đậu đỏ</span><span class="name">Haricot rouge au lait de coco <span class="veg"></span></span><span class="desc">Servi tiède. Le dessert d'enfance des familles vietnamiennes.</span></div>
+            <span class="dots"></span><span class="price">4,50 €</span>
+          </div>
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=900&q=85" data-vt="Bánh xèo ngọt">
+            <div class="meta"><span class="vt">Bánh xèo ngọt</span><span class="name">Crêpe vietnamienne <span class="veg"></span></span><span class="desc">Galette de riz dorée, lait de coco, sucre brun.</span></div>
+            <span class="dots"></span><span class="price">5,00 €</span>
+          </div>
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=900&q=85" data-vt="Chè chuối">
+            <div class="meta"><span class="vt">Chè chuối</span><span class="name">Banane &amp; tapioca <span class="veg"></span></span><span class="desc">Banane mûre, tapioca perles, lait de coco. Tiède.</span></div>
+            <span class="dots"></span><span class="price">4,50 €</span>
+          </div>
+        </div>
+
+        <!-- BOISSONS -->
+        <div class="menu-chapter" data-chap="boissons">
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85" data-vt="Cà phê">
+            <div class="meta"><span class="vt">Cà phê</span><span class="name">Café <span class="veg"></span></span><span class="desc">Filtre vietnamien ou expresso italien, au choix.</span></div>
+            <span class="dots"></span><span class="price">2,00 €</span>
+          </div>
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=900&q=85" data-vt="Trà đá">
+            <div class="meta"><span class="vt">Trà đá</span><span class="name">Thé glacé maison <span class="veg"></span></span><span class="desc">Infusion légère, glaçons, citron vert.</span></div>
+            <span class="dots"></span><span class="price">2,50 €</span>
+          </div>
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=85" data-vt="Nước">
+            <div class="meta"><span class="vt">Nước</span><span class="name">Eau minérale 50cl <span class="veg"></span></span><span class="desc">Plate ou pétillante.</span></div>
+            <span class="dots"></span><span class="price">3,80 €</span>
+          </div>
+          <div class="menu-row" data-veg data-img="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=900&q=85" data-vt="Bia">
+            <div class="meta"><span class="vt">Bia</span><span class="name">Bière 33cl <span class="veg"></span></span><span class="desc">Pression ou bouteille, sélection vietnamienne et internationale.</span></div>
+            <span class="dots"></span><span class="price">4,50 €</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Preview panel -->
+      <aside class="carte-preview" id="cartePreview">
+        <div class="preview-img" id="previewImg" style="background-image:url('https://images.unsplash.com/photo-1606471191009-63994c53433b?w=900&q=85')"></div>
+        <div class="preview-body">
+          <span class="preview-tag" id="previewTag">Aperçu</span>
+          <div class="preview-name" id="previewName">Survolez un plat</div>
+          <div class="preview-vt" id="previewVt">— pour la photo</div>
+          <p class="preview-desc" id="previewDesc">Chaque ligne ouvre ici une vignette du plat avec sa traduction et un mot sur la préparation.</p>
+          <span class="preview-price" id="previewPrice"></span>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES — bento grid
+     ============================================================ -->
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="services-head reveal-stagger">
+      <div>
+        <span class="chapter">— IV.</span>
+        <h2>Sur place, à emporter,<br/>ou <em>chez vous</em>.</h2>
+      </div>
+      <p>Une salle, deux salles, une terrasse — et tout ce qu'il faut pour vous suivre à la maison ou au bureau.</p>
+    </div>
+
+    <div class="services-grid reveal-stagger">
+
+      <article class="service-card large">
+        <div class="body">
+          <h3>Sur place</h3>
+          <p>Deux salles intérieures et une terrasse en été. Accessible fauteuil roulant. Écran TV pour les matchs.</p>
+          <a href="tel:+33143674241" class="more">Réserver une table
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card short traiteur">
+        <div class="icon" style="color:var(--vermillion)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18l-1 13H4z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+        </div>
+        <h3>Traiteur</h3>
+        <p>Repas d'affaires, anniversaires, réceptions. Devis sur mesure.</p>
+        <a href="tel:+33143674241" class="more">Demander un devis
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card tall">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 11V7a4 4 0 0 0-8 0v4"/><rect x="5" y="11" width="14" height="10" rx="2"/></svg>
+        </div>
+        <h3>À emporter</h3>
+        <p>Tout le menu en boîte. Commande au comptoir ou par téléphone, prêt en 15 minutes.</p>
+        <a href="tel:+33143674241" class="more">Commander
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card short livraison">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Livraison</h3>
+        <p>Disponible via les plateformes habituelles. Paris 11<sup>e</sup> et alentours.</p>
+        <a href="#" class="more">Commander en ligne
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COIN DE LA MAISON — infos pratiques + map + resa
+     ============================================================ -->
+<section class="coin" id="coin">
+  <div class="container">
+
+    <div class="coin-head reveal-stagger">
+      <div>
+        <span class="chapter">— V.</span>
+        <h2>Le coin de<br/>la <em>maison</em>.</h2>
+      </div>
+      <p>168 bis rue de Charonne, métro Alexandre Dumas à 179 mètres. Réservation par téléphone vivement conseillée.</p>
+    </div>
+
+    <div class="coin-grid">
+
+      <div class="hours-card reveal">
+        <h3>Horaires</h3>
+        <p class="sub">La ligne du jour est mise en valeur.</p>
+        <div class="hours-list" id="hoursList">
+          <div class="hours-row" data-day="1">
+            <span class="day"><span class="dot"></span>Lundi</span>
+            <span class="time"></span>
+            <span class="closed">Fermé</span>
+          </div>
+          <div class="hours-row" data-day="2">
+            <span class="day"><span class="dot"></span>Mardi</span>
+            <span class="time">11 h 30 – 15 h · 18 h 30 – 22 h 30</span>
+            <span></span>
+          </div>
+          <div class="hours-row" data-day="3">
+            <span class="day"><span class="dot"></span>Mercredi</span>
+            <span class="time">11 h 30 – 15 h · 18 h 30 – 22 h 30</span>
+            <span></span>
+          </div>
+          <div class="hours-row" data-day="4">
+            <span class="day"><span class="dot"></span>Jeudi</span>
+            <span class="time">11 h 30 – 15 h · 18 h 30 – 22 h 30</span>
+            <span></span>
+          </div>
+          <div class="hours-row" data-day="5">
+            <span class="day"><span class="dot"></span>Vendredi</span>
+            <span class="time">11 h 30 – 15 h · 18 h 30 – 22 h 30</span>
+            <span></span>
+          </div>
+          <div class="hours-row" data-day="6">
+            <span class="day"><span class="dot"></span>Samedi</span>
+            <span class="time">11 h 30 – 15 h · 18 h 30 – 22 h 30</span>
+            <span></span>
+          </div>
+          <div class="hours-row" data-day="0">
+            <span class="day"><span class="dot"></span>Dimanche</span>
+            <span class="time"></span>
+            <span class="closed">Fermé</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="illu-map reveal">
+        <svg class="illu-map-svg" viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-label="Carte du quartier de Charonne, Paris 11e">
+          <!-- Background blocks (parcelles de la ville) -->
+          <rect class="block" x="0" y="0" width="200" height="140" rx="3"/>
+          <rect class="block" x="220" y="0" width="180" height="140" rx="3"/>
+          <rect class="block" x="420" y="0" width="180" height="140" rx="3"/>
+          <rect class="block" x="0" y="170" width="160" height="140" rx="3"/>
+          <rect class="block" x="180" y="170" width="220" height="100" rx="3"/>
+          <rect class="block" x="180" y="290" width="120" height="100" rx="3"/>
+          <rect class="block" x="320" y="290" width="180" height="100" rx="3"/>
+          <rect class="block" x="420" y="170" width="180" height="120" rx="3"/>
+          <rect class="block" x="520" y="310" width="80" height="80" rx="3"/>
+          <rect class="block" x="0" y="340" width="160" height="120" rx="3"/>
+          <rect class="block" x="180" y="410" width="320" height="50" rx="3"/>
+          <rect class="block" x="520" y="410" width="80" height="50" rx="3"/>
+
+          <!-- Petit parc Père Lachaise edge -->
+          <rect class="park" x="430" y="290" width="60" height="50" rx="6"/>
+          <text class="street-label" x="445" y="320" font-size="9">Père Lachaise</text>
+
+          <!-- Streets -->
+          <!-- Rue de Charonne (main diagonal) -->
+          <path class="street street-main" d="M0 200 Q 200 230 380 270 T 600 320"/>
+          <text class="street-label" x="160" y="218" transform="rotate(7 160 218)">Rue de Charonne</text>
+
+          <!-- Boulevard Voltaire (left vertical) -->
+          <path class="street" d="M120 0 L 90 460"/>
+          <text class="street-label" x="78" y="80" transform="rotate(-90 78 80)">Bd. Voltaire</text>
+
+          <!-- Rue Alexandre Dumas (horizontal) -->
+          <path class="street" d="M0 380 L 600 360"/>
+          <text class="street-label" x="40" y="372">Rue Alexandre Dumas</text>
+
+          <!-- Avenue Philippe-Auguste -->
+          <path class="street" d="M310 0 L 280 460"/>
+
+          <!-- Rue de Bagnolet -->
+          <path class="street" d="M470 0 L 530 460"/>
+          <text class="street-label" x="495" y="60" transform="rotate(78 495 60)">Rue de Bagnolet</text>
+
+          <!-- Restaurant pin (highlight) -->
+          <g transform="translate(290, 254)">
+            <circle class="pin-pulse" cx="0" cy="0" r="9"/>
+            <circle class="pin-pulse delay" cx="0" cy="0" r="9"/>
+            <circle class="pin-ring" cx="0" cy="0" r="22"/>
+            <circle class="pin-dot" cx="0" cy="0" r="7"/>
+          </g>
+          <text class="pin-label" x="306" y="248">Saigon Hanoi</text>
+          <text class="street-label" x="306" y="263" font-size="10">168 bis · ici</text>
+
+          <!-- Métro Alexandre Dumas -->
+          <g transform="translate(380, 370)">
+            <circle class="metro-circle" cx="0" cy="0" r="11"/>
+            <text class="metro-text" x="0" y="3" text-anchor="middle">M</text>
+          </g>
+          <text class="metro-label" x="396" y="374">Alexandre Dumas</text>
+
+          <!-- Métro Charonne -->
+          <g transform="translate(95, 218)">
+            <circle class="metro-circle" cx="0" cy="0" r="9"/>
+            <text class="metro-text" x="0" y="3" text-anchor="middle">M</text>
+          </g>
+          <text class="metro-label" x="108" y="221" font-size="8">Charonne</text>
+
+          <!-- Walking line from metro to restaurant (dashed) -->
+          <path d="M378 368 Q 340 320 295 260" stroke="#D2452A" stroke-width="1.8" stroke-dasharray="3 4" fill="none" opacity=".7"/>
+          <text x="345" y="328" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#D2452A">3 min à pied</text>
+        </svg>
+        <div class="illu-map-overlay">
+          <div class="addr-line-1">168 bis rue de Charonne</div>
+          <div class="addr-line-2">75011 Paris · 11<sup>e</sup> arrondissement</div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=168+bis+rue+de+Charonne+75011+Paris" target="_blank" rel="noopener" class="metro">Métro Alexandre Dumas · 179 m</a>
+        </div>
+        <div class="illu-map-cta">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=168+bis+rue+de+Charonne+75011+Paris" target="_blank" rel="noopener" class="btn btn-ink">Itinéraire Google Maps
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="resa-card reveal">
+        <div>
+          <h3>Réservez la table.<br/>On garde le <em>phở</em> chaud.</h3>
+          <p class="sub">Choisissez les détails — ou appelez directement, c'est plus rapide et Hoang répond.</p>
+        </div>
+        <form class="resa-form" onsubmit="event.preventDefault();window.location.href='tel:+33143674241'">
+          <div class="resa-fields">
+            <button type="button" class="resa-field" data-field="people">
+              <label>Personnes</label>
+              <span class="v">2 personnes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+            </button>
+            <button type="button" class="resa-field" data-field="date">
+              <label>Date</label>
+              <span class="v">Ce soir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+            </button>
+            <button type="button" class="resa-field" data-field="time">
+              <label>Heure</label>
+              <span class="v">20 h 00 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+            </button>
+          </div>
+          <button type="submit" class="btn btn-primary">Confirmer par téléphone
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AVIS — conversation thread (no carousel)
+     ============================================================ -->
+<section class="avis">
+  <div class="container">
+
+    <div class="avis-head reveal-stagger">
+      <div>
+        <span class="chapter">— VI.</span>
+        <h2>Ce qu'on dit<br/>de <em>la maison</em>.</h2>
+      </div>
+      <div class="avis-rating">
+        <span class="big">4,6</span>
+        <div class="meta">
+          <span class="stars">★★★★★</span>
+          <small>246 avis · Google</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="avis-thread reveal-stagger">
+
+      <article class="avis-card">
+        <span class="stars">★★★★★</span>
+        <p class="quote">« Le phở qui me rappelle Hà Nội. Bouillon profond, herbes fraîches, et l'accueil de Madame Phương qui vous reconnaît à la deuxième visite. »</p>
+        <div class="person">
+          <span class="av">L</span>
+          <div class="who">
+            <strong>Lê Thanh H.</strong>
+            <small>Local Guide · 4 mois</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="avis-card">
+        <span class="stars">★★★★★</span>
+        <p class="quote">« Bò bún parfait, portions généreuses, prix raisonnables, terrasse l'été. C'est la cantine du quartier — et tant mieux qu'elle existe. »</p>
+        <div class="person">
+          <span class="av">É</span>
+          <div class="who">
+            <strong>Émilie Caron</strong>
+            <small>Avis Google · 6 mois</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="avis-card">
+        <span class="stars">★★★★★</span>
+        <p class="quote">« Je viens depuis quinze ans. La carte ne change pas. Le goût non plus. Le bœuf Lúc Lắc reste la meilleure raison de descendre rue de Charonne. »</p>
+        <div class="person">
+          <span class="av">M</span>
+          <div class="who">
+            <strong>Marc Petitjean</strong>
+            <small>Avis Google · 2 ans</small>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="foot">
+    <div class="foot-brand">
+      <div class="brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Saigon Hanoi<small style="color:var(--gold)">Paris 11<sup>e</sup> · Charonne</small></span>
+      </div>
+      <p>Restaurant vietnamien familial — Nord &amp; Sud, fait maison, depuis trois décennies rue de Charonne.</p>
+      <div class="foot-socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=168+bis+rue+de+Charonne+75011+Paris" target="_blank" rel="noopener" aria-label="Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-9-8-13a8 8 0 1 1 16 0c0 4-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <a href="#top">Accueil</a>
+      <a href="#villes">Deux villes</a>
+      <a href="#pho">Le phở</a>
+      <a href="#carte">La carte</a>
+      <a href="#services">Services</a>
+      <a href="#coin">Venir</a>
+    </div>
+    <div class="foot-col">
+      <h4>Venir</h4>
+      <p>168 bis rue de Charonne<br/>75011 Paris</p>
+      <p>Métro Alexandre Dumas<br/>Parking INDIGO Pyrénées-Bagnolet</p>
+      <a href="tel:+33143674241">01 43 67 42 41</a>
+    </div>
+    <div class="foot-col">
+      <h4>Horaires</h4>
+      <p>Lun. <span style="color:var(--vermillion)">Fermé</span></p>
+      <p>Mar. – Sam.<br/>11 h 30 – 15 h<br/>18 h 30 – 22 h 30</p>
+      <p>Dim. <span style="color:var(--vermillion)">Fermé</span></p>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© Saigon Hanoi · TRAITEUR PHƯƠNG THẢO SARL · RCS Paris 533 819 488 · SIRET 533 819 488 00010</span>
+    <span><a href="#">Mentions légales</a> · <a href="#">Cookies</a></span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     SCRIPT
+     ============================================================ -->
+<script>
+(() => {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.innerWidth <= 768;
+
+  /* ---- Hero entrance ---- */
+  const hero = document.querySelector('.hero');
+  requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('in')));
+
+  /* ---- Nav state on scroll + progress ---- */
+  const progress = document.getElementById('progress');
+  function onScroll(){
+    const y = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (y/h*100) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---- Burger ---- */
+  const burger = document.getElementById('burger');
+  const mm = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mm.classList.toggle('open');
+  });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open'); mm.classList.remove('open');
+  }));
+
+  /* ---- Reveal on scroll ---- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: isMobile ? 0.05 : 0.12, rootMargin: '0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal, .reveal-stagger, .pho').forEach(el => io.observe(el));
+
+  /* ---- Counters in phở stats ---- */
+  const counters = document.querySelectorAll('[data-count]');
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const dur = 1400;
+      const start = performance.now();
+      function tick(t){
+        const k = Math.min((t-start)/dur, 1);
+        const ease = 1 - Math.pow(1-k, 3);
+        const v = Math.round(target * ease);
+        el.textContent = v + suffix;
+        if(k < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  }, {threshold:.4});
+  counters.forEach(c => cio.observe(c));
+
+  /* ---- Section active in nav ---- */
+  const links = document.querySelectorAll('.nav-links a[data-sec]');
+  const sectionIds = ['top','villes','pho','carte','services','coin'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  const aio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        links.forEach(l => l.classList.toggle('active', l.dataset.sec === e.target.id));
+      }
+    });
+  }, {threshold:.25, rootMargin:'-30% 0px -50% 0px'});
+  sections.forEach(s => aio.observe(s));
+
+  /* ---- Carte chapters ---- */
+  const chapterLinks = document.querySelectorAll('.chapter-link');
+  const chapters = document.querySelectorAll('.menu-chapter');
+  chapterLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const chap = link.dataset.chap;
+      chapterLinks.forEach(l => l.classList.toggle('active', l === link));
+      chapters.forEach(c => {
+        c.classList.remove('active');
+        c.querySelectorAll('.menu-row').forEach(r => { r.style.animation = 'none'; });
+      });
+      const target = document.querySelector(`.menu-chapter[data-chap="${chap}"]`);
+      if(target){
+        target.classList.add('active');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            target.querySelectorAll('.menu-row').forEach(r => { r.style.animation = ''; });
+          });
+        });
+      }
+      resetPreview();
+    });
+  });
+
+  /* ---- Carte filters ---- */
+  const filterPills = document.querySelectorAll('.filter-pill');
+  let activeFilters = new Set();
+  filterPills.forEach(p => p.addEventListener('click', () => {
+    const f = p.dataset.filter;
+    if(activeFilters.has(f)){ activeFilters.delete(f); p.classList.remove('active'); }
+    else { activeFilters.add(f); p.classList.add('active'); }
+    applyFilters();
+  }));
+  function applyFilters(){
+    const active = document.querySelector('.menu-chapter.active');
+    if(!active) return;
+    active.querySelectorAll('.menu-row').forEach(row => {
+      let show = true;
+      if(activeFilters.has('veg') && !row.hasAttribute('data-veg')) show = false;
+      row.style.transition = 'opacity .4s var(--ease), transform .4s var(--ease)';
+      if(show){
+        row.style.display = '';
+        requestAnimationFrame(() => {
+          row.style.opacity = '1';
+          row.style.transform = 'none';
+        });
+      } else {
+        row.style.opacity = '0';
+        row.style.transform = 'translateY(-6px)';
+        setTimeout(() => { row.style.display = 'none'; }, 400);
+      }
+    });
+  }
+
+  /* ---- Carte preview on hover ---- */
+  const preview = document.getElementById('cartePreview');
+  const pvImg = document.getElementById('previewImg');
+  const pvName = document.getElementById('previewName');
+  const pvVt = document.getElementById('previewVt');
+  const pvDesc = document.getElementById('previewDesc');
+  const pvPrice = document.getElementById('previewPrice');
+  const pvTag = document.getElementById('previewTag');
+  function resetPreview(){
+    pvName.textContent = 'Survolez un plat';
+    pvVt.textContent = '— pour la photo';
+    pvDesc.textContent = 'Chaque ligne ouvre ici une vignette du plat avec sa traduction et un mot sur la préparation.';
+    pvPrice.textContent = '';
+    pvTag.textContent = 'Aperçu';
+  }
+  document.querySelectorAll('.menu-row').forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      const img = row.dataset.img;
+      const vt = row.dataset.vt || '';
+      const name = row.querySelector('.name').firstChild.textContent.trim();
+      const desc = row.querySelector('.desc')?.textContent || '';
+      const price = row.querySelector('.price').textContent;
+      const chap = row.closest('.menu-chapter').dataset.chap;
+      const labels = {entrees:'Entrée',soupes:'Soupe / Phở',bun:'Bò bún',plats:'Plat',desserts:'Dessert',boissons:'Boisson'};
+      if(img) pvImg.style.backgroundImage = `url('${img}')`;
+      pvName.textContent = name;
+      pvVt.textContent = vt ? `— ${vt}` : '';
+      pvDesc.textContent = desc;
+      pvPrice.textContent = price;
+      pvTag.textContent = labels[chap] || 'Plat';
+    });
+  });
+
+  /* ---- Hours today highlight ---- */
+  const today = new Date().getDay();
+  const todayRow = document.querySelector(`.hours-row[data-day="${today}"]`);
+  if(todayRow) todayRow.classList.add('today');
+
+  /* ---- Resa widget faux interactivity ---- */
+  const samples = {
+    people: ['1 personne','2 personnes','3 personnes','4 personnes','5 personnes','6 personnes','+ de 6'],
+    date: ['Ce soir','Demain','Vendredi','Samedi','Dimanche','La semaine prochaine'],
+    time: ['12 h 00','12 h 30','13 h 00','13 h 30','19 h 00','19 h 30','20 h 00','20 h 30','21 h 00','21 h 30']
+  };
+  document.querySelectorAll('.resa-field').forEach(f => {
+    f.addEventListener('click', () => {
+      const list = samples[f.dataset.field];
+      if(!list) return;
+      const v = f.querySelector('.v');
+      const txt = v.firstChild;
+      const cur = txt.textContent.trim();
+      const idx = list.findIndex(s => s.trim() === cur);
+      const next = list[(idx+1) % list.length];
+      txt.textContent = next + ' ';
+    });
+  });
+
+  /* ---- TWEAK 1: Typewriter on hero lede ---- */
+  if(!prefersReduced){
+    const lede = document.getElementById('heroLede');
+    if(lede){
+      const phrases = [
+        'Deux villes, une maison. Trois décennies rue de Charonne.',
+        'Cuisine du Nord et du Sud, faite minute.',
+        'Bún, phở, bò bún, bánh cuốn — depuis 1996.',
+        'La famille Phương Thảo, aux fourneaux comme à la salle.',
+      ];
+      const textNode = document.createTextNode('');
+      const cursor = document.createElement('span');
+      cursor.className = 'tw-cursor';
+      lede.innerHTML = '';
+      lede.appendChild(textNode);
+      lede.appendChild(cursor);
+      let pi = 0, ci = 0, deleting = false;
+      function typeStep(){
+        const phrase = phrases[pi];
+        if(!deleting){
+          ci++;
+          textNode.textContent = phrase.slice(0, ci);
+          if(ci === phrase.length){ deleting = true; setTimeout(typeStep, 2800); return; }
+          setTimeout(typeStep, 34);
+        } else {
+          ci = Math.max(0, ci - 2);
+          textNode.textContent = phrase.slice(0, ci);
+          if(ci === 0){ deleting = false; pi = (pi + 1) % phrases.length; setTimeout(typeStep, 380); return; }
+          setTimeout(typeStep, 16);
+        }
+      }
+      setTimeout(typeStep, 1700);
+    }
+  }
+
+  /* ---- TWEAK 2: Magnetic CTA (mouse follow) ---- */
+  if(!prefersReduced && !isMobile){
+    document.querySelectorAll('[data-magnetic]').forEach(btn => {
+      const radius = 110;
+      const max = 9;
+      let rafId = null;
+      let tx = 0, ty = 0, atx = 0, aty = 0;
+      function update(){
+        atx += (tx - atx) * 0.18;
+        aty += (ty - aty) * 0.18;
+        btn.style.transform = `translate(${atx.toFixed(2)}px, ${aty.toFixed(2)}px)`;
+        if(Math.abs(tx - atx) > 0.05 || Math.abs(ty - aty) > 0.05){
+          rafId = requestAnimationFrame(update);
+        } else { rafId = null; }
+      }
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const cx = r.left + r.width/2;
+        const cy = r.top + r.height/2;
+        const dx = e.clientX - cx;
+        const dy = e.clientY - cy;
+        const dist = Math.hypot(dx, dy);
+        if(dist < radius){
+          const k = 1 - (dist / radius);
+          tx = (dx / radius) * max * (k + 0.5);
+          ty = (dy / radius) * max * (k + 0.5);
+        } else {
+          tx = 0; ty = 0;
+        }
+        if(!rafId) rafId = requestAnimationFrame(update);
+      });
+      btn.addEventListener('mouseleave', () => {
+        tx = 0; ty = 0;
+        if(!rafId) rafId = requestAnimationFrame(update);
+      });
+    });
+  }
+
+  /* ---- TWEAK 3: Scale-on-scroll hero title ---- */
+  if(!prefersReduced && !isMobile){
+    const titleBlock = document.querySelector('.hero-title-block');
+    if(titleBlock){
+      let ticking2 = false;
+      function scaleScroll(){
+        const y = window.scrollY;
+        const heroH = window.innerHeight;
+        const progress = Math.min(y / (heroH * 0.85), 1);
+        const scale = 1 - (progress * 0.22);
+        const ty = -(progress * 30);
+        const op = 1 - (progress * 0.85);
+        titleBlock.style.transform = `translateY(${ty}px) scale(${scale})`;
+        titleBlock.style.opacity = op.toFixed(3);
+        ticking2 = false;
+      }
+      window.addEventListener('scroll', () => {
+        if(!ticking2){ requestAnimationFrame(scaleScroll); ticking2 = true; }
+      }, {passive:true});
+    }
+  }
+
+  /* ---- TWEAK 4: Marquee items clickable + flash ---- */
+  document.querySelectorAll('.marquee-item[data-dish]').forEach(item => {
+    item.addEventListener('click', () => {
+      const dish = item.dataset.dish;
+      // Find which chapter contains this dish
+      const allRows = document.querySelectorAll('.menu-row');
+      let target = null;
+      allRows.forEach(r => {
+        if(r.dataset.vt === dish) target = r;
+      });
+      if(!target) return;
+      const chapter = target.closest('.menu-chapter').dataset.chap;
+      // Activate that chapter
+      document.querySelectorAll('.chapter-link').forEach(l => l.classList.toggle('active', l.dataset.chap === chapter));
+      document.querySelectorAll('.menu-chapter').forEach(c => c.classList.toggle('active', c.dataset.chap === chapter));
+      // Scroll to the dish then flash
+      setTimeout(() => {
+        target.scrollIntoView({behavior:'smooth', block:'center'});
+        setTimeout(() => {
+          target.classList.remove('flash');
+          requestAnimationFrame(() => { target.classList.add('flash'); });
+          setTimeout(() => target.classList.remove('flash'), 2100);
+        }, 700);
+      }, 50);
+    });
+  });
+
+  /* ---- TWEAK 6: Cities Nord/Sud toggle ---- */
+  const toggle = document.getElementById('citiesToggle');
+  const citiesSection = document.getElementById('villes');
+  if(toggle && citiesSection){
+    toggle.querySelectorAll('button').forEach(b => {
+      b.addEventListener('click', () => {
+        const city = b.dataset.city;
+        toggle.dataset.active = city;
+        citiesSection.dataset.focus = city;
+        toggle.querySelectorAll('button').forEach(btn => btn.classList.toggle('active', btn === b));
+      });
+    });
+  }
+
+  /* ---- TWEAK 5: Phở mega stats counter ---- */
+  const megaCounters = document.querySelectorAll('[data-count-mega]');
+  const mio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.countMega, 10);
+      const suffix = el.dataset.suffix || '';
+      const unit = el.querySelector('.unit');
+      const unitHTML = unit ? unit.outerHTML : '';
+      const dur = 1800;
+      const start = performance.now();
+      function tick(t){
+        const k = Math.min((t-start)/dur, 1);
+        const ease = 1 - Math.pow(1-k, 4);
+        const v = Math.round(target * ease);
+        el.innerHTML = v + suffix + unitHTML;
+        if(k < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      mio.unobserve(el);
+    });
+  }, {threshold:.35});
+  megaCounters.forEach(c => mio.observe(c));
+
+  /* ---- Parallax hero imagery + watermark ---- */
+  if(!prefersReduced && !isMobile){
+    const imagery = document.querySelector('.hero-imagery');
+    const watermark = document.querySelector('.hero-watermark');
+    let ticking = false;
+    function parallax(){
+      const y = window.scrollY;
+      if(imagery) imagery.style.transform = `translateY(${y*0.09}px)`;
+      if(watermark) watermark.style.transform = `translateX(-50%) translateY(${y*-0.18}px)`;
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if(!ticking){ requestAnimationFrame(parallax); ticking = true; }
+    }, {passive:true});
+  }
+})();
+</script>
+</body>
+</html>
