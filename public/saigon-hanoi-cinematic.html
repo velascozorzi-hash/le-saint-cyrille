@@ -1,0 +1,1630 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Saigon Hanoi — Cuisine vietnamienne, Paris 11e</title>
+<meta name="description" content="Saigon Hanoi · 168 bis rue de Charonne, Paris 11e. Phở 12 h, bún, bò bún, bánh cuốn. Cuisine vietnamienne familiale, fait minute, depuis trois décennies." />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+
+<meta property="og:type" content="restaurant.restaurant" />
+<meta property="og:title" content="Saigon Hanoi — Cuisine vietnamienne, Paris 11e" />
+<meta property="og:description" content="Phở 12 h, bò bún, bánh cuốn. Cuisine du Nord et du Sud, faite minute, depuis trois décennies rue de Charonne." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1200&q=85" />
+<meta name="theme-color" content="#0A0A0A" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS — Dark Cinematic + Bento
+   ============================================================ */
+:root{
+  --bg:#0A0A0A;
+  --bg-2:#0F0F0F;
+  --surface:#141414;
+  --surface-2:#1A1A1A;
+  --surface-3:#222220;
+  --line:rgba(255,255,255,.08);
+  --line-2:rgba(255,255,255,.14);
+  --text:#FAFAF8;
+  --text-soft:rgba(250,250,248,.62);
+  --text-muted:rgba(250,250,248,.42);
+  --gold:#D4AF7A;
+  --gold-soft:#B89464;
+  --gold-glow:rgba(212,175,122,.18);
+  --vermillion:#E84A2A;
+  --vermillion-dark:#C03A1E;
+  --jade:#7AA886;
+  --jade-soft:#5C8669;
+  --cream:#FFF8E7;
+
+  --serif:'Instrument Serif','Times New Roman',serif;
+  --sans:'Be Vietnam Pro',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+
+  --maxw:1400px;
+  --gutter:clamp(22px,4vw,56px);
+  --radius:18px;
+  --radius-lg:26px;
+  --ease:cubic-bezier(.16,.84,.44,1);
+  --ease-soft:cubic-bezier(.22,.61,.36,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  line-height:1.55;
+  font-size:15.5px;
+  font-weight:400;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+::selection{background:var(--vermillion);color:var(--text)}
+
+/* TYPOGRAPHY */
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.02em;color:var(--text)}
+h1{font-size:clamp(72px,13vw,220px);font-weight:400;letter-spacing:-.04em;line-height:.88}
+h2{font-size:clamp(46px,7vw,128px);letter-spacing:-.03em;font-weight:400}
+h3{font-size:clamp(24px,2.4vw,38px);letter-spacing:-.012em}
+.italic{font-style:italic}
+p{margin:0}
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:10.5px;
+  letter-spacing:.36em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--gold);
+  display:inline-flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:"";width:32px;height:1px;background:currentColor;display:inline-block}
+.eyebrow.no-line::before{display:none}
+
+.chapter-num{
+  font-family:var(--mono);font-size:11px;
+  color:var(--gold);letter-spacing:.18em;
+  text-transform:uppercase;font-weight:500;
+}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:15px 26px;
+  border-radius:999px;
+  font-family:var(--sans);font-weight:500;font-size:14px;
+  letter-spacing:.01em;
+  position:relative;overflow:hidden;
+  transition:transform .4s var(--ease),background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);
+  cursor:pointer;will-change:transform;
+}
+.btn .arrow{
+  width:24px;height:24px;border-radius:50%;
+  display:inline-grid;place-items:center;
+  background:rgba(255,255,255,.1);
+  transition:transform .4s var(--ease);
+}
+.btn .arrow svg{width:11px;height:11px}
+.btn-primary{background:var(--vermillion);color:#fff}
+.btn-primary:hover{background:var(--vermillion-dark);transform:translateY(-2px)}
+.btn-primary:hover .arrow{transform:translateX(4px)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line-2)}
+.btn-ghost:hover{background:var(--text);color:var(--bg);border-color:var(--text);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--bg)}
+.btn-gold:hover{background:var(--cream);transform:translateY(-2px)}
+.btn-surface{background:var(--surface-2);color:var(--text);border:1px solid var(--line)}
+.btn-surface:hover{background:var(--surface-3);border-color:var(--line-2)}
+.btn:active{transform:scale(.97)!important;transition-duration:.1s!important}
+
+/* CTA shimmer */
+@keyframes shimmer-sweep{0%{transform:translateX(-200%)}100%{transform:translateX(200%)}}
+.btn-primary::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);
+  transform:translateX(-200%);
+  animation:shimmer-sweep 3.4s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* ============================================================
+   NAV — floating dark pill
+   ============================================================ */
+.nav{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);
+  z-index:60;
+  display:flex;align-items:center;gap:0;
+  background:rgba(20,20,20,.78);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:7px 7px 7px 20px;
+  box-shadow:0 16px 50px -20px rgba(0,0,0,.7);
+}
+.nav-brand{display:flex;align-items:center;gap:10px;margin-right:24px}
+.nav-brand-mark{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--gold);color:var(--bg);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-style:italic;font-weight:500;font-size:17px;
+}
+.nav-brand-name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:19px;letter-spacing:-.005em;line-height:1}
+.nav-brand-name small{display:block;font-family:var(--sans);font-style:normal;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-top:3px}
+.nav-links{display:flex;gap:4px;align-items:center;margin-right:8px}
+.nav-links a{
+  font-size:13.5px;padding:8px 14px;border-radius:999px;
+  color:var(--text-soft);font-weight:400;
+  transition:background .25s var(--ease),color .25s var(--ease);
+}
+.nav-links a:hover{background:var(--line);color:var(--text)}
+.nav-links a.active{background:var(--text);color:var(--bg)}
+.nav-cta{
+  background:var(--vermillion);color:#fff;
+  padding:10px 18px;border-radius:999px;
+  font-size:13px;font-weight:500;
+  display:inline-flex;align-items:center;gap:7px;
+  transition:background .25s var(--ease),transform .25s var(--ease);
+}
+.nav-cta:hover{background:var(--vermillion-dark);transform:translateY(-1px)}
+.nav-cta svg{width:13px;height:13px}
+
+.burger{
+  display:none;width:36px;height:36px;border-radius:50%;
+  background:var(--text);color:var(--bg);
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;
+}
+.burger span{width:14px;height:1.5px;background:currentColor;transition:transform .3s var(--ease),opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(3px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-3px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;inset:0;background:var(--bg);color:var(--text);
+  z-index:55;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:28px;
+  opacity:0;pointer-events:none;transition:opacity .4s var(--ease);
+  padding:80px var(--gutter);
+}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:var(--serif);font-size:36px;font-style:italic;font-weight:400;color:var(--text)}
+.mobile-menu a.cta{margin-top:18px;background:var(--vermillion);padding:14px 28px;border-radius:999px;font-family:var(--sans);font-style:normal;font-size:15px;font-weight:500}
+
+@media (max-width:980px){
+  .nav-links{display:none}
+  .nav-brand{margin-right:auto}
+  .burger{display:inline-flex;margin-left:8px}
+  .nav{left:16px;right:16px;transform:none;padding:7px 7px 7px 16px}
+}
+
+/* Scroll progress */
+.progress{position:fixed;top:0;left:0;height:1.5px;width:0;background:var(--vermillion);z-index:70;transition:width .12s linear}
+
+/* ============================================================
+   HERO — cinematic full-bleed
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100dvh;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  z-index:1;
+}
+.hero-bg-img{
+  position:absolute;inset:-2%;
+  background:#000 url('https://images.unsplash.com/photo-1585032226651-759b368d7246?w=2000&q=85') center/cover no-repeat;
+  filter:saturate(.92) contrast(1.05);
+  opacity:0;
+  animation:hero-ken-burns 22s ease-in-out infinite;
+}
+.hero.in .hero-bg-img{opacity:1;transition:opacity 1.4s var(--ease)}
+@keyframes hero-ken-burns{
+  0%{transform:scale(1.04) translate(0,0)}
+  50%{transform:scale(1.12) translate(-1.5%,-1%)}
+  100%{transform:scale(1.04) translate(0,0)}
+}
+.hero-bg::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.35) 30%,rgba(10,10,10,.65) 75%,var(--bg) 100%),
+    radial-gradient(circle at 70% 30%,rgba(212,175,122,.08),transparent 50%);
+  z-index:2;
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 78%,var(--bg) 100%);
+  z-index:3;
+}
+
+.hero-content{
+  position:relative;z-index:4;
+  display:flex;flex-direction:column;
+  flex:1;
+  padding:120px var(--gutter) 70px;
+  max-width:var(--maxw);width:100%;margin:0 auto;
+}
+
+.hero-top{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  margin-bottom:auto;flex-wrap:wrap;
+}
+.live-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 16px 8px 14px;
+  background:rgba(20,20,20,.55);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:12px;letter-spacing:.04em;
+  color:var(--text);
+}
+.live-pill .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--jade);
+  animation:pulse-live 2s ease-out infinite;
+}
+@keyframes pulse-live{0%{box-shadow:0 0 0 0 rgba(122,168,134,.55)}70%{box-shadow:0 0 0 7px rgba(122,168,134,0)}100%{box-shadow:0 0 0 0 rgba(122,168,134,0)}}
+.hero-top-right{display:flex;align-items:center;gap:14px;font-size:11.5px;color:var(--text-soft);letter-spacing:.04em}
+.hero-top-right .vrt{width:1px;height:14px;background:var(--line-2)}
+
+.hero-headline{
+  margin-top:auto;
+  font-family:var(--serif);
+  font-size:clamp(72px,15vw,260px);
+  letter-spacing:-.045em;line-height:.86;
+  font-weight:400;
+  color:var(--text);
+  max-width:1100px;
+}
+.hero-headline .line{display:block;overflow:hidden}
+.hero-headline .line span{display:inline-block;transform:translateY(110%);transition:transform 1.2s var(--ease)}
+.hero.in .hero-headline .line:nth-child(1) span{transform:translateY(0);transition-delay:.1s}
+.hero.in .hero-headline .line:nth-child(2) span{transform:translateY(0);transition-delay:.24s}
+.hero-headline em{font-style:italic;color:var(--gold)}
+
+.hero-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:end;
+  margin-top:60px;
+  padding-top:40px;
+  border-top:1px solid var(--line);
+  opacity:0;transform:translateY(20px);
+  transition:opacity 1s var(--ease) .9s,transform 1s var(--ease) .9s;
+}
+.hero.in .hero-bottom{opacity:1;transform:none}
+.hero-meta{display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--text-soft)}
+.hero-meta-row{display:flex;align-items:center;gap:14px}
+.hero-meta-row .label{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;min-width:100px}
+.hero-meta-row .val{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--text);font-weight:400}
+
+.hero-cta-stack{display:flex;flex-direction:column;align-items:flex-end;gap:18px}
+.hero-rating{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:13px;
+}
+.hero-rating .stars{color:var(--gold);font-size:14px;letter-spacing:1px}
+.hero-rating .num{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--text)}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+@media (max-width:900px){
+  .hero-bottom{grid-template-columns:1fr;gap:30px;align-items:flex-start}
+  .hero-cta-stack{align-items:flex-start}
+  .hero-ctas{justify-content:flex-start}
+}
+
+/* ============================================================
+   BENTO DASHBOARD — "Le menu en direct"
+   ============================================================ */
+.bento-dashboard{
+  padding:120px var(--gutter) 100px;
+  background:var(--bg);
+  position:relative;
+}
+.bento-dashboard .head{
+  max-width:var(--maxw);margin:0 auto 50px;
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;
+}
+.bento-dashboard .head h2{font-size:clamp(40px,5vw,80px);line-height:.96}
+.bento-dashboard .head h2 em{font-style:italic;color:var(--gold)}
+.bento-dashboard .head p{max-width:380px;font-size:14.5px;color:var(--text-soft);line-height:1.55}
+
+.bento-grid{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:minmax(180px,auto);
+  gap:14px;
+  grid-template-areas:
+    "today today live rating"
+    "today today calendar weather"
+    "popular popular popular service";
+}
+.tile{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:26px 28px;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .55s var(--ease),border-color .35s var(--ease),box-shadow .55s var(--ease);
+}
+.tile:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 24px 60px -20px rgba(0,0,0,.6)}
+.tile .tile-label{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+}
+.tile .tile-label .live-d{width:5px;height:5px;border-radius:50%;background:var(--vermillion);animation:pulse-tiny 1.4s ease-out infinite}
+@keyframes pulse-tiny{0%{opacity:1}50%{opacity:.3}100%{opacity:1}}
+
+.tile.today{
+  grid-area:today;
+  background:linear-gradient(135deg,var(--surface) 0%,var(--surface-2) 60%,#1f1815 100%);
+  padding:32px 36px;
+}
+.tile.today .massive{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(54px,6vw,96px);
+  line-height:.92;letter-spacing:-.025em;color:var(--text);
+  margin-top:auto;
+}
+.tile.today .massive em{color:var(--gold);font-style:italic}
+.tile.today .massive .next-word{display:inline-block;color:var(--gold)}
+.tile.today .sub{margin-top:18px;font-size:14px;color:var(--text-soft);line-height:1.5;max-width:420px}
+.tile.today .more{
+  margin-top:24px;display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--gold);font-weight:500;letter-spacing:.04em;
+}
+.tile.today .more svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.tile.today:hover .more svg{transform:translateX(4px)}
+
+.tile.live{
+  grid-area:live;
+  background:radial-gradient(circle at 70% 30%,rgba(232,74,42,.12),transparent 60%),var(--surface);
+}
+.tile.live .status-big{font-family:var(--serif);font-size:36px;line-height:1;letter-spacing:-.015em;color:var(--text);margin-top:auto}
+.tile.live .status-big em{color:var(--jade);font-style:italic}
+.tile.live .sched{margin-top:10px;font-family:var(--mono);font-size:11.5px;color:var(--text-soft);letter-spacing:.04em}
+.tile.live .ring{
+  position:absolute;top:24px;right:24px;width:30px;height:30px;
+  border-radius:50%;border:1.5px solid var(--jade);
+  display:grid;place-items:center;
+}
+.tile.live .ring::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 0 rgba(122,168,134,.5);animation:pulse-live 2s ease-out infinite}
+
+.tile.rating{
+  grid-area:rating;
+  background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%);
+}
+.tile.rating .big-num{font-family:var(--serif);font-style:italic;font-size:72px;line-height:.88;color:var(--gold);margin-top:auto;letter-spacing:-.02em}
+.tile.rating .stars{color:var(--gold);font-size:15px;letter-spacing:1px;margin-top:4px}
+.tile.rating .who{margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--text-muted);letter-spacing:.12em;text-transform:uppercase}
+
+.tile.calendar{grid-area:calendar}
+.tile.calendar .date-big{font-family:var(--serif);font-size:54px;line-height:.88;letter-spacing:-.025em;margin-top:auto;color:var(--text);font-style:italic}
+.tile.calendar .month{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.tile.calendar .day-name{font-size:13px;color:var(--text-soft);margin-top:8px}
+
+.tile.weather{grid-area:weather;background:linear-gradient(180deg,#1a1f1c 0%,var(--surface) 100%)}
+.tile.weather .temp{font-family:var(--serif);font-size:42px;line-height:.95;color:var(--text);margin-top:auto;letter-spacing:-.02em}
+.tile.weather .temp .unit{font-size:.5em;color:var(--text-muted)}
+.tile.weather .verdict{margin-top:8px;font-family:var(--serif);font-style:italic;color:var(--jade);font-size:15px;line-height:1.35}
+
+.tile.popular{
+  grid-area:popular;
+  background:var(--surface);
+  display:grid;grid-template-columns:1fr 280px;gap:26px;align-items:center;
+  padding:30px 32px;overflow:hidden;
+}
+.tile.popular .left{display:flex;flex-direction:column}
+.tile.popular .massive{font-family:var(--serif);font-style:italic;font-size:clamp(40px,4.5vw,68px);line-height:.92;letter-spacing:-.02em;color:var(--text);margin-top:6px}
+.tile.popular .massive .vt{color:var(--gold);font-style:italic}
+.tile.popular .sub{margin-top:14px;font-size:13.5px;color:var(--text-soft);line-height:1.5;max-width:440px}
+.tile.popular .meter{
+  margin-top:18px;height:5px;background:var(--surface-3);border-radius:999px;overflow:hidden;
+  position:relative;max-width:280px;
+}
+.tile.popular .meter-fill{
+  position:absolute;top:0;left:0;height:100%;background:linear-gradient(90deg,var(--vermillion),var(--gold));
+  width:0;border-radius:999px;
+  animation:meter-fill 1.6s ease-out forwards 1s;
+}
+@keyframes meter-fill{to{width:87%}}
+.tile.popular .meter-meta{margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--text-muted);letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between}
+.tile.popular .img-wrap{
+  height:200px;border-radius:14px;overflow:hidden;
+  background:#000 url('https://images.unsplash.com/photo-1583932692577-1d3e1f3c2e02?w=900&q=85') center/cover no-repeat;
+  filter:saturate(.88);
+}
+
+.tile.service{
+  grid-area:service;
+  background:var(--vermillion);color:#fff;
+  display:flex;flex-direction:column;
+}
+.tile.service .tile-label{color:rgba(255,255,255,.7)}
+.tile.service h3{margin-top:auto;font-family:var(--serif);font-size:36px;line-height:.95;letter-spacing:-.02em;font-style:italic}
+.tile.service p{margin-top:8px;font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.5}
+.tile.service .cta-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;letter-spacing:.04em}
+.tile.service .cta-link svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.tile.service:hover .cta-link svg{transform:translateX(4px)}
+
+/* Floating cursor inside today tile */
+.tile.today .tw-cursor{display:inline-block;width:3px;height:.85em;background:var(--gold);margin-left:4px;vertical-align:baseline;animation:tw-blink 1.1s step-start infinite}
+@keyframes tw-blink{0%,100%{opacity:1}49%{opacity:1}50%{opacity:0}}
+
+@media (max-width:1100px){
+  .bento-grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-template-areas:
+      "today today"
+      "live rating"
+      "calendar weather"
+      "popular popular"
+      "service service";
+  }
+  .tile.popular{grid-template-columns:1fr}
+  .tile.popular .img-wrap{display:none}
+}
+@media (max-width:620px){
+  .bento-grid{grid-template-columns:1fr;grid-template-areas:"today" "live" "rating" "calendar" "weather" "popular" "service"}
+}
+
+/* ============================================================
+   CINEMATIC CHAPTER 01 — Le bouillon
+   ============================================================ */
+.cinematic{
+  position:relative;
+  min-height:100dvh;
+  padding:130px 0 130px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.cinematic-bg{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;background-position:center;
+  filter:saturate(.85) brightness(.55) contrast(1.08);
+  animation:hero-ken-burns 24s ease-in-out infinite;
+}
+.cinematic::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,var(--bg) 0%,rgba(10,10,10,.5) 18%,rgba(10,10,10,.6) 80%,var(--bg) 100%);
+}
+.cinematic::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(circle at 80% 40%,rgba(212,175,122,.12),transparent 50%);
+}
+.cinematic .container{position:relative;z-index:2}
+
+.cinematic-grid{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:80px;
+  align-items:center;
+  min-height:60vh;
+}
+.cinematic-text .chapter-num{margin-bottom:24px;display:block}
+.cinematic-text h2{
+  font-size:clamp(48px,7.5vw,140px);
+  line-height:.9;letter-spacing:-.035em;
+}
+.cinematic-text h2 em{font-style:italic;color:var(--gold)}
+.cinematic-text .lede{
+  margin-top:32px;font-size:18px;color:var(--text-soft);max-width:500px;line-height:1.6;font-weight:300;
+}
+.cinematic-text blockquote{
+  margin:40px 0 0;padding-left:24px;
+  border-left:1px solid var(--gold-soft);
+  font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.45;color:var(--gold);
+  max-width:480px;
+}
+.cinematic-text blockquote small{
+  display:block;font-family:var(--sans);font-style:normal;font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);margin-top:14px;font-weight:500;
+}
+
+.cinematic-visual{
+  position:relative;
+  border-radius:24px;overflow:hidden;
+  aspect-ratio:4/5;
+  background:#000 center/cover no-repeat;
+  box-shadow:0 50px 100px -30px rgba(0,0,0,.7);
+}
+.cinematic-visual::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent 50%,rgba(0,0,0,.4) 100%);
+}
+
+/* Massive stats below cinematic */
+.cinematic-stats{
+  margin-top:100px;padding-top:60px;
+  border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  position:relative;z-index:2;
+}
+.cinematic-stat{padding:0 32px;border-left:1px solid var(--line)}
+.cinematic-stat:first-child{border-left:0;padding-left:0}
+.cinematic-stat .val{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(64px,8.5vw,140px);line-height:.88;
+  color:var(--gold);letter-spacing:-.035em;
+  display:flex;align-items:baseline;gap:8px;
+}
+.cinematic-stat .val .unit{
+  font-family:var(--serif);font-style:normal;font-weight:400;
+  font-size:.32em;color:var(--text-muted);letter-spacing:.04em;
+}
+.cinematic-stat .lbl{
+  margin-top:14px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--text-soft);font-weight:500;
+}
+.cinematic-stat .sub{margin-top:10px;font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--text-muted);line-height:1.5;max-width:240px}
+
+@media (max-width:900px){
+  .cinematic{padding:80px 0 90px;min-height:auto}
+  .cinematic-grid{grid-template-columns:1fr;gap:40px}
+  .cinematic-visual{aspect-ratio:1/1;max-height:480px}
+  .cinematic-stats{grid-template-columns:1fr;gap:30px;border-top:1px solid var(--line);padding-top:50px}
+  .cinematic-stat{border-left:0;padding:0;padding-top:30px;border-top:1px solid var(--line)}
+  .cinematic-stat:first-child{padding-top:0;border-top:0}
+}
+
+/* ============================================================
+   BENTO CARTE — menu as bento tiles
+   ============================================================ */
+.bento-carte{
+  padding:130px var(--gutter) 110px;
+  background:var(--bg);
+}
+.bento-carte .head{
+  max-width:var(--maxw);margin:0 auto 50px;
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;
+}
+.bento-carte .head h2{font-size:clamp(42px,5.5vw,90px);line-height:.96;letter-spacing:-.025em}
+.bento-carte .head h2 em{font-style:italic;color:var(--gold)}
+.bento-carte .head p{max-width:340px;font-size:14.5px;color:var(--text-soft);line-height:1.55}
+
+.carte-bento-grid{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:minmax(220px,auto);
+  gap:14px;
+}
+.carte-tile{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-lg);overflow:hidden;
+  position:relative;cursor:pointer;
+  transition:transform .55s var(--ease),border-color .35s var(--ease),box-shadow .55s var(--ease);
+  display:flex;flex-direction:column;
+}
+.carte-tile:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 28px 60px -22px rgba(0,0,0,.7)}
+.carte-tile .tile-img{
+  flex:1;min-height:160px;
+  background-size:cover;background-position:center;
+  position:relative;
+}
+.carte-tile .tile-img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(10,10,10,.92) 100%);
+}
+.carte-tile .tile-body{
+  padding:18px 22px 20px;
+  position:relative;z-index:1;
+}
+.carte-tile.with-img .tile-body{
+  margin-top:-50px;
+}
+.carte-tile .vt{
+  font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);
+  display:block;margin-bottom:4px;
+}
+.carte-tile .name{
+  font-family:var(--serif);font-size:24px;font-weight:400;line-height:1.1;letter-spacing:-.012em;color:var(--text);
+}
+.carte-tile .desc{margin-top:6px;font-size:12.5px;color:var(--text-soft);line-height:1.45}
+.carte-tile .price-row{
+  margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+}
+.carte-tile .price{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--gold);letter-spacing:.02em}
+.carte-tile .count{font-family:var(--mono);font-size:10px;color:var(--text-muted);letter-spacing:.16em;text-transform:uppercase}
+
+.carte-tile.featured{
+  grid-column:span 2;grid-row:span 2;
+}
+.carte-tile.wide{grid-column:span 2}
+.carte-tile.tall{grid-row:span 2}
+
+.carte-tile .hoang-tag{
+  position:absolute;top:14px;left:14px;
+  background:var(--vermillion);color:#fff;
+  padding:5px 10px;border-radius:999px;
+  font-family:var(--serif);font-style:italic;font-size:12px;font-weight:500;
+  z-index:2;
+}
+
+.carte-tile.category-header{
+  background:var(--surface-2);
+  padding:24px 26px;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.carte-tile.category-header .cat-num{font-family:var(--mono);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.carte-tile.category-header .cat-name{font-family:var(--serif);font-style:italic;font-size:42px;line-height:.95;letter-spacing:-.02em;color:var(--text);margin-top:auto}
+.carte-tile.category-header .cat-meta{margin-top:8px;font-size:12px;color:var(--text-soft)}
+
+.carte-cta-row{
+  margin-top:50px;display:flex;justify-content:space-between;align-items:center;
+  max-width:var(--maxw);margin-left:auto;margin-right:auto;gap:30px;flex-wrap:wrap;
+}
+.carte-cta-row p{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--text-soft);max-width:520px;line-height:1.4}
+
+@media (max-width:1100px){
+  .carte-bento-grid{grid-template-columns:repeat(4,1fr)}
+  .carte-tile.featured{grid-column:span 2;grid-row:span 2}
+}
+@media (max-width:700px){
+  .carte-bento-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:minmax(180px,auto)}
+  .carte-tile.featured,.carte-tile.wide{grid-column:span 2;grid-row:auto}
+  .carte-tile.tall{grid-row:auto}
+}
+
+/* ============================================================
+   CINEMATIC CHAPTER 02 — La famille Phương Thảo
+   ============================================================ */
+/* (reuses .cinematic class) */
+
+/* ============================================================
+   BENTO PRACTICAL — Hours / Map / Resa as tiles
+   ============================================================ */
+.bento-practical{
+  padding:130px var(--gutter) 110px;
+  background:var(--bg);
+}
+.bento-practical .head{
+  max-width:var(--maxw);margin:0 auto 50px;
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;
+}
+.bento-practical .head h2{font-size:clamp(42px,5.5vw,90px);line-height:.96;letter-spacing:-.025em}
+.bento-practical .head h2 em{font-style:italic;color:var(--gold)}
+.bento-practical .head p{max-width:380px;font-size:14.5px;color:var(--text-soft);line-height:1.55}
+
+.practical-grid{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:minmax(180px,auto);
+  gap:14px;
+  grid-template-areas:
+    "address address phone next"
+    "hours hours map map"
+    "resa resa resa resa";
+}
+
+.tile.address{grid-area:address;background:var(--surface);display:flex;flex-direction:column}
+.tile.address .addr-1{font-family:var(--serif);font-size:42px;line-height:.95;letter-spacing:-.02em;color:var(--text);margin-top:auto;font-style:italic}
+.tile.address .addr-2{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--text-soft);letter-spacing:.04em}
+.tile.address .metro-line{margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gold)}
+.tile.address .metro-line::before{
+  content:"M";width:18px;height:18px;border-radius:50%;background:#0066A1;color:#fff;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;
+  display:inline-grid;place-items:center;
+}
+
+.tile.phone{grid-area:phone;background:var(--gold);color:var(--bg);display:flex;flex-direction:column;justify-content:space-between}
+.tile.phone .tile-label{color:rgba(10,10,10,.5)}
+.tile.phone .number{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--bg);margin-top:auto;font-weight:500;letter-spacing:-.01em}
+.tile.phone .call-cta{margin-top:10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(10,10,10,.65);font-weight:600}
+
+.tile.next{grid-area:next;background:var(--surface-2);display:flex;flex-direction:column;justify-content:space-between}
+.tile.next .tile-label{color:var(--jade)}
+.tile.next .next-slot{font-family:var(--serif);font-style:italic;font-size:38px;line-height:1;color:var(--text);margin-top:auto;letter-spacing:-.015em}
+.tile.next .next-meta{margin-top:8px;font-size:12px;color:var(--text-soft)}
+
+.tile.hours{grid-area:hours;background:var(--surface);display:flex;flex-direction:column}
+.tile.hours .hours-list{display:flex;flex-direction:column;margin-top:auto;width:100%}
+.tile.hours .h-row{
+  display:grid;grid-template-columns:80px 1fr auto;gap:14px;align-items:center;
+  padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;
+}
+.tile.hours .h-row:last-child{border-bottom:0}
+.tile.hours .h-row .day{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-soft);font-weight:500}
+.tile.hours .h-row .time{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--text)}
+.tile.hours .h-row .closed{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--vermillion);font-weight:600}
+.tile.hours .h-row.today{
+  background:linear-gradient(90deg,rgba(212,175,122,.08),transparent);
+  margin:0 -16px;padding:11px 16px;border-radius:8px;
+}
+.tile.hours .h-row.today .day{color:var(--gold)}
+.tile.hours .h-row.today .time{color:var(--gold)}
+
+.tile.map{grid-area:map;background:var(--surface);padding:0;overflow:hidden;position:relative}
+.tile.map svg{width:100%;height:100%;display:block;min-height:280px;background:#1A1814}
+.tile.map .street{stroke:#2A2620;stroke-width:14;fill:none;stroke-linecap:round}
+.tile.map .street-main{stroke:var(--gold-soft);stroke-width:20;opacity:.6}
+.tile.map .block{fill:#161312;stroke:#22201D;stroke-width:.8}
+.tile.map .park{fill:#1F2520}
+.tile.map .street-label{font-family:'Instrument Serif',serif;font-style:italic;font-size:10px;fill:var(--text-muted);letter-spacing:.02em}
+.tile.map .pin-ring{fill:none;stroke:var(--vermillion);stroke-width:1.5;opacity:.4}
+.tile.map .pin-dot{fill:var(--vermillion)}
+.tile.map .pin-pulse{fill:var(--vermillion);transform-origin:center;transform-box:fill-box;animation:pin-pulse 2.2s ease-out infinite}
+.tile.map .pin-pulse.delay{animation-delay:1.1s}
+.tile.map .pin-label{font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;font-size:13px;fill:var(--gold)}
+.tile.map .metro-circle{fill:#0066A1}
+.tile.map .metro-text{font-family:'Be Vietnam Pro',sans-serif;font-size:7px;font-weight:700;fill:white}
+.tile.map .metro-label{font-family:'Be Vietnam Pro',sans-serif;font-size:9px;fill:var(--text-soft);letter-spacing:.04em;text-transform:uppercase}
+@keyframes pin-pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.4);opacity:0}}
+.tile.map .overlay{
+  position:absolute;bottom:16px;left:16px;
+  background:rgba(20,20,20,.78);backdrop-filter:blur(10px);
+  border:1px solid var(--line);border-radius:12px;
+  padding:10px 14px;font-size:12px;color:var(--text);
+  display:flex;align-items:center;gap:10px;
+}
+.tile.map .overlay a{font-size:11px;color:var(--gold);font-weight:500;letter-spacing:.04em}
+
+.tile.resa{
+  grid-area:resa;background:var(--surface);
+  display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;
+  padding:40px 44px;position:relative;overflow:hidden;
+}
+.tile.resa::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 350px at 110% 50%,rgba(232,74,42,.14),transparent 55%);
+  pointer-events:none;
+}
+.tile.resa .text{position:relative;z-index:1}
+.tile.resa h3{font-family:var(--serif);font-style:italic;font-size:clamp(28px,3.5vw,52px);line-height:1;letter-spacing:-.02em;color:var(--text)}
+.tile.resa h3 em{color:var(--gold);font-style:italic}
+.tile.resa .sub{margin-top:14px;font-size:14px;color:var(--text-soft);line-height:1.55;max-width:380px}
+.tile.resa .form{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px}
+.tile.resa .fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tile.resa .field{
+  background:rgba(255,255,255,.04);border:1px solid var(--line);
+  border-radius:14px;padding:12px 14px;cursor:pointer;
+  transition:background .25s,border-color .25s;
+}
+.tile.resa .field:hover{background:rgba(255,255,255,.08);border-color:var(--line-2)}
+.tile.resa .field label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px;font-weight:600}
+.tile.resa .field .v{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--text);display:flex;align-items:center;gap:6px}
+.tile.resa .field .v svg{width:10px;height:10px;opacity:.5}
+
+@media (max-width:1100px){
+  .practical-grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-template-areas:
+      "address phone"
+      "next next"
+      "hours hours"
+      "map map"
+      "resa resa";
+  }
+}
+@media (max-width:700px){
+  .practical-grid{grid-template-columns:1fr;grid-template-areas:"address" "phone" "next" "hours" "map" "resa"}
+  .tile.resa{grid-template-columns:1fr;padding:30px}
+  .tile.resa .fields{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   CINEMATIC CLOSE — big quote testimonial
+   ============================================================ */
+.cinematic-close{
+  position:relative;
+  padding:140px 0 140px;
+  background:var(--bg);
+  overflow:hidden;
+}
+.cinematic-close::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(800px 500px at 50% 50%,rgba(212,175,122,.08),transparent 50%);
+  pointer-events:none;
+}
+.cinematic-close .container{text-align:center;position:relative;z-index:1}
+.cinematic-close .quote-block{max-width:1100px;margin:0 auto}
+.cinematic-close blockquote{
+  margin:0;font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(40px,5.2vw,84px);
+  line-height:1.05;letter-spacing:-.02em;color:var(--text);
+}
+.cinematic-close blockquote em{color:var(--gold)}
+.cinematic-close .author{
+  margin-top:50px;display:inline-flex;align-items:center;gap:14px;
+  padding:14px 20px;background:var(--surface);border:1px solid var(--line);
+  border-radius:999px;
+}
+.cinematic-close .author .av{
+  width:36px;height:36px;border-radius:50%;background:var(--vermillion);color:#fff;
+  display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-weight:500;font-size:15px;
+}
+.cinematic-close .author .who{text-align:left;font-size:13px;line-height:1.3}
+.cinematic-close .author .who strong{font-weight:500;color:var(--text);display:block}
+.cinematic-close .author .who small{font-family:var(--mono);font-size:10.5px;color:var(--text-muted);letter-spacing:.12em}
+
+.cinematic-close .rating-strip{
+  margin-top:60px;padding-top:40px;border-top:1px solid var(--line);
+  display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap;
+}
+.cinematic-close .rating-strip .item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-soft)}
+.cinematic-close .rating-strip .item .stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+.cinematic-close .rating-strip .item .num{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold);font-weight:500}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  background:#070707;color:var(--text-soft);
+  padding:80px var(--gutter) 30px;position:relative;
+  border-top:1px solid var(--line);
+}
+.foot{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;
+}
+.foot-brand{display:flex;flex-direction:column;gap:18px}
+.foot-brand .brand{display:flex;align-items:center;gap:12px}
+.foot-brand .brand-mark{width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--bg);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-weight:500;font-size:19px}
+.foot-brand .brand-name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;line-height:1;color:var(--text)}
+.foot-brand .brand-name small{display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:4px;font-weight:500}
+.foot-brand p{font-size:13.5px;color:var(--text-muted);line-height:1.55;max-width:340px}
+.foot-socials{display:flex;gap:10px;margin-top:6px}
+.foot-socials a{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .25s,border-color .25s}
+.foot-socials a:hover{background:var(--vermillion);border-color:var(--vermillion);color:#fff}
+.foot-socials svg{width:14px;height:14px}
+
+.foot-col h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:13.5px;color:var(--text-muted);margin-bottom:8px;line-height:1.5;transition:color .25s}
+.foot-col a:hover{color:var(--text)}
+
+.foot-bot{
+  max-width:var(--maxw);margin:60px auto 0;padding-top:24px;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10.5px;color:var(--text-muted);letter-spacing:.04em;
+}
+.foot-bot a{color:var(--text-soft);transition:color .25s}
+.foot-bot a:hover{color:var(--text)}
+
+@media (max-width:900px){
+  .foot{grid-template-columns:1fr 1fr;gap:40px}
+  .foot-brand{grid-column:1 / -1}
+}
+@media (max-width:560px){
+  .foot{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   REVEAL animations
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .95s var(--ease),transform .95s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal-stagger > *{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal-stagger.in > *:nth-child(1){opacity:1;transform:none;transition-delay:.05s}
+.reveal-stagger.in > *:nth-child(2){opacity:1;transform:none;transition-delay:.13s}
+.reveal-stagger.in > *:nth-child(3){opacity:1;transform:none;transition-delay:.21s}
+.reveal-stagger.in > *:nth-child(4){opacity:1;transform:none;transition-delay:.29s}
+.reveal-stagger.in > *:nth-child(5){opacity:1;transform:none;transition-delay:.37s}
+.reveal-stagger.in > *:nth-child(6){opacity:1;transform:none;transition-delay:.45s}
+.reveal-stagger.in > *:nth-child(7){opacity:1;transform:none;transition-delay:.53s}
+.reveal-stagger.in > *:nth-child(8){opacity:1;transform:none;transition-delay:.61s}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-brand">
+    <span class="nav-brand-mark">S</span>
+    <span class="nav-brand-name">Saigon Hanoi<small>Paris 11<sup>e</sup></small></span>
+  </a>
+  <div class="nav-links">
+    <a href="#top" class="active">Maison</a>
+    <a href="#dashboard">En direct</a>
+    <a href="#bouillon">Le bouillon</a>
+    <a href="#carte">La carte</a>
+    <a href="#famille">La famille</a>
+    <a href="#venir">Venir</a>
+  </div>
+  <a href="tel:+33143674241" class="nav-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+    Réserver
+  </a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#dashboard">En direct</a>
+  <a href="#bouillon">Le bouillon</a>
+  <a href="#carte">La carte</a>
+  <a href="#famille">La famille</a>
+  <a href="#venir">Venir</a>
+  <a href="tel:+33143674241" class="cta">Réserver — 01 43 67 42 41</a>
+</div>
+
+<!-- HERO CINEMATIC -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-bg-img"></div>
+  </div>
+  <div class="hero-content">
+
+    <div class="hero-top">
+      <div class="live-pill">
+        <span class="dot"></span>
+        <span id="liveStatus">Ouvert · service du soir</span>
+      </div>
+      <div class="hero-top-right">
+        <span>168 bis rue de Charonne</span>
+        <span class="vrt"></span>
+        <span>Paris 11<sup>e</sup></span>
+      </div>
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="line"><span>Saïgon,</span></span>
+      <span class="line"><span><em>Hà Nội.</em></span></span>
+    </h1>
+
+    <div class="hero-bottom">
+      <div class="hero-meta">
+        <div class="hero-meta-row">
+          <span class="label">Depuis</span>
+          <span class="val">trois décennies</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="label">Bouillon</span>
+          <span class="val">douze heures</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="label">Maître</span>
+          <span class="val">Hoang Minh</span>
+        </div>
+      </div>
+      <div class="hero-cta-stack">
+        <div class="hero-rating">
+          <span class="stars">★★★★★</span>
+          <span class="num">4,6</span>
+          <span style="color:var(--text-muted);font-family:var(--mono);font-size:11px;letter-spacing:.1em">246 AVIS GOOGLE</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#carte" class="btn btn-ghost">Voir la carte</a>
+          <a href="tel:+33143674241" class="btn btn-primary">Réserver
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENTO DASHBOARD -->
+<section class="bento-dashboard" id="dashboard">
+
+  <div class="head reveal">
+    <div>
+      <span class="chapter-num">— 01 / La maison</span>
+      <h2 style="margin-top:14px">En <em>direct</em><br/>de la cuisine.</h2>
+    </div>
+    <p>Ce qui mijote là, maintenant. Note Google, créneau libre, et la météo qui dit qu'aujourd'hui, c'est jour de phở.</p>
+  </div>
+
+  <div class="bento-grid reveal-stagger">
+
+    <article class="tile today">
+      <div class="tile-label"><span class="live-d"></span>Aujourd'hui chez Hoang</div>
+      <div class="massive" id="todayMassive">
+        <span id="todayText">Bò bún</span><span class="tw-cursor"></span>
+      </div>
+      <p class="sub">Le plat que la maison met en avant ce midi. La carte tourne avec le marché, jamais sur un fichier figé.</p>
+      <a href="#carte" class="more">Voir la carte complète
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </article>
+
+    <article class="tile live">
+      <div class="ring"></div>
+      <div class="tile-label">Statut</div>
+      <div class="status-big"><em>Ouvert</em></div>
+      <div class="sched">18 H 30 → 22 H 30</div>
+    </article>
+
+    <article class="tile rating">
+      <div class="tile-label">Note Google</div>
+      <div class="big-num" data-count-mega="4.6">0</div>
+      <div class="stars">★★★★★</div>
+      <div class="who">246 avis</div>
+    </article>
+
+    <article class="tile calendar">
+      <div class="tile-label">Date</div>
+      <div class="date-big" id="dayNum">—</div>
+      <div class="month" id="dayMonth">—</div>
+      <div class="day-name" id="dayName">—</div>
+    </article>
+
+    <article class="tile weather">
+      <div class="tile-label">Météo phở</div>
+      <div class="temp">14<span class="unit">°C</span></div>
+      <div class="verdict">Pluie fine.<br/>Jour <em>parfait</em> pour un bouillon.</div>
+    </article>
+
+    <article class="tile popular">
+      <div class="left">
+        <div class="tile-label"><span class="live-d"></span>Plat du mois</div>
+        <div class="massive"><span class="vt">Phở đặc biệt</span><br/>Soupe tonkinoise.</div>
+        <p class="sub">Bouillon 12 h, pâtes de riz fines, bœuf, boulettes, herbes fraîches. Le geste signature de la maison depuis trois décennies.</p>
+        <div class="meter"><div class="meter-fill"></div></div>
+        <div class="meter-meta"><span>87% des commandes du mois</span><span>14,00 €</span></div>
+      </div>
+      <div class="img-wrap"></div>
+    </article>
+
+    <article class="tile service">
+      <div class="tile-label" style="color:rgba(255,255,255,.7)">Traiteur · livraison</div>
+      <h3>Aussi <em>chez vous.</em></h3>
+      <p>Repas d'affaires, anniversaires, livraison Paris 11<sup>e</sup>. Tout le menu en boîte.</p>
+      <a href="tel:+33143674241" class="cta-link">Demander un devis
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<!-- CINEMATIC CHAPTER 01 — Le bouillon -->
+<section class="cinematic" id="bouillon">
+  <div class="cinematic-bg" style="background-image:url('https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1800&q=85')" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="cinematic-grid">
+      <div class="cinematic-text reveal">
+        <span class="chapter-num">— 02 / Le geste</span>
+        <h2 style="margin-top:24px">Douze heures<br/>de <em>bouillon.</em></h2>
+        <p class="lede">
+          Os de bœuf et badiane, gingembre torréfié à la flamme, oignon brûlé sur la plaque.
+          Sept épices entières, jamais en poudre. Le secret n'est pas dans la recette —
+          elle tient sur une carte postale — mais dans le temps qu'on lui donne, et dans la main qui écume.
+        </p>
+        <blockquote>
+          « Un phở, ça ne se sert pas. Ça se reçoit. »
+          <small>Hoang Minh · gérant depuis 1996</small>
+        </blockquote>
+      </div>
+      <div class="cinematic-visual reveal" style="background-image:url('https://images.unsplash.com/photo-1583932692577-1d3e1f3c2e02?w=1200&q=85')"></div>
+    </div>
+
+    <div class="cinematic-stats reveal-stagger">
+      <div class="cinematic-stat">
+        <div class="val" data-count-mega="12">0<span class="unit">heures</span></div>
+        <div class="lbl">Cuisson du bouillon</div>
+        <div class="sub">Le feu doux, sans relâche, à partir de minuit.</div>
+      </div>
+      <div class="cinematic-stat">
+        <div class="val" data-count-mega="7">0<span class="unit">épices</span></div>
+        <div class="lbl">Entières, jamais en poudre</div>
+        <div class="sub">Badiane, cardamome, cannelle, clou de girofle, coriandre, fenouil, gingembre.</div>
+      </div>
+      <div class="cinematic-stat">
+        <div class="val" data-count-mega="100" data-suffix="%">0<span class="unit">%</span></div>
+        <div class="lbl">Fait maison</div>
+        <div class="sub">Rien n'arrive en sachet. Le bouillon, les nems, les sauces. Tout sort de la cuisine.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENTO LA CARTE -->
+<section class="bento-carte" id="carte">
+
+  <div class="head reveal">
+    <div>
+      <span class="chapter-num">— 03 / La carte</span>
+      <h2 style="margin-top:14px">Six chapitres,<br/>une <em>maison</em>.</h2>
+    </div>
+    <p>Tout est préparé minute. Cliquez sur un chapitre pour ouvrir le détail.</p>
+  </div>
+
+  <div class="carte-bento-grid reveal-stagger">
+
+    <article class="carte-tile featured with-img">
+      <span class="hoang-tag">★ Le choix de Hoang</span>
+      <div class="tile-img" style="background-image:url('https://images.unsplash.com/photo-1583932692577-1d3e1f3c2e02?w=900&q=85')"></div>
+      <div class="tile-body">
+        <span class="vt">Phở đặc biệt</span>
+        <h3 class="name">Soupe tonkinoise spéciale au bœuf</h3>
+        <p class="desc">Bouillon 12 h, pâtes de riz, bœuf, boulettes, herbes fraîches.</p>
+        <div class="price-row">
+          <span class="price">14,00 €</span>
+          <span class="count">Le signature</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="carte-tile wide category-header">
+      <span class="cat-num">— 01</span>
+      <span class="cat-name">Entrées</span>
+      <span class="cat-meta">8 plats · à partir de 3,50 €</span>
+    </article>
+
+    <article class="carte-tile with-img">
+      <div class="tile-img" style="background-image:url('https://images.unsplash.com/photo-1606471191009-63994c53433b?w=900&q=85')"></div>
+      <div class="tile-body">
+        <span class="vt">Chả giò</span>
+        <h3 class="name">Nems maison ×4</h3>
+        <div class="price-row">
+          <span class="price">5,00 €</span>
+          <span class="count">Porc / poulet</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="carte-tile with-img">
+      <div class="tile-img" style="background-image:url('https://images.unsplash.com/photo-1551326844-4df70f78d0e9?w=900&q=85')"></div>
+      <div class="tile-body">
+        <span class="vt">Gỏi cuốn</span>
+        <h3 class="name">Rouleau de printemps</h3>
+        <div class="price-row">
+          <span class="price">3,50 €</span>
+          <span class="count">Porc &amp; crevettes</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="carte-tile category-header">
+      <span class="cat-num">— 02</span>
+      <span class="cat-name">Soupes</span>
+      <span class="cat-meta">4 phở</span>
+    </article>
+
+    <article class="carte-tile with-img">
+      <span class="hoang-tag">★ Hoang</span>
+      <div class="tile-img" style="background-image:url('https://images.unsplash.com/photo-1606471191009-63994c53433b?w=900&q=85')"></div>
+      <div class="tile-body">
+        <span class="vt">Bún bò chả giò</span>
+        <h3 class="name">Vermicelles au bœuf + nem</h3>
+        <div class="price-row">
+          <span class="price">12,00 €</span>
+          <span class="count">Bò bún</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="carte-tile with-img">
+      <span class="hoang-tag">★ Hoang</span>
+      <div class="tile-img" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85')"></div>
+      <div class="tile-body">
+        <span class="vt">Bò lúc lắc</span>
+        <h3 class="name">Bœuf sauté au wok</h3>
+        <div class="price-row">
+          <span class="price">13,50 €</span>
+          <span class="count">La star du wok</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="carte-tile wide category-header">
+      <span class="cat-num">— 03</span>
+      <span class="cat-name">Plats du Sud</span>
+      <span class="cat-meta">Wok &amp; caramel · 11–14 €</span>
+    </article>
+
+    <article class="carte-tile with-img">
+      <div class="tile-img" style="background-image:url('https://images.unsplash.com/photo-1604497181015-76590d828aae?w=900&q=85')"></div>
+      <div class="tile-body">
+        <span class="vt">Heo kho</span>
+        <h3 class="name">Porc au caramel</h3>
+        <div class="price-row">
+          <span class="price">12,00 €</span>
+          <span class="count">Saigon · sucré-salé</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="carte-tile category-header">
+      <span class="cat-num">— 04</span>
+      <span class="cat-name">Desserts</span>
+      <span class="cat-meta">À partir de 4,50 €</span>
+    </article>
+
+    <article class="carte-tile with-img">
+      <div class="tile-img" style="background-image:url('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&q=85')"></div>
+      <div class="tile-body">
+        <span class="vt">Chè đậu đỏ</span>
+        <h3 class="name">Haricot rouge, lait de coco</h3>
+        <div class="price-row">
+          <span class="price">4,50 €</span>
+          <span class="count">Servi tiède</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="carte-cta-row" style="margin-top:50px;padding:0 var(--gutter)">
+    <p>Plus de 40 plats à la carte. Sans gluten et végétarien disponibles.</p>
+    <a href="tel:+33143674241" class="btn btn-gold">Demander la carte complète
+      <span class="arrow" style="background:rgba(10,10,10,.15)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- CINEMATIC CHAPTER 02 — La famille -->
+<section class="cinematic" id="famille">
+  <div class="cinematic-bg" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1800&q=85')" aria-hidden="true"></div>
+  <div class="container">
+    <div class="cinematic-grid" style="grid-template-columns:1.1fr 1fr">
+      <div class="cinematic-visual reveal" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=85');order:-1"></div>
+      <div class="cinematic-text reveal">
+        <span class="chapter-num">— 04 / La famille</span>
+        <h2 style="margin-top:24px">Une <em>maison</em><br/>portée par<br/>trois décennies.</h2>
+        <p class="lede">
+          La famille Phương Thảo pose ses fourneaux 168 bis rue de Charonne en 1996.
+          Le Nord du Vietnam dans une assiette, le Sud dans la sauce d'huître. Hoang Minh
+          répond encore au téléphone, prend les réservations, et reconnaît les habitués
+          du jeudi midi.
+        </p>
+        <blockquote>
+          « Quinze ans que je viens. La carte ne change pas. Le goût non plus. »
+          <small>Marc P. · client depuis 2010</small>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENTO PRACTICAL -->
+<section class="bento-practical" id="venir">
+
+  <div class="head reveal">
+    <div>
+      <span class="chapter-num">— 05 / Venir</span>
+      <h2 style="margin-top:14px">Le coin<br/>de la <em>maison</em>.</h2>
+    </div>
+    <p>Adresse, horaires, créneau libre, et un téléphone direct chez Hoang. Tout ce qu'il faut pour pousser la porte.</p>
+  </div>
+
+  <div class="practical-grid reveal-stagger">
+
+    <article class="tile address">
+      <div class="tile-label">Adresse</div>
+      <div class="addr-1">168 bis<br/>rue de Charonne</div>
+      <div class="addr-2">75011 PARIS · 11<sup>e</sup></div>
+      <div class="metro-line">Alexandre Dumas · 179 m</div>
+    </article>
+
+    <article class="tile phone">
+      <div class="tile-label">Téléphone</div>
+      <div class="number">01 43 67<br/>42 41</div>
+      <a href="tel:+33143674241" class="call-cta">→ Appeler maintenant</a>
+    </article>
+
+    <article class="tile next">
+      <div class="tile-label">Prochain créneau libre</div>
+      <div class="next-slot">Ce soir<br/>20 h 30</div>
+      <div class="next-meta">Pour 2 personnes · table en terrasse</div>
+    </article>
+
+    <article class="tile hours">
+      <div class="tile-label">Horaires de la semaine</div>
+      <div class="hours-list" id="hoursList">
+        <div class="h-row" data-day="1"><span class="day">Lun</span><span class="time"></span><span class="closed">Fermé</span></div>
+        <div class="h-row" data-day="2"><span class="day">Mar</span><span class="time">11 h 30 — 22 h 30</span><span></span></div>
+        <div class="h-row" data-day="3"><span class="day">Mer</span><span class="time">11 h 30 — 22 h 30</span><span></span></div>
+        <div class="h-row" data-day="4"><span class="day">Jeu</span><span class="time">11 h 30 — 22 h 30</span><span></span></div>
+        <div class="h-row" data-day="5"><span class="day">Ven</span><span class="time">11 h 30 — 22 h 30</span><span></span></div>
+        <div class="h-row" data-day="6"><span class="day">Sam</span><span class="time">11 h 30 — 22 h 30</span><span></span></div>
+        <div class="h-row" data-day="0"><span class="day">Dim</span><span class="time"></span><span class="closed">Fermé</span></div>
+      </div>
+    </article>
+
+    <article class="tile map">
+      <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+        <rect class="block" x="0" y="0" width="200" height="100" rx="2"/>
+        <rect class="block" x="220" y="0" width="180" height="100" rx="2"/>
+        <rect class="block" x="420" y="0" width="180" height="100" rx="2"/>
+        <rect class="block" x="0" y="130" width="160" height="110" rx="2"/>
+        <rect class="block" x="180" y="130" width="220" height="80" rx="2"/>
+        <rect class="block" x="180" y="230" width="120" height="70" rx="2"/>
+        <rect class="block" x="320" y="230" width="180" height="70" rx="2"/>
+        <rect class="block" x="420" y="130" width="180" height="90" rx="2"/>
+        <rect class="block" x="520" y="240" width="80" height="60" rx="2"/>
+        <rect class="block" x="0" y="270" width="160" height="90" rx="2"/>
+        <rect class="block" x="180" y="320" width="320" height="40" rx="2"/>
+        <rect class="block" x="520" y="320" width="80" height="40" rx="2"/>
+
+        <path class="street street-main" d="M0 155 Q 200 180 380 210 T 600 250"/>
+        <text class="street-label" x="160" y="170" transform="rotate(7 160 170)">Rue de Charonne</text>
+        <path class="street" d="M120 0 L 90 360"/>
+        <path class="street" d="M0 295 L 600 280"/>
+        <text class="street-label" x="40" y="290">Rue Alexandre Dumas</text>
+
+        <g transform="translate(290, 198)">
+          <circle class="pin-pulse" cx="0" cy="0" r="7"/>
+          <circle class="pin-pulse delay" cx="0" cy="0" r="7"/>
+          <circle class="pin-ring" cx="0" cy="0" r="18"/>
+          <circle class="pin-dot" cx="0" cy="0" r="5.5"/>
+        </g>
+        <text class="pin-label" x="304" y="194">Saigon Hanoi</text>
+
+        <g transform="translate(380, 288)">
+          <circle class="metro-circle" cx="0" cy="0" r="10"/>
+          <text class="metro-text" x="0" y="3" text-anchor="middle">M</text>
+        </g>
+        <text class="metro-label" x="395" y="292">Alexandre Dumas</text>
+
+        <path d="M378 286 Q 340 250 295 204" stroke="#E84A2A" stroke-width="1.8" stroke-dasharray="3 4" fill="none" opacity=".7"/>
+        <text x="345" y="256" font-family="Instrument Serif" font-style="italic" font-size="10" fill="#E84A2A">3 min</text>
+      </svg>
+      <div class="overlay">
+        <span>168 bis rue de Charonne</span>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=168+bis+rue+de+Charonne+75011+Paris" target="_blank" rel="noopener">Itinéraire →</a>
+      </div>
+    </article>
+
+    <article class="tile resa">
+      <div class="text">
+        <h3>Réservez la table.<br/>On garde le <em>phở</em> chaud.</h3>
+        <p class="sub">Trois clics ou un coup de fil. Hoang répond directement, c'est plus rapide.</p>
+      </div>
+      <form class="form" onsubmit="event.preventDefault();window.location.href='tel:+33143674241'">
+        <div class="fields">
+          <button type="button" class="field" data-field="people">
+            <label>Personnes</label>
+            <span class="v">2 pers. <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <button type="button" class="field" data-field="date">
+            <label>Date</label>
+            <span class="v">Ce soir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <button type="button" class="field" data-field="time">
+            <label>Heure</label>
+            <span class="v">20 h 30 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start">Confirmer par téléphone
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+      </form>
+    </article>
+
+  </div>
+</section>
+
+<!-- CINEMATIC CLOSE -->
+<section class="cinematic-close">
+  <div class="container">
+    <div class="quote-block reveal">
+      <blockquote>« Bò bún parfait, portions <em>généreuses</em>, prix raisonnables.<br/>C'est la cantine du quartier — et tant mieux qu'elle <em>existe</em>. »</blockquote>
+      <div class="author">
+        <span class="av">É</span>
+        <div class="who">
+          <strong>Émilie Caron</strong>
+          <small>AVIS GOOGLE · 6 MOIS</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="rating-strip">
+      <div class="item">
+        <span class="stars">★★★★★</span>
+        <span class="num">4,6</span>
+        <span>· 246 avis Google</span>
+      </div>
+      <div class="item" style="color:var(--text-muted)">·</div>
+      <div class="item">
+        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)">30 ans</span>
+        <span>· depuis 1996</span>
+      </div>
+      <div class="item" style="color:var(--text-muted)">·</div>
+      <div class="item">
+        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)">11<sup>e</sup></span>
+        <span>· rue de Charonne</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot">
+    <div class="foot-brand">
+      <div class="brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Saigon Hanoi<small>Paris 11<sup>e</sup> · Charonne</small></span>
+      </div>
+      <p>Restaurant vietnamien familial — Nord &amp; Sud, fait maison, depuis trois décennies rue de Charonne.</p>
+      <div class="foot-socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=168+bis+rue+de+Charonne+75011+Paris" target="_blank" rel="noopener" aria-label="Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-9-8-13a8 8 0 1 1 16 0c0 4-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <a href="#top">Maison</a>
+      <a href="#dashboard">En direct</a>
+      <a href="#bouillon">Le bouillon</a>
+      <a href="#carte">La carte</a>
+      <a href="#famille">La famille</a>
+      <a href="#venir">Venir</a>
+    </div>
+    <div class="foot-col">
+      <h4>Venir</h4>
+      <p>168 bis rue de Charonne<br/>75011 Paris</p>
+      <p>Métro Alexandre Dumas<br/>Parking INDIGO Pyrénées-Bagnolet</p>
+      <a href="tel:+33143674241">01 43 67 42 41</a>
+    </div>
+    <div class="foot-col">
+      <h4>Horaires</h4>
+      <p>Lun. <span style="color:var(--vermillion)">Fermé</span></p>
+      <p>Mar. – Sam.<br/>11 h 30 – 15 h<br/>18 h 30 – 22 h 30</p>
+      <p>Dim. <span style="color:var(--vermillion)">Fermé</span></p>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© Saigon Hanoi · TRAITEUR PHƯƠNG THẢO SARL · RCS Paris 533 819 488</span>
+    <span><a href="#">Mentions légales</a> · <a href="#">Cookies</a></span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.innerWidth <= 768;
+
+  /* Hero entrance */
+  const hero = document.querySelector('.hero');
+  requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('in')));
+
+  /* Progress bar */
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (y/h*100) + '%';
+  }, {passive:true});
+
+  /* Burger */
+  const burger = document.getElementById('burger');
+  const mm = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mm.classList.toggle('open');
+  });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open'); mm.classList.remove('open');
+  }));
+
+  /* Reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold: isMobile ? 0.05 : 0.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+
+  /* Today calendar tile */
+  const days = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+  const months = ['Janv.','Févr.','Mars','Avril','Mai','Juin','Juil.','Août','Sept.','Oct.','Nov.','Déc.'];
+  const now = new Date();
+  document.getElementById('dayNum').textContent = now.getDate();
+  document.getElementById('dayMonth').textContent = months[now.getMonth()] + ' 2026';
+  document.getElementById('dayName').textContent = days[now.getDay()];
+
+  /* Today's dish typewriter cycle in tile.today */
+  const todayText = document.getElementById('todayText');
+  if(todayText && !prefersReduced){
+    const dishes = ['Bò bún', 'Phở đặc biệt', 'Bò lúc lắc', 'Bánh cuốn', 'Bún bò chả giò'];
+    let pi = 0, ci = 0, deleting = false;
+    function typeStep(){
+      const word = dishes[pi];
+      if(!deleting){
+        ci++;
+        todayText.textContent = word.slice(0, ci);
+        if(ci === word.length){ deleting = true; setTimeout(typeStep, 2400); return; }
+        setTimeout(typeStep, 80);
+      } else {
+        ci = Math.max(0, ci - 1);
+        todayText.textContent = word.slice(0, ci);
+        if(ci === 0){ deleting = false; pi = (pi + 1) % dishes.length; setTimeout(typeStep, 350); return; }
+        setTimeout(typeStep, 35);
+      }
+    }
+    setTimeout(typeStep, 1500);
+  }
+
+  /* Mega counters in cinematic stats + rating */
+  const megaCounters = document.querySelectorAll('[data-count-mega]');
+  const mio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const isFloat = el.dataset.countMega.includes('.');
+      const target = parseFloat(el.dataset.countMega);
+      const suffix = el.dataset.suffix || '';
+      const unit = el.querySelector('.unit');
+      const unitHTML = unit ? unit.outerHTML : '';
+      const dur = 1800;
+      const start = performance.now();
+      function tick(t){
+        const k = Math.min((t-start)/dur, 1);
+        const ease = 1 - Math.pow(1-k, 4);
+        let v = target * ease;
+        v = isFloat ? v.toFixed(1).replace('.', ',') : Math.round(v);
+        el.innerHTML = v + suffix + unitHTML;
+        if(k < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      mio.unobserve(el);
+    });
+  }, {threshold:.35});
+  megaCounters.forEach(c => mio.observe(c));
+
+  /* Hours today highlight */
+  const today = now.getDay();
+  const todayRow = document.querySelector(`.h-row[data-day="${today}"]`);
+  if(todayRow) todayRow.classList.add('today');
+
+  /* Resa widget faux */
+  const samples = {
+    people: ['1 pers.','2 pers.','3 pers.','4 pers.','5 pers.','6 pers.','+ de 6'],
+    date: ['Ce soir','Demain','Vendredi','Samedi','Dimanche'],
+    time: ['12 h 00','12 h 30','13 h 00','19 h 00','19 h 30','20 h 00','20 h 30','21 h 00','21 h 30']
+  };
+  document.querySelectorAll('.field[data-field]').forEach(f => {
+    f.addEventListener('click', () => {
+      const list = samples[f.dataset.field];
+      if(!list) return;
+      const v = f.querySelector('.v');
+      const txt = v.firstChild;
+      const cur = txt.textContent.trim();
+      const idx = list.findIndex(s => s.trim() === cur);
+      const next = list[(idx+1) % list.length];
+      txt.textContent = next + ' ';
+    });
+  });
+
+  /* Live status update */
+  function updateLive(){
+    const d = new Date();
+    const day = d.getDay();
+    const hr = d.getHours() + d.getMinutes()/60;
+    let status = 'Fermé · ouvre Mar. 11 h 30';
+    if(day !== 0 && day !== 1){
+      if(hr >= 11.5 && hr < 15) status = 'Ouvert · service du midi';
+      else if(hr >= 18.5 && hr < 22.5) status = 'Ouvert · service du soir';
+      else if(hr < 11.5) status = 'Ouvre à 11 h 30';
+      else if(hr >= 15 && hr < 18.5) status = 'Ferme · réouvre à 18 h 30';
+      else status = 'Fermé · ouvre demain 11 h 30';
+    }
+    const el = document.getElementById('liveStatus');
+    if(el) el.textContent = status;
+  }
+  updateLive();
+})();
+</script>
+</body>
+</html>
