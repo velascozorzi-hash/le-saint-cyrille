@@ -1,0 +1,104 @@
+/* ─────────────────────────────────────────────────────────────
+   tokens.css — palette + typo swappable via data attrs on <html>
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* default = crème & encre — bordeaux */
+  --paper: #fbfaf6;
+  --ink: #1d1a17;
+  --accent: #9b2c1e;
+  --muted: #6b655c;
+  --hairline: rgba(29, 26, 23, 0.14);
+  --hairline-soft: rgba(29, 26, 23, 0.08);
+  --paper-tint: rgba(29, 26, 23, 0.03);
+
+  /* type stacks */
+  --font-display: "Italiana", "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Manrope", "Work Sans", system-ui, sans-serif;
+
+  /* layout */
+  --header-h: 72px;
+  --pad-side: clamp(20px, 4vw, 48px);
+  --max-w: 1440px;
+  --gutter: clamp(16px, 2vw, 24px);
+
+  /* eyebrow */
+  --eyebrow-spacing: 0.22em;
+
+  /* radii (≤2px per brief) */
+  --r: 1.5px;
+}
+
+/* ── PALETTES ──────────────────────────────────────────────── */
+
+html[data-palette="creme"] {
+  --paper: #fbfaf6;
+  --ink: #1d1a17;
+  --accent: #9b2c1e;
+  --muted: #6b655c;
+  --hairline: rgba(29, 26, 23, 0.14);
+  --hairline-soft: rgba(29, 26, 23, 0.08);
+  --paper-tint: rgba(29, 26, 23, 0.03);
+}
+
+html[data-palette="lin"] {
+  --paper: #f1ede3;
+  --ink: #18201a;
+  --accent: #2d5a3d;
+  --muted: #6b6a5e;
+  --hairline: rgba(24, 32, 26, 0.16);
+  --hairline-soft: rgba(24, 32, 26, 0.08);
+  --paper-tint: rgba(24, 32, 26, 0.04);
+}
+
+html[data-palette="pierre"] {
+  --paper: #e7e2d6;
+  --ink: #17161a;
+  --accent: #a07a2e;
+  --muted: #5e5950;
+  --hairline: rgba(23, 22, 26, 0.18);
+  --hairline-soft: rgba(23, 22, 26, 0.09);
+  --paper-tint: rgba(23, 22, 26, 0.04);
+}
+
+html[data-palette="ivoire"] {
+  --paper: #f6f5f1;
+  --ink: #0e0e0c;
+  --accent: #0e0e0c;
+  --muted: #6f6c66;
+  --hairline: rgba(14, 14, 12, 0.18);
+  --hairline-soft: rgba(14, 14, 12, 0.08);
+  --paper-tint: rgba(14, 14, 12, 0.03);
+}
+
+/* ── TYPOGRAPHY ────────────────────────────────────────────── */
+
+html[data-typo="italiana"] {
+  --font-display: "Italiana", "Times New Roman", serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --display-tracking: 0;
+  --display-weight: 400;
+  --display-leading: 1.05;
+}
+
+html[data-typo="cormorant"] {
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
+  --display-tracking: -0.005em;
+  --display-weight: 500;
+  --display-leading: 1.06;
+}
+
+html[data-typo="tenor"] {
+  --font-display: "Tenor Sans", "Times New Roman", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --display-tracking: 0.005em;
+  --display-weight: 400;
+  --display-leading: 1.08;
+}
+
+:root {
+  --display-tracking: 0;
+  --display-weight: 400;
+  --display-leading: 1.05;
+}

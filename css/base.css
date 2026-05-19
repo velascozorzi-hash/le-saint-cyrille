@@ -1,0 +1,242 @@
+/* ─────────────────────────────────────────────────────────────
+   base.css — reset + typography base
+   ───────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+
+/* ── Display + body typography ─────────────────────────────── */
+
+.display, h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight, 400);
+  line-height: var(--display-leading, 1.08);
+  letter-spacing: var(--display-tracking, 0);
+  margin: 0;
+  font-variant-numeric: oldstyle-nums;
+}
+
+h1 { font-size: clamp(56px, 9vw, 120px); }
+h2 { font-size: clamp(36px, 4.4vw, 60px); }
+h3 { font-size: clamp(26px, 2.4vw, 36px); }
+
+p { margin: 0 0 1em; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--eyebrow-spacing);
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+/* italic display emphasis on key words */
+.display em, h1 em, h2 em, h3 em {
+  font-style: italic;
+  font-weight: inherit;
+}
+
+/* ── Squiggly hover link ───────────────────────────────────── */
+
+.link-squig {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  padding-bottom: 4px;
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+.link-squig::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 6px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 6' preserveAspectRatio='none'><path d='M0 3 Q 3 0 6 3 T 12 3 T 18 3 T 24 3' stroke='currentColor' fill='none' stroke-width='1' stroke-linecap='round'/></svg>");
+  background-repeat: repeat-x;
+  background-size: 12px 6px;
+  opacity: 0.5;
+  transition: opacity 0.18s ease, transform 0.25s ease;
+}
+.link-squig:hover { color: var(--accent); transform: translateY(-1px); }
+.link-squig:hover::after { opacity: 1; transform: translateY(2px); animation: squig 1.4s linear infinite; }
+@keyframes squig {
+  from { background-position-x: 0; }
+  to   { background-position-x: 24px; }
+}
+
+/* ── Button ─────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 22px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--r);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--accent); border-color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.ghost:hover { color: var(--accent); border-color: var(--accent); background: transparent; }
+.btn.sm { padding: 9px 16px 8px; font-size: 11px; }
+
+/* ── Hairlines ─────────────────────────────────────────────── */
+
+.hr { border: 0; height: 1px; background: var(--hairline); margin: 0; }
+.dotted {
+  border: 0; border-bottom: 1px dotted var(--hairline);
+  height: 1px; margin: 0;
+}
+
+/* ── Containers ────────────────────────────────────────────── */
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-side);
+}
+
+.section {
+  padding: clamp(72px, 12vh, 140px) 0;
+  position: relative;
+}
+.section-tight { padding: clamp(48px, 8vh, 96px) 0; }
+
+/* ── Reveal animation ──────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(.2,.7,.3,1), transform 0.9s cubic-bezier(.2,.7,.3,1), clip-path 0.9s cubic-bezier(.2,.7,.3,1);
+}
+.reveal-up    { transform: translateY(12px); }
+.reveal-fade  { transform: none; }
+.reveal-left  { transform: translateX(-32px); }
+.reveal-split { transform: none; clip-path: inset(0 50% 0 50%); }
+.reveal.in    { opacity: 1; transform: none; clip-path: inset(0 0% 0 0%); }
+.reveal.d1 { transition-delay: 0.08s; }
+.reveal.d2 { transition-delay: 0.16s; }
+.reveal.d3 { transition-delay: 0.24s; }
+
+/* ── Hero letter stagger ───────────────────────────────────── */
+
+.hero-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: letterIn 0.65s cubic-bezier(.2,.7,.3,1) forwards;
+}
+@keyframes letterIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Word reveal (manifesto typewriter) ────────────────────── */
+
+.word-hidden { opacity: 0; display: inline-block; transform: translateY(7px); }
+.word-show   { display: inline-block; animation: wordIn 0.55s cubic-bezier(.2,.7,.3,1) forwards; }
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(7px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll progress bar ───────────────────────────────────── */
+
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .hero-letter { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .word-hidden { opacity: 1 !important; transform: none !important; }
+  .word-show   { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-split {
+    opacity: 1 !important; transform: none !important;
+    clip-path: none !important; transition: none !important;
+  }
+}
+
+/* ── Focus ─────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
